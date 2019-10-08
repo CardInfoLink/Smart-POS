@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>OVERVIEW - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">HOME</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER GUIDE <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../getstarted/">GET STARTED</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">OVERVIEW</a>
+</li>
+                                    
+<li >
+    <a href="../attachments/">ATTACHMENTS</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../documentation/sdkapi/">SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/bluetooth/">BLUETOOTH</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../download/">DOWNLOADS</a>
+                            </li>
+                            <li >
+                                <a href="../../about/">ABOUT</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../getstarted/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../attachments/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/user-guide/overview.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#sdk">智能终端应用需求【sdk】完成版</a></li>
+            <li><a href="#_1">智能终端业务文档</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="sdk">智能终端应用需求【sdk】完成版</h1>
+<p>标签（空格分隔）： 智能pos</p>
+<hr />
+<h2 id="_1">智能终端业务文档</h2>
+<h3 id="_2">一、管理类</h3>
+<p>管理类sdk作为基础服务包，内容包括了激活、初始化、下载参数和签到；</p>
+<h5 id="_3">序列图</h5>
+<pre><code class="seq">Title:  管理类
+应用-&gt;支付插件: 调用管理功能
+支付插件-&gt;&gt;系统: 1.【激活】激活商户终端；激活-&gt;参数下载-&gt;初始化-&gt;签到；
+支付插件-&gt;&gt;系统: 2.【参数下载】下载终端配置参数；
+支付插件-&gt;&gt;系统: 3.【初始化】更新密钥；
+支付插件-&gt;&gt;系统: 4.【签到】每日签到；
+</code></pre>
+
+<h4 id="_4">激活</h4>
+<p>激活界面，输入商户号终端号，点击【激活】，实现终端与支付server交互，确认身份信息。支付server后续将密钥等信息反馈给终端。 
+<em>只需要在初次使用终端时操作一次。激活操作直接完成激活、参数下载、初始化、签到等流程。</em></p>
+<h5 id="_5">调用方法</h5>
+<p><code>CILSDK.active(merCode, termCode, new Callback&lt;CILResponse&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+<th>样例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>merCode</td>
+<td>商户代码</td>
+<td>021290050110001</td>
+<td>15位数字，激活时必填</td>
+</tr>
+<tr>
+<td>termCode</td>
+<td>终端代码</td>
+<td>00000001</td>
+<td>8位数字，激活时必填</td>
+</tr>
+</tbody>
+</table>
+<p><code>new Callback&lt;CILResponse&gt;</code> 是回调函数</p>
+<h4 id="_6">参数下载</h4>
+<p>参数下载在主要应用在以下两种情况：
+1. 激活时下载参数 
+2. 参数修改后下载参数</p>
+<h5 id="_7">调用方法</h5>
+<p><code>CILSDK.downloadParams(merCode, termCode, new com.cardinfolink.pos.listener.Callback&lt;CILResponse&gt;()</code>
+其中，<code>new com.cardinfolink.pos.listener.Callback&lt;CILResponse&gt;()</code>是回调函数</p>
+<h4 id="_8">初始化</h4>
+<p>初始化主要是终端密钥下载，包含了主密钥下载和工作密钥下载。其主要应用在以下两种情况：
+1.激活时初始化密钥 
+2.需要更新密钥时初始化</p>
+<h5 id="_9">调用方法</h5>
+<p><code>CILSDK.downloadParamsWithProgress(new ProgressCallback&lt;CILResponse&gt;()</code></p>
+<h4 id="_10">签到</h4>
+<p>签到其实就是一个更新密钥的过程，激活时已经覆盖了每日一次签到的操作。</p>
+<h5 id="_11">调用方法</h5>
+<p><code>CILSDK.signIn(new Callback&lt;CILResponse&gt;()</code></p>
+<h3 id="_12">二、配置</h3>
+<h5 id="_13">可配置参数</h5>
+<p><strong>1. 批次号、流水号</strong> 
+批次号用于结算，流水号（凭证号）定位本批每一笔交易唯一索引；</p>
+<h5 id="_14">调用方法</h5>
+<p>设置批次号
+<code>boolean isSuccess = CILSDK.setBatchNum(int batchNum);</code>
+获取批次号
+<code>int batchNum = CILSDK.getBatchNum();</code>
+设置流水号
+<code>boolean isSuccess = CILSDK.setSerialNum(int serialNum);</code>
+获取流水号
+<code>int serialNum = CILSDK.getSerialNum();</code></p>
+<p><strong>2. 主色调</strong> 
+为融合app颜色风格，提供一个调整支付demo颜色的方法，可调整主色调（输入颜色值即可，提供几个参数供参考），图标不可调；</p>
+<p><strong>3. 语言</strong>
+为方便适应境内外app使用场景，提供一个输入语言控制的方法，可调整支付demo的语言。</p>
+<h5 id="_15">序列图</h5>
+<pre><code class="seq">Title: 配置
+应用-&gt;支付插件: 设置批次号、流水号、颜色、语言、币种
+</code></pre>
+
+<h3 id="_16">三、打印</h3>
+<p>交易成功后，需要打印签购单，一般打印两联：商户联和客户联。商户联在持卡人签名后由商户保存。交易成功后，会自动打印商户联。
+<em>需要补打小票时，可以早交易明细中找到补打功能，打印商户联。</em></p>
+<h5 id="_17">序列图</h5>
+<pre><code class="seq">Title: 打印（SDK-打印api)
+APP-&gt;SDK: 发送打印商户联请求
+SDK--&gt;APP: 返回商户联打印结果
+APP-&gt;SDK: 发送客户联打印请求
+SDK--&gt;APP: 返回客户联打印结果
+</code></pre>
+
+<h5 id="_18">调用方法</h5>
+<h6 id="_19">打印银行类／扫码交易小票</h6>
+<p><code>CILSDK.printKindsReceipts(trans,lineBreak,formatTransCode, kind, isForeignTrans,  new Callback&lt;PrinterResult&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans</td>
+<td>交易信息</td>
+</tr>
+<tr>
+<td>lineBreak</td>
+<td>小票结尾需要走纸换行的行数</td>
+</tr>
+<tr>
+<td>formatTransCode</td>
+<td>小票的交易类型（String类型）</td>
+</tr>
+<tr>
+<td>kind</td>
+<td>小票的子标题，判断是商户联或者是客户联(int)</td>
+</tr>
+<tr>
+<td>isForeignTrans</td>
+<td>是否是外卡类交易</td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h6 id="_20">打印结算小票</h6>
+<p><code>CILSDK.printSettleReceipts(transSettles, transDatetime,batchNum, lineBreak, formatTransCode, new Callback&lt;PrinterResult&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transSettles</td>
+<td>结算信息List</td>
+</tr>
+<tr>
+<td>transDatetime</td>
+<td>结算时间</td>
+</tr>
+<tr>
+<td>batchNum</td>
+<td>批次号</td>
+</tr>
+<tr>
+<td>lineBreak</td>
+<td>打印结尾换行数</td>
+</tr>
+<tr>
+<td>formatTransCode</td>
+<td>结算类型</td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h6 id="_21">自定义打印</h6>
+<p><code>CILSDK.printBufferReceipt(buffer, lineBreak,new Callback&lt;PrinterResult&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buffer</td>
+<td>打印内容</td>
+</tr>
+<tr>
+<td>linebreak</td>
+<td>打印结尾换行数</td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h6 id="_22">打印二维码</h6>
+<p><code>CILSDK.printQRCode(qrCode,position,width,lineBreak,new Callback&lt;PrinterResult&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qrCode</td>
+<td>二维码</td>
+</tr>
+<tr>
+<td>position</td>
+<td>二维码位置</td>
+</tr>
+<tr>
+<td>width</td>
+<td>二维码大小</td>
+</tr>
+<tr>
+<td>lineBreak</td>
+<td>打印结尾换行数</td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h6 id="_23">打印条形码</h6>
+<p><code>CILSDK.printBarCode(String barCode, int position, int lineBreak, new Callback&lt;PrinterResult&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>barCode</td>
+<td>条形码数字</td>
+</tr>
+<tr>
+<td>position</td>
+<td>条形码位置</td>
+</tr>
+<tr>
+<td>lineBreak</td>
+<td>打印结尾换行数</td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h6 id="_24">打印图片</h6>
+<p><code>CILSDK.printImage(bitmap, lineBreak, offset, new Callback&lt;PrinterResult&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bitmap</td>
+<td>图片Bitmap</td>
+</tr>
+<tr>
+<td>lineBreak</td>
+<td>换行数</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>偏移量</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_25">四、消费</h3>
+<h4 id="1-nfc">1. 消费【插卡、刷卡、挥卡、手机NFC】</h4>
+<p>支持开发者调用接口实现商家银行卡收款需求。
+主要类型包括刷卡、插卡、挥卡以及手机NFC支付。</p>
+<h5 id="_26">序列图</h5>
+<pre><code class="seq">Title: 消费－银行卡（SDK-银行卡消费api)
+APP-&gt;SDK: 发送消费请求
+SDK--&gt;APP: 返回消费结果
+APP-&gt;SDK: （消费成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面输入消费金额，选择银行卡支付，发起银行卡付款请求</li>
+<li>SDK处理交易，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>如果消费成功，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h4 id="2">2. 消费【扫码】</h4>
+<p>支持开发者调用接口实现商家扫码收款需求。
+主要类型包括微信扫码和支付宝扫码。</p>
+<h5 id="_27">序列图</h5>
+<pre><code class="seq">Title: 消费－扫码（SDK-扫码消费api)
+APP-&gt;SDK: 发送消费请求
+SDK--&gt;APP: 返回消费结果
+APP-&gt;SDK: （消费成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面输入消费金额，扫描二维码获取付款码信息，发起扫码付款请求</li>
+<li>SDK处理消费请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>如果消费成功，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h3 id="_28">五、撤销</h3>
+<p>支持开发者调用接口实现商家撤销当日交易需求。
+包括银行卡撤销和扫码撤销。</p>
+<h5 id="_29">序列图</h5>
+<pre><code class="seq">Title: 撤销（SDK-撤销api)
+APP-&gt;SDK: 发送撤销请求
+SDK--&gt;APP: 返回撤销结果
+APP-&gt;SDK: （撤销成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面输入原交易凭证号，核对该笔交易，发起撤销请求</li>
+<li>SDK处理撤销请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>撤销成功时，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h3 id="_30">六、退货</h3>
+<p>支持开发者调用接口实现商家非当日交易的退货需求。
+包括银行卡退货和扫码退货。</p>
+<h5 id="_31">序列图</h5>
+<pre><code class="seq">Title: 退货（SDK-退货api)
+APP-&gt;SDK: 发送退货请求
+SDK--&gt;APP: 返回退货结果
+APP-&gt;SDK: （退货成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面输入订单相关信息（参考号／交易日期／退货金额），核对该笔交易，发起退货请求</li>
+<li>SDK处理退货请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>退货成功时，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h3 id="_32">七、预授权类</h3>
+<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权类需求。
+主要针对银行卡业务。</p>
+<h4 id="1">1. 预授权</h4>
+<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权需求。
+<em>持卡人在宾馆、酒店或出租公司消费，消费与结算不在同一时间完成，特约单位通过POS预先向发卡机构索要授权的行为。</em></p>
+<h5 id="_33">序列图</h5>
+<pre><code class="seq">Title: 预授权类－预授权（SDK-预授权api)
+APP-&gt;SDK: 发送预授权请求
+SDK--&gt;APP: 返回预授权结果
+APP-&gt;SDK: （预授权成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面输入消费金额，发起预授权请求</li>
+<li>SDK处理预授权请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>如果预授权成功，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h4 id="2_1">2. 预授权撤销</h4>
+<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权撤销需求。
+<em>预授权撤销用来撤销之前的预授权交易，不限制当日。</em></p>
+<h5 id="_34">序列图</h5>
+<pre><code class="seq">Title: 预授权撤销（SDK-预授权撤销api)
+APP-&gt;SDK: 发送预授权撤销请求
+SDK--&gt;APP: 返回预授权撤销结果
+APP-&gt;SDK: （预授权撤销成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</li>
+<li>SDK处理撤销请求，返回应答码</li>
+<li>APP翻译应答码，输出结果页面</li>
+<li>预授权撤销成功时，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h4 id="3">3. 预授权完成</h4>
+<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成需求。
+<em>预授权完成是持卡人消费完成并确定消费金额时，已取得预授权的特约商户在预授权金额或超出预授权金额一定比例的范围内，根据持卡人实际消费金额通过POS终端或手工方式完成持卡人付款的过程。</em></p>
+<h5 id="_35">序列图</h5>
+<pre><code class="seq">Title: 预授权类－预授权完成（SDK-预授权完成api)
+APP-&gt;SDK: 发送预授权完成请求
+SDK--&gt;APP: 返回预授权完成结果
+APP-&gt;SDK: （预授权完成成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面：输入预授权完成金额和原预授权信息（原交易日期\授权码），核对该笔交易，发起预授权完成请求</li>
+<li>SDK处理预授权完成请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>如果预授权完成成功，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h4 id="4">4. 预授权完成撤销</h4>
+<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成撤销需求。
+<em>用来撤销已经成功的预授权完成交易。不限当日。要解冻相应的预授权交易金额，需要完成撤销预授权.</em></p>
+<h5 id="_36">序列图</h5>
+<pre><code class="seq">Title: 预授权完成撤销（SDK-预授权完成撤销api)
+APP-&gt;SDK: 发送预授权完成撤销请求
+SDK--&gt;APP: 返回预授权完成撤销结果
+APP-&gt;SDK: （预授权完成撤销成功）发送打印请求
+SDK--&gt;APP: 返回打印结果
+</code></pre>
+
+<ol>
+<li>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</li>
+<li>SDK处理预授权完成撤销请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>预授权完成撤销成功时，APP发送打印请求</li>
+<li>SDK返回打印结果</li>
+</ol>
+<h3 id="_37">八、交易明细</h3>
+<p>支持开发者调用接口实现商家查看交易订单需求，同时可以补打、撤销订单。</p>
+<h5 id="_38">序列图</h5>
+<pre><code class="seq">Title: 交易明细（SDK-交易明细api)
+APP-&gt;SDK: 发送查看交易明细请求
+SDK--&gt;APP: 返回交易明细结果
+APP-&gt;SDK: （某一笔交易）发送打印请求
+SDK--&gt;APP: 返回打印结果
+APP-&gt;SDK: （某一笔交易）发送撤销请求
+SDK--&gt;APP: 返回撤销结果
+</code></pre>
+
+<ol>
+<li>APP界面：发起查看交易明细请求</li>
+<li>SDK处理请求，返回应答码</li>
+<li>APP翻译应答码，输出交易明细结果</li>
+<li>对某一笔订单，APP发送打印商户联请求</li>
+<li>SDK返回打印商户联结果</li>
+<li>对某一笔订单，APP发送撤销请求</li>
+<li>SDK返回撤销结果</li>
+</ol>
+<h5 id="_39">调用方法</h5>
+<p><code>CILSDK.getBillsAsync(page, size,@BillType int txnType, new Callback&lt;CILResponse&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>从0开始</td>
+</tr>
+<tr>
+<td>size</td>
+<td>每页返回的条数</td>
+</tr>
+<tr>
+<td>type</td>
+<td>账单类型</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>回调</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_40">九、结算</h3>
+<p>支持开发者调用接口实现商家结算需求。
+结算需求主要用于每日交易结束时或收银员交接班时，对某段时间内的账款核对。</p>
+<h5 id="_41">序列图</h5>
+<pre><code class="seq">Title: 结算（SDK-结算api)
+APP-&gt;SDK: 发送结算请求
+SDK--&gt;APP: 返回结算结果
+APP-&gt;SDK: （结算成功）发送打印结算单请求
+SDK--&gt;APP: 返回打印结算单结果
+</code></pre>
+
+<ol>
+<li>APP界面：点击【去结算】，核对交易明细无误后【结算】，发起结算请求</li>
+<li>SDK处理结算请求，返回应答码</li>
+<li>APP翻译应答码，输出结果</li>
+<li>结算成功时，APP发送打印结算单请求</li>
+<li>SDK返回打印结算单结果</li>
+</ol>
+<h5 id="_42">调用方法</h5>
+<p><code>CILSDK.transSettleAsync(batchNum, new Callback&lt;CILResponse&gt;()</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>batchNum</td>
+<td>批次号</td>
+</tr>
+<tr>
+<td>Callback</td>
+<td>回调函数</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

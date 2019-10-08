@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>GET STARTED - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">HOME</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER GUIDE <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">GET STARTED</a>
+</li>
+                                    
+<li >
+    <a href="../overview/">OVERVIEW</a>
+</li>
+                                    
+<li >
+    <a href="../attachments/">ATTACHMENTS</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../documentation/sdkapi/">SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/bluetooth/">BLUETOOTH</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../download/">DOWNLOADS</a>
+                            </li>
+                            <li >
+                                <a href="../../about/">ABOUT</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../..">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../overview/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/user-guide/getstarted.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">概要</a></li>
+        <li class="main "><a href="#_2">初始化</a></li>
+        <li class="main "><a href="#_3">消费</a></li>
+        <li class="main "><a href="#_4">撤销</a></li>
+        <li class="main "><a href="#_5">退货</a></li>
+        <li class="main "><a href="#_6">预授权类</a></li>
+        <li class="main "><a href="#_7">明细查询</a></li>
+        <li class="main "><a href="#_8">结算</a></li>
+        <li class="main "><a href="#_9">小费</a></li>
+        <li class="main "><a href="#_10">余额查询</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="_1">概要</h3>
+<p>本文档详细介绍了用户APP、SDK与后台之间的交互作用，用图形直观简洁的介绍每个功能，并附有详细的文字说明加以解释。</p>
+<h3 id="_2">初始化</h3>
+<ul>
+<li>
+<p>激活
+<img alt="" src="../../img/激活.png" />
+CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端获取devicetoken，将上述信息上传到管理平台验证身份，身份合格后将参数下载到sdk内。</p>
+</li>
+<li>
+<p>主密钥下载
+<img alt="" src="../../img/主密钥下载.png" />
+主密钥下载：采用非对称加密方式，获取主密钥KEY，并启动主密钥。</p>
+</li>
+<li>
+<p>剩余工作密钥下载
+<img alt="" src="../../img/工作密钥下载.png" />
+剩余工作密钥下载：下载工作密钥并装载；下载aid并装载；下载ic公钥并装载。</p>
+</li>
+</ul>
+<p></br></p>
+<h3 id="_3">消费</h3>
+<ul>
+<li>
+<p>银行卡消费
+<img alt="" src="../../img/银行卡消费.png" />
+银行卡消费：输入金额，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+<li>
+<p>扫码消费
+<img alt="" src="../../img/扫码消费.png" />
+扫码消费：输入金额后，扫描消费者付款码，加上终端信息，全部报文经加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+</ul>
+<p></br></p>
+<h3 id="_4">撤销</h3>
+<ul>
+<li>
+<p>银行卡撤销
+<img alt="" src="../../img/银行卡撤销.png" />
+银行卡撤销：输入凭证号本地获取原交易信息，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+<li>
+<p>扫码撤销
+<img alt="" src="../../img/扫码撤销.png" />
+扫码撤销：输入凭证号本地获取原交易信息，全部报文经加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+</ul>
+<p></br></p>
+<h3 id="_5">退货</h3>
+<ul>
+<li>
+<p>银行卡退货
+<img alt="" src="../../img/银行卡退货.png" />
+银行卡退货：输入金额、交易日期、参考号等获取原交易信息，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+<li>
+<p>扫码退货
+<img alt="" src="../../img/扫码退货.png" />
+扫码撤销：输入金额、交易日期和参考号本地获取原交易信息，全部报文经加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+</ul>
+<p></br></p>
+<h3 id="_6">预授权类</h3>
+<ul>
+<li>
+<p>预授权
+<img alt="" src="../../img/预授权.png" />
+预授权：输入金额，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+<li>
+<p>预授权撤销
+<img alt="" src="../../img/预授权撤销.png" />
+预授权撤销：输入相关信息获取原交易，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+<li>
+<p>预授权完成
+<img alt="" src="../../img/预授权完成.png" />
+预授权完成：输入相关信息获取预授权交易，输入预授权完成金额后，刷卡操作，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+<li>
+<p>预授权完成撤销
+<img alt="" src="../../img/预授权完成撤销.png" />
+预授权完成撤销：输入相关信息获取预授权完成交易，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
+</li>
+</ul>
+<p></br></p>
+<h3 id="_7">明细查询</h3>
+<ul>
+<li>明细查询
+<img alt="" src="../../img/明细查询.png" />
+明细查询：发送终端信息到api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到管理平台，管理平台返回应答报文，终端显示。</li>
+</ul>
+<p></br></p>
+<h3 id="_8">结算</h3>
+<ul>
+<li>结算
+<img alt="" src="../../img/结算.png" />
+结算：发送终端信息、商户号、结算批次号到api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到管理平台，管理平台返回应答报文，终端显示。</li>
+</ul>
+<p></br></p>
+<h3 id="_9">小费</h3>
+<ul>
+<li>
+<p>收取小费
+<img alt="" src="../../img/收取小费.png" />
+收取小费：app发起交易，将原交易信息、消费金额传送给api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到交易网关，交易网关返回应答报文，终端显示交易成功。</p>
+</li>
+<li>
+<p>小费撤销
+<img alt="" src="../../img/撤销小费.png" />
+小费撤销：app发起交易，将原小费交易信息传送给api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到交易网关，交易网关返回应答报文，终端显示交易成功。</p>
+</li>
+</ul>
+<p></br></p>
+<h3 id="_10">余额查询</h3>
+<ul>
+<li>余额查询
+<img alt="" src="../../img/余额查询.png" />
+余额查询：app发起余额查询，刷卡后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文，app显示刷卡余额。</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

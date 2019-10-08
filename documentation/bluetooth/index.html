@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>BLUETOOTH - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">HOME</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER GUIDE <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../user-guide/getstarted/">GET STARTED</a>
+</li>
+                                    
+<li >
+    <a href="../../user-guide/overview/">OVERVIEW</a>
+</li>
+                                    
+<li >
+    <a href="../../user-guide/attachments/">ATTACHMENTS</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../sdkapi/">SDK API</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">BLUETOOTH</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../download/">DOWNLOADS</a>
+                            </li>
+                            <li >
+                                <a href="../../about/">ABOUT</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../sdkapi/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../download/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/bluetooth.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">一、使用场景和流程</a></li>
+        <li class="main "><a href="#_2">二、传输数据格式定义</a></li>
+        <li class="main "><a href="#_3">三、调试方法</a></li>
+        <li class="main "><a href="#_4">四、交易报文示例</a></li>
+        <li class="main "><a href="#todo">五、错误码(TODO)</a></li>
+        <li class="main "><a href="#qa-todo">六、Q&amp;A (TODO)</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="_1">一、使用场景和流程</h3>
+<p>传统收银机需要连接讯联的智能 POS 进行收银，但是为了适应收银机上已有的一些业务系统，需要做到收银机唤起智能 POS，
+同时接收来自收银机的一些参数，如金额，参考号等。待智能 POS 接收到请求并处理完毕之后，会立即将交易的处理结果返回给收银机。</p>
+<p><img alt="" src="../../img/pos_coco.png" /></p>
+<p>需要下载风狐智能 POS 蓝牙版，才能具备串口唤起我们的应用功能，请扫描下方二维码，或 <a href="http://ob7kiv99z.bkt.clouddn.com/2017-04-12_smartposcoco_v5.0.0_2017041214_externaldebug.apk">下载到本地</a></p>
+<p><img alt="" src="../../img/download_bluetooth.png" /></p>
+<p>注：目前只支持新大陆 N900 智能 POS + 新大陆 N900 蓝牙底座</p>
+<h3 id="_2">二、传输数据格式定义</h3>
+<pre><code class="json">//request 报文 (收银机 -&gt; 智能 POS)
+{
+    &quot;action&quot;:&quot;CBANK&quot;,                                   //CBANK:银行卡消费, CQR:扫码消费, CANBANK:银行卡撤销, CANQR:扫码撤销, RETBANK:银行卡退货, RETQR:扫码退货, ORDER:订单查询
+    &quot;amount&quot;:&quot;10.01&quot;,                                   //金额
+    &quot;extOrder&quot;:&quot;1002016122912&quot;,                         //外部订单号（可选）
+    &quot;refNum&quot;:&quot;361172435022&quot;,                            //原交易参考号
+    &quot;revAuthCode&quot;:&quot;012345&quot;,                             //原交易授权码
+    &quot;batchNum&quot;:&quot;000001&quot;,                                //原交易批次号
+    &quot;traceNum&quot;:&quot;000012&quot;,                                //原交易凭证号
+    &quot;transDatetime&quot;:&quot;1229&quot;,                             //原交易日期(MMdd)
+    &quot;page&quot;:&quot;1&quot;,                                         //第几页（从1开始）
+    &quot;size&quot;:&quot;10&quot;,                                        //每页返回的条数
+    &quot;txnType&quot;:&quot;QR&quot;                                      //账单类型 CARD:银行卡账单, QR:扫码账单, ALL:银行卡和扫码账单
+}
+
+//response 报文 (智能 POS -&gt; 收银机)
+{
+    &quot;status&quot;:1,                                         //状态 1 成功；0 失败；
+    &quot;msg&quot;:&quot;success&quot;,                                    //详细信息
+    &quot;data&quot;:[                                            //数据
+            {                                           //交易数据字段详情可见 javadoc
+                &quot;additionalResData&quot;: &quot;0102000010134001&quot;,//附加响应数据
+                &quot;batchNum&quot;: &quot;000001&quot;,                   //批次号
+                &quot;billingAmt&quot;: &quot;&quot;,                       //持卡人扣帐金额
+                &quot;billingCurr&quot;: &quot;&quot;,                      //持卡人扣帐货币代码
+                &quot;cardBrand&quot;: &quot;CUP&quot;,                     //国际信用卡公司代码
+                &quot;cardNo&quot;: &quot;6222042600001000&quot;,           //银行卡号(后续将会返回622204****1000形式)
+                &quot;clearingDate&quot;: &quot;0122&quot;,                 //清算日期
+                &quot;localTransDate&quot;: &quot;0122&quot;,               //受卡方所在地日期
+                &quot;localTransTime&quot;: &quot;142139&quot;,             //受卡方所在地时间
+                &quot;merCode&quot;: &quot;201605260000001&quot;,           //商户号
+                &quot;posInputStyle&quot;: &quot;&quot;,                    //服务点输入方式码
+                &quot;processflag&quot;: &quot;0&quot;,                     //交易处理标志
+                &quot;refNum&quot;: &quot;022142445573&quot;,               //检索参考号
+                &quot;respCode&quot;: &quot;00&quot;,                       //应答码
+                &quot;revAuthCode&quot;: &quot;007508&quot;,                //授权标识应答码
+                &quot;revFlag&quot;: &quot;0&quot;,                         //冲正标志
+                &quot;revInsCode&quot;: &quot;0102000010134001&quot;,       //附加响应数据
+                &quot;scanCodeId&quot;: &quot;&quot;,                       //扫码号
+                &quot;termCode&quot;: &quot;00000007&quot;,                 //终端号
+                &quot;traceNum&quot;: &quot;000037&quot;,                   //凭证号
+                &quot;transAmt&quot;: &quot;10.01&quot;,                    //交易金额
+                &quot;transCode&quot;: &quot;PER&quot;,                     //交易类型码
+                &quot;transCurr&quot;: &quot;156&quot;,                     //交易货币代码
+                &quot;transDate&quot;: &quot;20170122142141&quot;,          //原交易日期
+                &quot;transDatetime&quot;: &quot;0122142139&quot;,          //受卡方所在地日期＋受卡方所在地时
+                &quot;transRate&quot;: &quot;&quot;,                        //持卡人扣帐汇率
+                &quot;merDiscount&quot;:&quot;1.00&quot;,                   //商家优惠金额
+                &quot;coupon&quot;:&quot;0.01&quot;                         //支付宝/微信优惠金额
+            },
+            ...
+        ]
+}
+</code></pre>
+
+<p>注意：respCode 应答码表可参见<a href="/user-guide/attachments/#v320160811">交易应答码表V3</a></p>
+<h3 id="_3">三、调试方法</h3>
+<p>将蓝牙底座和串口正确连接，并且将智能 POS 机上的蓝牙底座应用打开，找到底座蓝牙并且连接成功。然后就可以使用串口调试工具发送示例报文了。</p>
+<p><img src="/Smart-POS/img/bluetooth1.png" width="180" height="300" />
+<img src="/Smart-POS/img/bluetooth2.png" width="260" height="300" /></p>
+<h3 id="_4">四、交易报文示例</h3>
+<ul>
+<li>银行卡消费</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;CBANK&quot;,
+  &quot;amount&quot;: &quot;10.01&quot;,
+  &quot;extOrder&quot;:&quot;1002016122912&quot;
+}
+
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;additionalResData&quot;: &quot;01020000   10134001   &quot;,
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;&quot;,
+      &quot;billingCurr&quot;: &quot;&quot;,
+      &quot;cardBrand&quot;: &quot;CUP&quot;,
+      &quot;cardNo&quot;: &quot;6222042600001000&quot;,
+      &quot;clearingDate&quot;: &quot;0122&quot;,
+      &quot;localTransDate&quot;: &quot;0122&quot;,
+      &quot;localTransTime&quot;: &quot;142139&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;posInputStyle&quot;: &quot;&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022142445573&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;007508&quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revInsCode&quot;: &quot;01020000   10134001   &quot;,
+      &quot;scanCodeId&quot;: &quot;&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000037&quot;,
+      &quot;transAmt&quot;: &quot;10.01&quot;,
+      &quot;transCode&quot;: &quot;PER&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122142141&quot;,
+      &quot;transDatetime&quot;: &quot;0122142139&quot;,
+      &quot;transRate&quot;: &quot;&quot;
+    }
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>银行卡撤销</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;CANBANK&quot;,
+  &quot;amount&quot;: &quot;10.01&quot;,
+  &quot;traceNum&quot;: &quot;000037&quot;,
+  &quot;extOrder&quot;:&quot;1002016122912&quot;
+}
+
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;additionalResData&quot;: &quot;01020000   10134001   &quot;,
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;&quot;,
+      &quot;billingCurr&quot;: &quot;&quot;,
+      &quot;cardBrand&quot;: &quot;CUP&quot;,
+      &quot;cardNo&quot;: &quot;6222042600001000&quot;,
+      &quot;clearingDate&quot;: &quot;0122&quot;,
+      &quot;localTransDate&quot;: &quot;0122&quot;,
+      &quot;localTransTime&quot;: &quot;145536&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;posInputStyle&quot;: &quot;&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022142445573&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;007508&quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revInsCode&quot;: &quot;01020000   10134001   &quot;,
+      &quot;scanCodeId&quot;: &quot;&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000040&quot;,
+      &quot;transAmt&quot;: &quot;10.01&quot;,
+      &quot;transCode&quot;: &quot;PVR&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122145538&quot;,
+      &quot;transDatetime&quot;: &quot;0122145536&quot;,
+      &quot;transRate&quot;: &quot;&quot;
+    }
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>银行卡退货</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;RETBANK&quot;,
+  &quot;amount&quot;: &quot;10.01&quot;,
+  &quot;refNum&quot;: &quot;022145445612&quot;,
+  &quot;transDatetime&quot;: &quot;0122&quot;,
+  &quot;extOrder&quot;:&quot;1002016122912&quot;
+}
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;additionalResData&quot;: &quot;01020000   10134001   &quot;,
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;&quot;,
+      &quot;billingCurr&quot;: &quot;&quot;,
+      &quot;cardBrand&quot;: &quot;CUP&quot;,
+      &quot;cardNo&quot;: &quot;6222042600001000&quot;,
+      &quot;clearingDate&quot;: &quot;0122&quot;,
+      &quot;localTransDate&quot;: &quot;0122&quot;,
+      &quot;localTransTime&quot;: &quot;150037&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;posInputStyle&quot;: &quot;&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022145445612&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;&quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revInsCode&quot;: &quot;01020000   10134001   &quot;,
+      &quot;scanCodeId&quot;: &quot;&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000042&quot;,
+      &quot;transAmt&quot;: &quot;10.01&quot;,
+      &quot;transCode&quot;: &quot;CTH&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122150039&quot;,
+      &quot;transDatetime&quot;: &quot;0122150037&quot;,
+      &quot;transRate&quot;: &quot;&quot;
+    }
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>扫码消费</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;CQR&quot;,
+  &quot;amount&quot;: &quot;0.01&quot;,
+  &quot;extOrder&quot;:&quot;1002016122912&quot;
+}
+
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;additionalResData&quot;: &quot;00000000   10134001   &quot;,
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;&quot;,
+      &quot;billingCurr&quot;: &quot;&quot;,
+      &quot;cardBrand&quot;: &quot;ALP&quot;,
+      &quot;cardNo&quot;: &quot;pho***@foxmail.com&quot;,
+      &quot;clearingDate&quot;: &quot;&quot;,
+      &quot;localTransDate&quot;: &quot;0122&quot;,
+      &quot;localTransTime&quot;: &quot;145144&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;posInputStyle&quot;: &quot;040&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022145445609&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;&quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revInsCode&quot;: &quot;00000000   10134001   &quot;,
+      &quot;revOrderNum&quot;: &quot;2017012221001004480248605076&quot;,
+      &quot;scanCodeId&quot;: &quot;E68890E58A9F&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000038&quot;,
+      &quot;transAmt&quot;: &quot;0.01&quot;,
+      &quot;transCode&quot;: &quot;BPA&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122145149&quot;,
+      &quot;transDatetime&quot;: &quot;0122145144&quot;,
+      &quot;transRate&quot;: &quot;&quot;
+    }
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>扫码撤销</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;CANQR&quot;,
+  &quot;amount&quot;: &quot;0.01&quot;,
+  &quot;traceNum&quot;: &quot;000038&quot;,
+  &quot;extOrder&quot;:&quot;1002016122912&quot;
+}
+
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;additionalResData&quot;: &quot;00000000   10134001   &quot;,
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;&quot;,
+      &quot;billingCurr&quot;: &quot;&quot;,
+      &quot;cardBrand&quot;: &quot;ALP&quot;,
+      &quot;cardNo&quot;: &quot;pho***@foxmail.com&quot;,
+      &quot;clearingDate&quot;: &quot;&quot;,
+      &quot;localTransDate&quot;: &quot;0122&quot;,
+      &quot;localTransTime&quot;: &quot;145411&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;posInputStyle&quot;: &quot;&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022145445610&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;&quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revInsCode&quot;: &quot;00000000   10134001   &quot;,
+      &quot;revOrderNum&quot;: &quot;2017012221001004480248605076&quot;,
+      &quot;scanCodeId&quot;: &quot;E68890E58A9F&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000039&quot;,
+      &quot;transAmt&quot;: &quot;0.01&quot;,
+      &quot;transCode&quot;: &quot;BPA&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122145414&quot;,
+      &quot;transDatetime&quot;: &quot;0122145411&quot;,
+      &quot;transRate&quot;: &quot;&quot;
+    }
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>扫码退货</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;RETQR&quot;,
+  &quot;amount&quot;: &quot;0.01&quot;,
+  &quot;refNum&quot;: &quot;022150445617&quot;,
+  &quot;transDatetime&quot;: &quot;0122&quot;,
+  &quot;extOrder&quot;:&quot;1002016122912&quot;
+}
+
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;additionalResData&quot;: &quot;00000000   10134001   &quot;,
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;&quot;,
+      &quot;billingCurr&quot;: &quot;&quot;,
+      &quot;cardBrand&quot;: &quot;ALP&quot;,
+      &quot;cardNo&quot;: &quot;pho***@foxmail.com&quot;,
+      &quot;clearingDate&quot;: &quot;&quot;,
+      &quot;localTransDate&quot;: &quot;0122&quot;,
+      &quot;localTransTime&quot;: &quot;150601&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;posInputStyle&quot;: &quot;&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022150445618&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;&quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revInsCode&quot;: &quot;00000000   10134001   &quot;,
+      &quot;revOrderNum&quot;: &quot;2017012221001004480248627853&quot;,
+      &quot;scanCodeId&quot;: &quot;E68890E58A9F&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000044&quot;,
+      &quot;transAmt&quot;: &quot;0.01&quot;,
+      &quot;transCode&quot;: &quot;BPA&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122150605&quot;,
+      &quot;transDatetime&quot;: &quot;0122150601&quot;,
+      &quot;transRate&quot;: &quot;&quot;
+    }
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>交易明细</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;ORDER&quot;,
+  &quot;page&quot;: &quot;1&quot;,
+  &quot;size&quot;: &quot;10&quot;,
+  &quot;txnType&quot;: &quot;QR&quot;
+}
+
+//response
+{
+  &quot;data&quot;: [
+    {
+      &quot;batchNum&quot;: &quot;000001&quot;,
+      &quot;billingAmt&quot;: &quot;.01&quot;,
+      &quot;billingCurr&quot;: &quot;156&quot;,
+      &quot;cardBrand&quot;: &quot;ALP&quot;,
+      &quot;cardNo&quot;: &quot;0000000000000000000&quot;,
+      &quot;insCode&quot;: &quot;10134001&quot;,
+      &quot;merCode&quot;: &quot;201605260000001&quot;,
+      &quot;processflag&quot;: &quot;0&quot;,
+      &quot;refNum&quot;: &quot;022150445618&quot;,
+      &quot;respCode&quot;: &quot;00&quot;,
+      &quot;revAuthCode&quot;: &quot;      &quot;,
+      &quot;revFlag&quot;: &quot;0&quot;,
+      &quot;revOrderNum&quot;: &quot;2017012221001004480248627853&quot;,
+      &quot;termCode&quot;: &quot;00000007&quot;,
+      &quot;traceNum&quot;: &quot;000044&quot;,
+      &quot;transAmt&quot;: &quot;0.01&quot;,
+      &quot;transCode&quot;: &quot;BTH&quot;,
+      &quot;transCurr&quot;: &quot;156&quot;,
+      &quot;transDate&quot;: &quot;20170122&quot;,
+      &quot;transDatetime&quot;: &quot;0122150601&quot;,
+      &quot;transRate&quot;: &quot;30001000&quot;
+    },
+    ...
+  ],
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li>会员卡（佰馏卡）</li>
+</ul>
+<pre><code class="json">//request
+{
+  &quot;action&quot;: &quot;VC_MEMBER&quot;
+}
+//response
+{
+  &quot;extra&quot;:{
+      &quot;amount&quot;: &quot;100000&quot;,//金额
+      &quot;balance&quot;: &quot;10000&quot;,//余额
+      &quot;points&quot;: &quot;100&quot;,//积分
+      &quot;cardNum&quot;: &quot;0000000000000000000&quot;,//卡号
+      &quot;requestType&quot;: {},
+      &quot;response&quot;: {},/消费返回信息
+      &quot;vcRespAggrRes&quot;: {},//合计信息
+      &quot;vcRespInquiry&quot;: {},//余额查询信息
+      &quot;originTransNum&quot;: &quot;&quot;//原交易号
+    },
+  &quot;msg&quot;: &quot;success&quot;,
+  &quot;status&quot;: 1
+}
+</code></pre>
+
+<h3 id="todo">五、错误码(TODO)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">代码</th>
+<th align="left">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">失败</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">成功</td>
+</tr>
+<tr>
+<td align="left">-1</td>
+<td align="left">请求为空</td>
+</tr>
+<tr>
+<td align="left">-11</td>
+<td align="left">金额格式不合法</td>
+</tr>
+<tr>
+<td align="left">-12</td>
+<td align="left">参数长度错误</td>
+</tr>
+<tr>
+<td align="left">-13</td>
+<td align="left">未知交易类型</td>
+</tr>
+<tr>
+<td align="left">-14</td>
+<td align="left">日期格式错误</td>
+</tr>
+<tr>
+<td align="left">-15</td>
+<td align="left">报文格式错误</td>
+</tr>
+<tr>
+<td align="left">-16</td>
+<td align="left">字段为空</td>
+</tr>
+<tr>
+<td align="left">-17</td>
+<td align="left">无权限</td>
+</tr>
+<tr>
+<td align="left">-2</td>
+<td align="left">设备被占用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qa-todo">六、Q&amp;A (TODO)</h3>
+<ul>
+<li>1、为什么智能 POS 在有些界面接收到蓝牙发去的报文没任何反应呢？</li>
+</ul>
+<p>当 N900 处在刷卡，打印等情况时，设备会被占用，主要体现在刷卡界面，扫码界面等和打印凭条的时候，
+所以当智能 POS 应用处于以下界面的时候，会不接收蓝牙发过来的交易请求：
+(为不和用户直接操作 POS 冲突，建议当应用处于主界面的时候发送请求)</p>
+<p>扫码界面、等待刷卡界面、密码键盘界面、电子签名界面、交易成功界面、交易失败界面、订单详情界面、
+设置界面、会员卡所有的界面、撤销确认界面、扫码退货界面、余额查询界面、DCC转EDC界面、收取小费界面、
+小费撤销界面、收取小费确认界面、撤销小费确认界面、结算详情界面、历史结算详情界面、记账结算界面、
+记账明细界面、现金结算界面、现金历史结算界面</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
