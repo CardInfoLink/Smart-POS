@@ -1,0 +1,15 @@
+site_name: CRAZYFOX
+repo_name: GitHub
+repo_url: https://github.com/CardInfoLink/Smart-POS
+pages:
+- HOME: index.md
+- USER GUIDE:
+    - GET STARTED: user-guide/getstarted.md
+    - OVERVIEW: user-guide/overview.md
+    - ATTACHMENTS: user-guide/attachments.md
+- DOCUMENTATION:
+    - SDK API: documentation/sdkapi.md
+    - BLUETOOTH: documentation/bluetooth.md
+- DOWNLOADS: download.md
+- ABOUT: about.md
+theme: mkdocs
