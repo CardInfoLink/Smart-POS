@@ -12,7 +12,7 @@
 
 | 环境 | 地址 | 表现形式 |
 |:--|:--|:--|
-| 生产环境 | https://www.xunliandata.com/ | <img src="/Smart-POS/img/address_3.png" width="50" height="75" /> |
-| 外网测试环境 | http://116.236.215.18:10017/ | <img src="/Smart-POS/img/address_2.png" width="50" height="75" /> |
-| 内网测试环境 | http://192.168.1.176:3810/ | <img src="/Smart-POS/img/address_1.png" width="50" height="75" /> |
+| 生产环境 | https://www.xunliandata.com/ | ![](../img/address_3.png)|
+| 外网测试环境 | http://116.236.215.18:10017/ | ![](../img/address_2.png) |
+| 内网测试环境 | http://192.168.1.176:3810/ | ![](../img/address_1.png) |
 

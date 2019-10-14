@@ -5,7 +5,7 @@
 
 ![](../img/pos_coco.png)
 
-需要下载风狐智能 POS 蓝牙版，才能具备串口唤起我们的应用功能，请扫描下方二维码，或 [下载到本地](http://ob7kiv99z.bkt.clouddn.com/2017-04-12_smartposcoco_v5.0.0_2017041214_externaldebug.apk)
+需要下载风狐智能 POS 蓝牙版，才能具备串口唤起我们的应用功能，请扫描下方二维码，或 [下载到本地](http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2019-10-12/2019-09-19_smartposcoco_v5.6.0_2019092003_release.apk)
 
 ![](../img/download_bluetooth.png)
 
@@ -75,8 +75,7 @@
 
 将蓝牙底座和串口正确连接，并且将智能 POS 机上的蓝牙底座应用打开，找到底座蓝牙并且连接成功。然后就可以使用串口调试工具发送示例报文了。
 
-<img src="/Smart-POS/img/bluetooth1.png" width="180" height="300" />
-<img src="/Smart-POS/img/bluetooth2.png" width="260" height="300" />
+![](../img/bluetooth1.png)![](../img/bluetooth2.png)
 
 ### 四、交易报文示例
 

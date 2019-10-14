@@ -6,11 +6,11 @@
 
 Version | Support | Download
 :--|:--|:--
-V2.0.0|N900\手机|[POS-demo-2.0.0.zip](https://github.com/CardInfoLink/POS-demo/archive/v2.0.0.zip)
-V1.0.4|N900|[POS-demo-1.0.4.zip](https://github.com/CardInfoLink/POS-demo/archive/v1.0.4.zip)
-V1.0.2|N900|[POS-demo-1.0.2.zip](https://github.com/CardInfoLink/POS-demo/archive/v1.0.2.zip)
-V1.0.1|N900|[POS-demo-1.0.1.zip](https://github.com/CardInfoLink/POS-demo/archive/v1.0.1.zip)
-V1.0.0|N900|[POS-demo-1.0.0.zip](https://github.com/CardInfoLink/POS-demo/archive/v1.0.0.zip)
+V2.0.0|N900|[POS-demo-2.0.0.zip](https://git.cardinfolink.net/Cardinfolink/pos-demo/repository/v2.0.0/archive.zip)
+V1.0.4|N900|[POS-demo-1.0.4.zip](https://git.cardinfolink.net/Cardinfolink/pos-demo/repository/v1.0.4/archive.zip)
+V1.0.2|N900|[POS-demo-1.0.2.zip](https://git.cardinfolink.net/Cardinfolink/pos-demo/repository/v1.0.2/archive.zip)
+V1.0.1|N900|[POS-demo-1.0.1.zip](https://git.cardinfolink.net/Cardinfolink/pos-demo/repository/v1.0.1/archive.zip)
+V1.0.0|N900|[POS-demo-1.0.0.zip](https://git.cardinfolink.net/Cardinfolink/pos-demo/repository/v1.0.0/archive.zip)
 
 > 注意：v2.1.3以及后续sdk版本使用Jcenter管理（`最新版本:2.2.4`）
 

@@ -231,21 +231,56 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
          *
          * @return
          */
-        public abstract String getAmount() {
+        public String getAmount() {
             //在这里传入金额
         }
+		
+		
+		/**
+		 * 此方法为控制sdk内部是否开启DCC交易逻辑（sdk2.4.1版本及以上支持该方法）
+		 * 
+		 *@return 需要进行DCC交易时，返回true，否则返回false
+		 */
+		public boolean isOpenDcc() {
+			//只有刷卡消费和刷卡预授权才支持DCC交易
+			//如果接入方无需支持DCC，则此方法返回false即可
+			return false;
+		}
+		
     
         /**
-         * 读卡的结果
+         * 读卡的结果（sdk2.4.1版本及以上新增RateInfo参数，返回DCC读卡流程中进行汇率查询的结果）
          *
          * @param isSuccess 是否成功
          * @param cardType  卡片种类
          * @param cardInfo  读取卡片信息
+		 * @param rateInfo  汇率信息
          */
-        public abstract void cardReaderHandler(boolean isSuccess, @CardType.Type int cardType, CardInfo cardInfo){
-            //在这里面发送银行卡相关的交易(如消费、消费撤销、退货、预授权、预授权撤销、预授权完成、预授权完成撤销、余额查询)
+        public abstract void cardReaderHandler(boolean isSuccess, @CardType.Type int cardType, CardInfo cardInfo, RateInfo rateInfo){
+            //1. 根据银联85号文规定，智能终端需上送经度，纬度，坐标系信息到卡组织
+			CILRequest request = new CILRequest();
+			
+			request.setLongitude(121.600228);//设置经度
+			request.setLatitude(31.180606);//设置纬度
+			request.setCoordinates("GCJ02");//设置坐标系
+			//关于坐标系，国内一些常用第三方取值：百度（BD09），高德、腾讯（GCJ02），GPS（WGS84）。
+			//一般第三方定位SDK都能从定位后返回的位置信息类中取到，详细可查看各第三方接入文档。
+			
+			
+			//2.如果接入方需要进行DCC交易，需将汇率信息填入request中，否则无需处理
+			CILRequest request = new CILRequest();
+			...
+			if (rateInfo != null) {
+			request.setBillingAmt(rateInfo.getBillingAmt());//设置扣账金额
+			request.setBillingCurr(rateInfo.getBillingCurr());//设置扣账币种
+			request.setTransRate(rateInfo.getTransRate());//设置交易汇率
+			request.setBatchNum(rateInfo.getBatchNum());//设置汇率请求批次号
+			request.setTraceNum(rateInfo.getTraceNum());//设置汇率请求流水号
+			}
+			
+			//3. 在这里面发送银行卡相关的交易(如消费、消费撤销、退货、预授权、预授权撤销、预授权完成、预授权完成撤销、余额查询)
             //CILSDK.consume(request, cardType, new Callback<CILResponse>() //消费
-        }
+		}
    
         /**
          * 显示读卡时的缓冲页面
@@ -376,7 +411,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 
 ```
 
-##### 5、预授权
+##### 5、卡预授权
 预授权接口[request必须包含参数:](#base_request)
 ```
     request.setLocation(location)//有终端具备获取位置信息能力时必选上送（ 用于消费 预授权）
@@ -394,7 +429,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 
 ```
 
-##### 6、预授权撤销
+##### 6、卡预授权撤销
 预授权撤销接口[request必须包含参数:](#base_request)
 ```
     /**
@@ -417,7 +452,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 
 ```
 
-##### 7、预授权完成
+##### 7、卡预授权完成
 预授权完成接口[request必须包含参数:](#base_request)
 ```
     /**
@@ -439,7 +474,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
         });
 ```
 
-##### 8、预授权完成撤销
+##### 8、卡预授权完成撤销
 预授权完成撤销接口[request必须包含参数:](#base_request)
 ```
     /**
@@ -726,7 +761,101 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
     cilRequest.setReferenceNumber(response.getTrans().getRefNum());
     public static void voidQr(CILRequest request, Callback<CILResponse> listener) {
             ...
-    }
+    }  
+	
+	
+	/**
+     * 扫码预授权
+     */
+    CILRequest request = new CILRequest();
+    request.setAmount(amount);
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+	
+	CILSDK.preAuthQr(request, new Callback<CILResponse>() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+            // 处理扫码预授权结果
+            // 如果结果返回`09`，需要查询该订单获取最终结果，如下：
+            /**
+             *      resultCode = response.getTrans().getRespCode();
+             *      if ("09".equals(resultCode)
+             ) {
+             *          CILSDK.queryQr(); // `queryQr` 方法见下文
+             *      }
+             */
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                //扫码预授权出错
+            }
+        });  
+		
+	
+	/**
+     * 扫码预授权撤销
+     */
+		CILRequest request = new CILRequest();
+        request.setAmount(transAmt);//原预授权交易金额
+        request.setReferenceNumber(revAuthCode);//原预授权交易参考号
+        request.setTransDatetime(transDate);//原预授权交易时间
+        request.setBatchNum(curTrans.getBatchNum());//原预授权交易批次号
+        request.setTraceNum(curTrans.getTraceNum());//原预授权交易凭证（流水）号
+	
+	CILSDK.revokePreAuthQr(request, new Callback<CILResponse>() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });  
+		
+	
+	/**
+     * 扫码预授权完成
+     */
+		CILRequest request = new CILRequest();
+        request.setAmount(transAmt);//原预授权交易金额
+        request.setReferenceNumber(revAuthCode);//原预授权交易参考号
+        request.setTransDatetime(transDate);//原预授权交易时间
+        CILSDK.preAuthCompleteQr(request, new Callback<CILResponse>() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });  
+		
+	/**
+     * 扫码预授权完成撤销
+     */
+	 CILRequest request = new CILRequest();
+        request.setAmount(transaction.getTransAmt());//原预授权完成交易金额
+        request.setBatchNum(transaction.getBatchNum());//原预授权完成交易批次号
+        request.setTraceNum(transaction.getTraceNum());//原预授权完成交易凭证（流水）号
+        request.setReferenceNumber(transaction.getRefNum());//原预授权完成交易参考号
+
+        CILSDK.revokePreAuthCompleteQr(request, new Callback<CILResponse>() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+	 
 
 ```
 
