@@ -1,0 +1,1518 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>1.1. sdk应答码表 - CRAZYFOX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7cb342">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="CRAZYFOX" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">cloud</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CRAZYFOX
+            </span>
+            <span class="md-header-nav__topic">
+              
+                1.1. sdk应答码表
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/CardInfoLink/Smart-POS/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        功能预览
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../documentation/intergration/" class="md-tabs__link">
+          快速接入
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../flowChart/overview/" class="md-tabs__link">
+          交互流程图
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          交易类型和应答码
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../download/" class="md-tabs__link">
+          版本说明与sample下载
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../about/" class="md-tabs__link">
+          SDK环境地址
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="CRAZYFOX" class="md-nav__button md-logo">
+      
+        <i class="md-icon">cloud</i>
+      
+    </a>
+    CRAZYFOX
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/CardInfoLink/Smart-POS/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="功能预览" class="md-nav__link">
+      功能预览
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      快速接入
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        快速接入
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      1. SDK API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        1. SDK API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/intergration/" title="1.1. 快速集成" class="md-nav__link">
+      1.1. 快速集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/active/" title="1.2. 激活" class="md-nav__link">
+      1.2. 激活
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/signIn/" title="1.3. 签到" class="md-nav__link">
+      1.3. 签到
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/card/" title="1.4. 卡交易" class="md-nav__link">
+      1.4. 卡交易
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/Qr/" title="1.5. 码交易" class="md-nav__link">
+      1.5. 码交易
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/bill/" title="1.6. 账单查询" class="md-nav__link">
+      1.6. 账单查询
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/transSettle/" title="1.7. 结算" class="md-nav__link">
+      1.7. 结算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/print/" title="1.8. 打印" class="md-nav__link">
+      1.8. 打印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/otherSetting/" title="1.9. 其它设置" class="md-nav__link">
+      1.9. 其它设置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/bluetooth/" title="2. BLUETOOTH API" class="md-nav__link">
+      2. BLUETOOTH API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      交互流程图
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        交互流程图
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flowChart/overview/" title="概述和序列图" class="md-nav__link">
+      概述和序列图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flowChart/systemFlowChart/" title="系统交互图" class="md-nav__link">
+      系统交互图
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      交易类型和应答码
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        交易类型和应答码
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
+    
+    <label class="md-nav__link" for="nav-4-1">
+      1. 应答码表
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        1. 应答码表
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="1.1. sdk应答码表" class="md-nav__link md-nav__link--active">
+      1.1. sdk应答码表
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fenghuAnserCode/" title="1.2. 风狐App应答码" class="md-nav__link">
+      1.2. 风狐App应答码
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../symbol/" title="2. 交易处理标志和冲正标志" class="md-nav__link">
+      2. 交易处理标志和冲正标志
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ticket/" title="3. 签购单规范" class="md-nav__link">
+      3. 签购单规范
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../transType/" title="4. 交易类型" class="md-nav__link">
+      4. 交易类型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      版本说明与sample下载
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        版本说明与sample下载
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../download/" title="sample下载" class="md-nav__link">
+      sample下载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      SDK环境地址
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        SDK环境地址
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="环境地址" class="md-nav__link">
+      环境地址
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/attached/sdkAnserCode.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>1.1. sdk应答码表</h1>
+                
+                <p><strong>交易应答码表V3(20160811更新)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">代码</th>
+<th align="left">POS显示(计划实施)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">00</td>
+<td align="left">交易成功</td>
+</tr>
+<tr>
+<td align="left">01</td>
+<td align="left">"01-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">02</td>
+<td align="left">"02-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">03</td>
+<td align="left">"03-无效商户请联系客服"</td>
+</tr>
+<tr>
+<td align="left">04</td>
+<td align="left">"04-卡片异常请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">05</td>
+<td align="left">"05-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">06</td>
+<td align="left">"06-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">07</td>
+<td align="left">"07-卡片异常请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">09</td>
+<td align="left">"09-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">"12-发卡行不支持的交易"</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">"13-无效金额"</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">"14-无效卡号请联系发卡行或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">"15-无此发卡行请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">"19-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">"20-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">"21-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">"22-操作有误请重试"</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">"23-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">"25-未找到原交易请重试或联系客服"</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left">"30-格式错误请联系客服"</td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left">"31-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left">"33-过期卡请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left">"34-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">"35-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">"36-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">"37-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left">"38-密码错误次数超限"</td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">"39-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left">"40-不支持的交易类型请联系客服"</td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left">"41-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left">"42-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">"43-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">44</td>
+<td align="left">"44-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">"45-请插卡交易或联系客服"</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">"51-余额不足"</td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">"52-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left">"53-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">"54-过期卡请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">"55-密码错误请重试"</td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">"56-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">"57-卡片异常请联系客服或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">58</td>
+<td align="left">"58-未授权的交易请联系客服"</td>
+</tr>
+<tr>
+<td align="left">59</td>
+<td align="left">"59-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">60</td>
+<td align="left">"60-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">61</td>
+<td align="left">"61-超出金额限制请联系客服或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">62</td>
+<td align="left">"62-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">63</td>
+<td align="left">"63-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">64</td>
+<td align="left">"64-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">65</td>
+<td align="left">"65-交易次数超限请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">66</td>
+<td align="left">"66-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">67</td>
+<td align="left">"67-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">68</td>
+<td align="left">"68-交易超时请重试"</td>
+</tr>
+<tr>
+<td align="left">75</td>
+<td align="left">"75-密码错误次数超限"</td>
+</tr>
+<tr>
+<td align="left">76</td>
+<td align="left">"76-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">77</td>
+<td align="left">"77-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">78</td>
+<td align="left">"78-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">79</td>
+<td align="left">"79-脱机交易对账不平请重传数据或联系客服"</td>
+</tr>
+<tr>
+<td align="left">80</td>
+<td align="left">"80-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">81</td>
+<td align="left">"81-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">83</td>
+<td align="left">"83-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">84</td>
+<td align="left">"84-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">85</td>
+<td align="left">"85-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">86</td>
+<td align="left">"86-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">88</td>
+<td align="left">"88-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">89</td>
+<td align="left">"89-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">90</td>
+<td align="left">"90-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">91</td>
+<td align="left">"91-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">92</td>
+<td align="left">"92-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">93</td>
+<td align="left">"93-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">94</td>
+<td align="left">"94-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">95</td>
+<td align="left">"95-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">96</td>
+<td align="left">"96-系统异常请联系客服"</td>
+</tr>
+<tr>
+<td align="left">97</td>
+<td align="left">"97-无效终端请联系客服或检查配置"</td>
+</tr>
+<tr>
+<td align="left">98</td>
+<td align="left">"98-交易超时请重试"</td>
+</tr>
+<tr>
+<td align="left">99</td>
+<td align="left">"99-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">A0</td>
+<td align="left">"A0-请重新签到或联系客服"</td>
+</tr>
+<tr>
+<td align="left">B1</td>
+<td align="left">"B1-卡片异常请联系客服或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">C0</td>
+<td align="left">"C0-核销失败"</td>
+</tr>
+<tr>
+<td align="left">C1</td>
+<td align="left">"C1-卡券已被核销"</td>
+</tr>
+<tr>
+<td align="left">C2</td>
+<td align="left">"C2-卡券已过期"</td>
+</tr>
+<tr>
+<td align="left">C3</td>
+<td align="left">"C3-无效的卡券"</td>
+</tr>
+<tr>
+<td align="left">C4</td>
+<td align="left">"C4-券状态异常"</td>
+</tr>
+<tr>
+<td align="left">C5</td>
+<td align="left">"C5-未到卡券使用时间"</td>
+</tr>
+<tr>
+<td align="left">C6</td>
+<td align="left">"C6-商户不能使用该卡券"</td>
+</tr>
+<tr>
+<td align="left">C7</td>
+<td align="left">"C7-金额太小不可参与优惠"</td>
+</tr>
+<tr>
+<td align="left">C8</td>
+<td align="left">"C8-此卡券不能使用此方式进行支付"</td>
+</tr>
+<tr>
+<td align="left">C9</td>
+<td align="left">"C9-交易失败，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">CA</td>
+<td align="left">"CA-付款码与卡券指定支付方式不符"</td>
+</tr>
+<tr>
+<td align="left">CB</td>
+<td align="left">"CB-卡券订单不存在"</td>
+</tr>
+<tr>
+<td align="left">CC</td>
+<td align="left">"CC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">CD</td>
+<td align="left">"CD-卡券订单已支付"</td>
+</tr>
+<tr>
+<td align="left">L1</td>
+<td align="left">"L1-交易额度超限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">L2</td>
+<td align="left">"L2-交易额度超限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">L3</td>
+<td align="left">"L3-交易额度超限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RA</td>
+<td align="left">"RA-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RB</td>
+<td align="left">"RB-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RC</td>
+<td align="left">"RC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RD</td>
+<td align="left">"RD-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y0</td>
+<td align="left">"Y0-付款码错误或过期，请重试"</td>
+</tr>
+<tr>
+<td align="left">Y1</td>
+<td align="left">"Y1-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y2</td>
+<td align="left">"Y2-未开通此支付方式，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y3</td>
+<td align="left">"Y3-订单不存在，请重试"</td>
+</tr>
+<tr>
+<td align="left">Y4</td>
+<td align="left">"Y4-未开通此支付方式，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y5</td>
+<td align="left">"Y5-退款失败，商家账户余额不足"</td>
+</tr>
+<tr>
+<td align="left">Y6</td>
+<td align="left">"Y6-退款金额超过原订单金额"</td>
+</tr>
+<tr>
+<td align="left">Y7</td>
+<td align="left">"Y7-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y8</td>
+<td align="left">"Y8-不支持的交易类型请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y9</td>
+<td align="left">"Y9-订单已关闭或取消"</td>
+</tr>
+<tr>
+<td align="left">YA</td>
+<td align="left">"YA-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YB</td>
+<td align="left">"YB-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YC</td>
+<td align="left">"YC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YD</td>
+<td align="left">"YD-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YE</td>
+<td align="left">"YE-该交易类型不能执行此操作"</td>
+</tr>
+<tr>
+<td align="left">YF</td>
+<td align="left">"YF-该交易类型不能执行此操作"</td>
+</tr>
+<tr>
+<td align="left">YG</td>
+<td align="left">"YG-原交易已退款"</td>
+</tr>
+<tr>
+<td align="left">YH</td>
+<td align="left">"YH-只能隔天退款"</td>
+</tr>
+<tr>
+<td align="left">YJ</td>
+<td align="left">"YJ-不支持的卡类型，请换卡或绑新卡"</td>
+</tr>
+<tr>
+<td align="left">YK</td>
+<td align="left">"YK-只能撤销当天交易"</td>
+</tr>
+<tr>
+<td align="left">YL</td>
+<td align="left">"YL-顾客账户状态异常"</td>
+</tr>
+<tr>
+<td align="left">YM</td>
+<td align="left">"YM-商家账户状态异常"</td>
+</tr>
+<tr>
+<td align="left">YN</td>
+<td align="left">"YN-付款码与交易渠道不符"</td>
+</tr>
+<tr>
+<td align="left">YP</td>
+<td align="left">"YP-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YQ</td>
+<td align="left">"YQ-软件版本过低，请升级"</td>
+</tr>
+<tr>
+<td align="left">YR</td>
+<td align="left">"YR-付款金额小于最低限额"</td>
+</tr>
+<tr>
+<td align="left">YS</td>
+<td align="left">"YS-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YT</td>
+<td align="left">"YT-姓名校验错误"</td>
+</tr>
+<tr>
+<td align="left">YU</td>
+<td align="left">"YU-对同一用户操作过于频繁，请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">YV</td>
+<td align="left">"YV-购汇金额或币种错误"</td>
+</tr>
+<tr>
+<td align="left">YW</td>
+<td align="left">"YW-额度超限"</td>
+</tr>
+<tr>
+<td align="left">YX</td>
+<td align="left">"YX-顾客关闭相关功能"</td>
+</tr>
+<tr>
+<td align="left">YY</td>
+<td align="left">"YY-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">YZ</td>
+<td align="left">"YZ-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z0</td>
+<td align="left">"Z0-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z1</td>
+<td align="left">"Z1-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z2</td>
+<td align="left">"Z2-未授权的交易请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z3</td>
+<td align="left">"Z3-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z4</td>
+<td align="left">"Z4-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z5</td>
+<td align="left">"Z5-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z6</td>
+<td align="left">"Z6-卖家买家账号相同，不能进行交易"</td>
+</tr>
+<tr>
+<td align="left">Z7</td>
+<td align="left">"Z7-商户未签约请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z8</td>
+<td align="left">"Z8-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">Z9</td>
+<td align="left">"Z9-商户未授权请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZA</td>
+<td align="left">"ZA-交易失败，请更换支付方式"</td>
+</tr>
+<tr>
+<td align="left">ZB</td>
+<td align="left">"ZB-交易失败请重试或联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZC</td>
+<td align="left">"ZC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZD</td>
+<td align="left">"ZD-未授权交易请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZE</td>
+<td align="left">"ZE-该商户暂无退款权限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZF</td>
+<td align="left">"ZF-交易异常，如有扣款，款项稍后退回"</td>
+</tr>
+<tr>
+<td align="left">ZG</td>
+<td align="left">"ZG-交易失败，请重试"</td>
+</tr>
+<tr>
+<td align="left">ZH</td>
+<td align="left">"ZH-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZI</td>
+<td align="left">"ZI-直接进入扫码流程显示流程界面"</td>
+</tr>
+<tr>
+<td align="left">ZJ</td>
+<td align="left">"ZJ-直接进入扫码流程显示流程界面"</td>
+</tr>
+<tr>
+<td align="left">ZK</td>
+<td align="left">"ZK-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZL</td>
+<td align="left">"ZL-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZM</td>
+<td align="left">"ZM-买家付款额度超限"</td>
+</tr>
+<tr>
+<td align="left">ZN</td>
+<td align="left">"ZN-商家收款额度超限"</td>
+</tr>
+<tr>
+<td align="left">ZP</td>
+<td align="left">"ZP-超出每日限额，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZQ</td>
+<td align="left">"ZQ-提升限额申请正在审核中"</td>
+</tr>
+<tr>
+<td align="left">ZR</td>
+<td align="left">"ZR-交易失败，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZS</td>
+<td align="left">"ZS-不支持该交易类型，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZT</td>
+<td align="left">"ZT-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZU</td>
+<td align="left">"ZU-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZV</td>
+<td align="left">"ZV-未开通此支付方式，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZY</td>
+<td align="left">"ZY-用户取消支付，请重新发起交易"</td>
+</tr>
+<tr>
+<td align="left">ZZ</td>
+<td align="left">"ZZ-交易失败请联系客服"</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../flowChart/systemFlowChart/" title="系统交互图" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                系统交互图
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../fenghuAnserCode/" title="1.2. 风狐App应答码" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                1.2. 风狐App应答码
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://cardinfolink.com" class="md-footer-social__link fa fa-globe"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

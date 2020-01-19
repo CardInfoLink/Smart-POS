@@ -1,0 +1,1301 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>1.5. 码交易 - CRAZYFOX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7cb342">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="CRAZYFOX" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">cloud</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CRAZYFOX
+            </span>
+            <span class="md-header-nav__topic">
+              
+                1.5. 码交易
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/CardInfoLink/Smart-POS/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        功能预览
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../intergration/" class="md-tabs__link md-tabs__link--active">
+          快速接入
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../flowChart/overview/" class="md-tabs__link">
+          交互流程图
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../attached/sdkAnserCode/" class="md-tabs__link">
+          交易类型和应答码
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../download/" class="md-tabs__link">
+          版本说明与sample下载
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../about/" class="md-tabs__link">
+          SDK环境地址
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="CRAZYFOX" class="md-nav__button md-logo">
+      
+        <i class="md-icon">cloud</i>
+      
+    </a>
+    CRAZYFOX
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/CardInfoLink/Smart-POS/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="功能预览" class="md-nav__link">
+      功能预览
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      快速接入
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        快速接入
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      1. SDK API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        1. SDK API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intergration/" title="1.1. 快速集成" class="md-nav__link">
+      1.1. 快速集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../active/" title="1.2. 激活" class="md-nav__link">
+      1.2. 激活
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../signIn/" title="1.3. 签到" class="md-nav__link">
+      1.3. 签到
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../card/" title="1.4. 卡交易" class="md-nav__link">
+      1.4. 卡交易
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="1.5. 码交易" class="md-nav__link md-nav__link--active">
+      1.5. 码交易
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bill/" title="1.6. 账单查询" class="md-nav__link">
+      1.6. 账单查询
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../transSettle/" title="1.7. 结算" class="md-nav__link">
+      1.7. 结算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../print/" title="1.8. 打印" class="md-nav__link">
+      1.8. 打印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../otherSetting/" title="1.9. 其它设置" class="md-nav__link">
+      1.9. 其它设置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bluetooth/" title="2. BLUETOOTH API" class="md-nav__link">
+      2. BLUETOOTH API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      交互流程图
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        交互流程图
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flowChart/overview/" title="概述和序列图" class="md-nav__link">
+      概述和序列图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flowChart/systemFlowChart/" title="系统交互图" class="md-nav__link">
+      系统交互图
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      交易类型和应答码
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        交易类型和应答码
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      1. 应答码表
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        1. 应答码表
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/sdkAnserCode/" title="1.1. sdk应答码表" class="md-nav__link">
+      1.1. sdk应答码表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/fenghuAnserCode/" title="1.2. 风狐App应答码" class="md-nav__link">
+      1.2. 风狐App应答码
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/symbol/" title="2. 交易处理标志和冲正标志" class="md-nav__link">
+      2. 交易处理标志和冲正标志
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/ticket/" title="3. 签购单规范" class="md-nav__link">
+      3. 签购单规范
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/transType/" title="4. 交易类型" class="md-nav__link">
+      4. 交易类型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      版本说明与sample下载
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        版本说明与sample下载
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../download/" title="sample下载" class="md-nav__link">
+      sample下载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      SDK环境地址
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        SDK环境地址
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="环境地址" class="md-nav__link">
+      环境地址
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/Qr.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>1.5. 码交易</h1>
+                
+                <p><strong> 扫码交易</strong></p>
+<p>扫码相关的交易则是不依赖 POS 机器的读卡模块的,但是你需要将<code>微信</code>或者<code>支付宝</code>的二维码读出来传给扫码消费接口,扫码可以使用第三方库,如 <code>zxing</code>。</p>
+<p><strong>扫码消费</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(amount);//交易金额
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+
+    CILSDK.consumeQr(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse response) {
+//        处理扫码消费结果，字段说明见底部
+//        如果结果返回`09`，需要查询该订单获取最终结果，如下：
+//        resultCode = response.getTrans().getRespCode();
+//        if (&quot;09&quot;.equals(resultCode)) {
+//            CILSDK.queryQr(); // `queryQr` 方法见下文
+//        }
+
+        }
+
+        @Override
+        public void onError(Parcelable cilRequest, Exception e) {
+            // 扫码消费出错
+        }
+    });  
+</code></pre>
+
+<blockquote>
+<p>注意,如果应答码返回09或98，需要调用讯联扫码查询接口，查询该笔订单的实际状态。</p>
+</blockquote>
+<p><strong>扫码撤销</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(amount);//原交易金额
+    request.setBatchNum(batchNum);//原交易批次号
+    request.setTraceNum(traceNum);//原交易凭证(流水)号
+    request.setReferenceNumber(refNum);  //原交易参考号
+
+    CILSDK.revokeConsumeQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+              ...
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码退货</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();  
+    request.setAmount(amount);//退款金额  
+    request.setReferenceNumber(serialNum);//原交易参考号  
+    request.setTransDatetime(tradeDate);//原交易时间
+
+    CILSDK.returnConsumeQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });
+</code></pre>
+
+<p><strong>扫码查询</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setBatchNum(response.getTrans().getBatchNum());//批次号
+    request.setTraceNum(response.getTrans().getTraceNum());//凭证号
+    request.setPeriod(10000L);//10s
+    request.setLimitTime(6);//6 次
+    request.setReferenceNumber(response.getTrans().getRefNum());//参考号
+    request.setPosInputStyle(response.getTrans().getPosInputStyle());//pos输入服务方式码
+    request.setScanCodeId(response.getTrans().getScanCodeId());//扫码号
+    request.setAmount(response.getTrans().getTransAmt());//交易金额
+
+    CILSDK.queryQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+</code></pre>
+
+<p><strong>扫码消费查询,只查询一次，不含取消接口</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setBatchNum(response.getTrans().getBatchNum());//批次号
+    request.setTraceNum(response.getTrans().getTraceNum());//凭证号
+    request.setReferenceNumber(response.getTrans().getRefNum());//参考号
+    request.setPosInputStyle(response.getTrans().getPosInputStyle());//pos输入服务方式码
+    request.setScanCodeId(response.getTrans().getScanCodeId());//扫码号  
+
+    CILSDK.queryQrJustOnce(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });
+</code></pre>
+
+<p><strong>扫码取消</strong>  </p>
+<pre><code>    /**
+     * 扫码取消
+     * 对于09状态的消费订单，最终需要取消、关单
+     * @param request
+     * @param listener
+     */  
+
+    CILRequest cilRequest = new CILRequest();
+    cilRequest.setOriginalTradeDate(response.getTrans().getTransDate());//原交易日期
+    cilRequest.setAmount(response.getTrans().getTransAmt());//交易金额
+    cilRequest.setBatchNum(response.getTrans().getBatchNum());//批次号
+    cilRequest.setTraceNum(response.getTrans().getTraceNum());//凭证号
+    cilRequest.setPosInputStyle(response.getTrans().getPosInputStyle());//pos输入服务方式码
+    cilRequest.setReferenceNumber(response.getTrans().getRefNum());//参考号  
+
+    CILSDK.voidQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码预授权</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(amount);
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+
+    CILSDK.preAuthQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+            // 处理扫码预授权结果
+            // 如果结果返回`09`，需要查询该订单获取最终结果，如下：
+            /**
+             *      resultCode = response.getTrans().getRespCode();
+             *      if (&quot;09&quot;.equals(resultCode)
+             ) {
+             *          CILSDK.queryQr(); // `queryQr` 方法见下文
+             *      }
+             */
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                //扫码预授权出错
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码预授权撤销</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(transAmt);//原预授权交易金额
+    request.setReferenceNumber(revAuthCode);//原预授权交易参考号
+    request.setTransDatetime(transDate);//原预授权交易时间
+    request.setBatchNum(curTrans.getBatchNum());//原预授权交易批次号
+    request.setTraceNum(curTrans.getTraceNum());//原预授权交易凭证（流水）号
+
+    CILSDK.revokePreAuthQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });  
+
+</code></pre>
+
+<p><strong>扫码预授权完成</strong></p>
+<pre><code>        CILRequest request = new CILRequest();
+        request.setAmount(transAmt);//原预授权交易金额
+        request.setReferenceNumber(revAuthCode);//原预授权交易参考号
+        request.setTransDatetime(transDate);//原预授权交易时间
+        CILSDK.preAuthCompleteQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码预授权完成撤销</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(transaction.getTransAmt());//原预授权完成交易金额
+    request.setBatchNum(transaction.getBatchNum());//原预授权完成交易批次号
+    request.setTraceNum(transaction.getTraceNum());//原预授权完成交易凭证（流水）号
+    request.setReferenceNumber(transaction.getRefNum());//原预授权完成交易参考号
+
+    CILSDK.revokePreAuthCompleteQr(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse cilResponse) {
+            ...
+        }
+
+        @Override
+        public void onError(Parcelable cilRequest, Exception e) {
+            ...
+        }
+    });
+</code></pre>
+
+<p><strong>单品券功能接入指引</strong>   </p>
+<blockquote>
+<p>注意：sdk v2.5.3及之后版本支持该功能
+1. 扫码消费接口增加单品券核销功能，扫码消费接口增加入参两个参数，订单优惠标记（为配券时候的填的优惠标记）,商品列表；</p>
+</blockquote>
+<pre><code>    /**
+     * 扫码消费
+     */
+    CILRequest request = new CILRequest();
+    request.setAmount(amount);
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+
+    request.setOrderPromotionMark(orderPromotionMark);//订单优惠标记（类型String可选参数）
+    request.setGoodsList(goodsList);//商品列表（类型String可选参数）详见下新增字段说明
+
+    CILSDK.consumeQr(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse response) {
+            // 处理扫码消费结果
+            // 如果结果返回`09`，需要查询该订单获取最终结果，如下：
+            /**
+             *      resultCode = response.getTrans().getRespCode();
+             *      if (&quot;09&quot;.equals(resultCode)
+             ) {
+             *          CILSDK.queryQr(); // `queryQr` 方法见下文
+             *      }
+             */
+
+        }
+
+        @Override
+        public void onError(Parcelable cilRequest, Exception e) {
+            // 扫码消费出错
+        }
+    });
+</code></pre>
+
+<ul>
+<li>新增字段说明  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否可选</th>
+<th>备注1</th>
+<th>备注2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderPromotionMark</td>
+<td>String</td>
+<td>订单优惠标记</td>
+<td>Y</td>
+<td>ans32</td>
+<td>来源于配券时选填字段</td>
+</tr>
+<tr>
+<td>goodsList</td>
+<td>String</td>
+<td>商品列表</td>
+<td>Y</td>
+<td>最多9个商品</td>
+<td>按照以下样例格式传输</td>
+</tr>
+</tbody>
+</table>
+<p>报文样例：</p>
+<pre><code>&quot;orderPromotionMark&quot;:&quot;1111&quot;,
+&quot;[
+    {
+        &quot;goodsName&quot;:&quot;小面包&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;1111&quot;
+    },
+    {
+        &quot;goodsName&quot;:&quot;棒棒糖&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;2222&quot;
+    },
+    {
+        &quot;goodsName&quot;:&quot;彩虹糖&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;3333&quot;
+    },
+    {
+        &quot;goodsName&quot;:&quot;矿泉水&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;4444&quot;
+    }
+]&quot;
+</code></pre>
+
+<ul>
+<li>响应报文新增一个CouponInfo的实例,内部包含属性字段有：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否可选</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>couponId</td>
+<td>String</td>
+<td>优惠券id</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>couponName</td>
+<td>String</td>
+<td>优惠券名称</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>channelContribution</td>
+<td>String</td>
+<td>渠道出资</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>MerchantContribution</td>
+<td>String</td>
+<td>商家出资</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>otherContribution</td>
+<td>String</td>
+<td>其它出资</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>discountType</td>
+<td>String</td>
+<td>优惠类型</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>discountRange</td>
+<td>String</td>
+<td>优惠范围</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>discountbatchaId</td>
+<td>String</td>
+<td>优惠活动批次ID</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>goodsList</td>
+<td>String</td>
+<td>单品优惠商品列表</td>
+<td>Y</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>单品优惠列表商品字段  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否可选</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>goodsBarCode</td>
+<td>String</td>
+<td>商品条码号</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>goodsDiscount</td>
+<td>String</td>
+<td>单品优惠金</td>
+<td>Y</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>CouponInfo响应报文样例：</p>
+<pre><code>{
+    &quot;MerchantContribution&quot;:&quot;000000000100&quot;,
+    &quot;couponId&quot;:&quot;9026256969&quot;,
+    &quot;couponName&quot;:&quot;讯联满1.1减1 tag&quot;,
+    &quot;discountRange&quot;:&quot;SINGLE&quot;,
+    &quot;discountType&quot;:&quot;DISCOUNT&quot;,
+    &quot;discountbatchaId&quot;:&quot;9803978&quot;,
+    &quot;goodsList&quot;:&quot;[{&quot;goodsBarCode&quot;:&quot;1111&quot;,&quot;goodsDiscount&quot;:&quot;000000000034&quot;}, {&quot;goodsBarCode&quot;:&quot;2222&quot;,&quot;goodsDiscount&quot;:&quot;000000000034&quot;}, {&quot;goodsBarCode&quot;:&quot;3333&quot;,&quot;goodsDiscount&quot;:&quot;000000000032&quot;}]&quot;,
+    &quot;otherContribution&quot;:&quot;000000000000&quot;
+}
+</code></pre>
+
+<p>附：最多支持传入9个商品  </p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../card/" title="1.4. 卡交易" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                1.4. 卡交易
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../bill/" title="1.6. 账单查询" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                1.6. 账单查询
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://cardinfolink.com" class="md-footer-social__link fa fa-globe"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1483 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>1.4. 卡交易 - CRAZYFOX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7cb342">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="CRAZYFOX" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">cloud</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CRAZYFOX
+            </span>
+            <span class="md-header-nav__topic">
+              
+                1.4. 卡交易
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/CardInfoLink/Smart-POS/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        功能预览
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../intergration/" class="md-tabs__link md-tabs__link--active">
+          快速接入
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../flowChart/overview/" class="md-tabs__link">
+          交互流程图
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../attached/sdkAnserCode/" class="md-tabs__link">
+          交易类型和应答码
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../download/" class="md-tabs__link">
+          版本说明与sample下载
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../about/" class="md-tabs__link">
+          SDK环境地址
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="CRAZYFOX" class="md-nav__button md-logo">
+      
+        <i class="md-icon">cloud</i>
+      
+    </a>
+    CRAZYFOX
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/CardInfoLink/Smart-POS/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="功能预览" class="md-nav__link">
+      功能预览
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      快速接入
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        快速接入
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      1. SDK API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        1. SDK API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intergration/" title="1.1. 快速集成" class="md-nav__link">
+      1.1. 快速集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../active/" title="1.2. 激活" class="md-nav__link">
+      1.2. 激活
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../signIn/" title="1.3. 签到" class="md-nav__link">
+      1.3. 签到
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="1.4. 卡交易" class="md-nav__link md-nav__link--active">
+      1.4. 卡交易
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Qr/" title="1.5. 码交易" class="md-nav__link">
+      1.5. 码交易
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bill/" title="1.6. 账单查询" class="md-nav__link">
+      1.6. 账单查询
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../transSettle/" title="1.7. 结算" class="md-nav__link">
+      1.7. 结算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../print/" title="1.8. 打印" class="md-nav__link">
+      1.8. 打印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../otherSetting/" title="1.9. 其它设置" class="md-nav__link">
+      1.9. 其它设置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bluetooth/" title="2. BLUETOOTH API" class="md-nav__link">
+      2. BLUETOOTH API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      交互流程图
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        交互流程图
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flowChart/overview/" title="概述和序列图" class="md-nav__link">
+      概述和序列图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flowChart/systemFlowChart/" title="系统交互图" class="md-nav__link">
+      系统交互图
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      交易类型和应答码
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        交易类型和应答码
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      1. 应答码表
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        1. 应答码表
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/sdkAnserCode/" title="1.1. sdk应答码表" class="md-nav__link">
+      1.1. sdk应答码表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/fenghuAnserCode/" title="1.2. 风狐App应答码" class="md-nav__link">
+      1.2. 风狐App应答码
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/symbol/" title="2. 交易处理标志和冲正标志" class="md-nav__link">
+      2. 交易处理标志和冲正标志
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/ticket/" title="3. 签购单规范" class="md-nav__link">
+      3. 签购单规范
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../attached/transType/" title="4. 交易类型" class="md-nav__link">
+      4. 交易类型
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      版本说明与sample下载
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        版本说明与sample下载
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../download/" title="sample下载" class="md-nav__link">
+      sample下载
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      SDK环境地址
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        SDK环境地址
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="环境地址" class="md-nav__link">
+      环境地址
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/card.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>1.4. 卡交易</h1>
+                
+                <p><strong>a、银行卡交易</strong></p>
+<p>由于银行卡交易逻辑有点复杂,讯联提供了一个 <code>BaseCardActivity</code> 基础类,你只需要继承这个类便可以做银行卡类的交易了。具体使用方法可以见 demo 
+里的 <code>CommonCardHandlerActivity</code> 类。下面给个大概说明:</p>
+<pre><code class="java">    public class CommonCardHandlerActivity extends BaseCardActivity {
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            //...
+
+        }
+
+        /**
+         * 必须传入金额
+         *
+         * @return
+         */
+        public String getAmount() {
+            //在这里传入金额
+        }
+
+
+        /**
+         * 此方法为控制sdk内部是否开启DCC交易逻辑（sdk2.4.1版本及以上支持该方法）
+         * 
+         *@return 需要进行DCC交易时，返回true，否则返回false
+         */
+        public boolean isOpenDcc() {
+            //只有刷卡消费和刷卡预授权才支持DCC交易
+            //如果接入方无需支持DCC，则此方法返回false即可
+            return false;
+        }
+
+
+        /**
+         * 读卡的结果（sdk2.4.1版本及以上新增RateInfo参数，返回DCC读卡流程中进行汇率查询的结果）
+         *
+         * @param isSuccess 是否成功
+         * @param cardType  卡片种类(-1(unknow) 1(msc) 2(ic) 3(nfc) 4(scancode) 5(other))
+         * @param cardInfo  读取卡片信息
+         * @param rateInfo  汇率信息
+         */
+        public void cardReaderHandler(boolean isSuccess, @CardType.Type int cardType, CardInfo cardInfo, RateInfo rateInfo){    
+            //读卡成功后才发起交易
+            if (!isSuccess || cardInfo == null) {
+                Toast.makeText(getApplicationContext(), &quot;读卡失败&quot;,  Toast.LENGTH_SHORT).show();
+                initCardEvent();
+                return;
+            }
+
+            //1. 根据银联85号文规定，智能终端需上送经度，纬度，坐标系信息到卡组织
+            CILRequest request = new CILRequest();
+
+            request.setLongitude(121.600228);//设置经度
+            request.setLatitude(31.180606);//设置纬度
+            request.setCoordinates(&quot;GCJ02&quot;);//设置坐标系
+            //关于坐标系，国内一些常用第三方取值：百度（BD09），高德、腾讯（GCJ02），GPS（WGS84）。
+            //一般第三方定位SDK都能从定位后返回的位置信息类中取到，详细可查看各第三方接入文档。
+
+
+            //2.如果接入方需要进行DCC交易，需将汇率信息填入request中，否则无需处理
+            CILRequest request = new CILRequest();
+            ...
+            if (rateInfo != null) {
+                request.setBillingAmt(rateInfo.getBillingAmt());//设置扣账金额
+                request.setBillingCurr(rateInfo.getBillingCurr());//设置扣账币种
+                request.setTransRate(rateInfo.getTransRate());//设置交易汇率
+                request.setBatchNum(rateInfo.getBatchNum());//设置汇率请求批次号
+                request.setTraceNum(rateInfo.getTraceNum());//设置汇率请求流水号
+            }
+
+            //3. 在这里面发送银行卡相关的交易(如消费、消费撤销、退货、预授权、预授权撤销、预授权完成、预授权完成撤销、余额查询)
+            //CILSDK.consume(request, cardType, new Callback&lt;CILResponse&gt;() //消费
+        }
+
+        /**
+         * 显示读卡时的缓冲页面
+         */
+        public void waitLoadingShow(){
+
+        }
+
+        /**
+         * 取消读卡时的缓冲页面
+         */
+        public void waitLoadingDismiss(){
+
+        }
+
+        /**
+         * 读卡失败
+         */
+        public void cardHandlerError(Exception e){
+
+        }
+
+    }
+</code></pre>
+
+<p><span id="base_request" style="font-size:20px;color:red" >注意:</span><br/></p>
+<blockquote>
+<p>调用银行卡类交易接口时，需要传入CILRequest以及CardType，且所有接口中CILRequest均需要传入以下信息：</p>
+</blockquote>
+<pre><code>   /**
+    * @param: request:请求信息
+    * @param: cardType:卡片类型
+    */
+    request.setAmount(amount);//消费金额
+    /**
+    * 刷卡获取的cardInfo信息
+    */
+    request.setCardNumb(cardInfo.getCardNumber());//卡号
+    request.setCardExpirationDate(cardInfo.getCardExpirationDate());//卡片有效期
+    request.setPinEmv(cardInfo.getPinBins());//卡bin
+    request.setCardSequenceNumber(cardInfo.getSequenceSerialNum());//卡片序列号
+    request.setField55(cardInfo.getField55());//55域信息
+    request.setSecondTrack(cardInfo.getTrack2());//二磁道信息
+    request.setOrderId(orderId);//可选参数。（消费、退货、预授权、预授权完成、扫码下单、扫码退货）
+    request.setLocation(location)//有终端具备获取位置信息能力时必选上送（ 用于消费 预授权）
+</code></pre>
+
+<p><strong>1、消费</strong></p>
+<p>消费接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>    CILSDK.consume(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>2、撤销</strong>
+撤销接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>
+    /**
+     *  撤销接口除基础信息外，
+     *  还需要原交易信息
+     */
+    request.setReferenceNumber(transaction.getRefNum());//原交易参考号
+    request.setRevAuthCode(transaction.getRevAuthCode());//原交易授权码
+    request.setBatchNum(transaction.getBatchNum());//原交易批次号
+    request.setTraceNum(transaction.getTraceNum());//原交易凭证号
+
+    CILSDK.revokeConsume(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>3、退货</strong>
+退货接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>
+    /**
+     *  退货接口除基础信息外
+     *  还需要原交易信息
+     */
+    request.setReferenceNumber(referenceNumber);
+    request.setTransDatetime(tradeDate);
+    CILSDK.returnConsume(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>4、余额查询</strong>
+余额查询接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>    CILSDK.checkBalance(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>5、卡预授权</strong>
+预授权接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>    request.setLocation(location)//有终端具备获取位置信息能力时必选上送（ 用于消费 预授权）
+    CILSDK.preAuth(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>6、卡预授权撤销</strong>
+预授权撤销接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>    /**
+     *  预授权撤销接口除基础信息外
+     *  还需要原预授权交易信息
+     */
+    request.setRevAuthCode(authCode);//原预授权交易授权码
+    request.setTransDatetime(originalTradeDate);//原预授权交易日期
+    CILSDK.revokePreAuth(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>7、卡预授权完成</strong>
+预授权完成接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>    /**
+     *  预授权完成接口除基础信息外
+     *  还需要原预授权交易信息
+     */
+    request.setRevAuthCode(authCode);//原预授权交易授权码
+    request.setTransDatetime(originalTradeDate);//原预授权交易日期
+    CILSDK.preAuthComplete(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+</code></pre>
+
+<p><strong>8、卡预授权完成撤销</strong>
+预授权完成撤销接口<a href="#base_request">request必须包含参数:</a></p>
+<pre><code>    /**
+     *  预授权完成撤销接口除基础信息外
+     *  还需要原预授权完成交易信息
+     */
+    request.setReferenceNumber(refNum);//原预授权完成交易参考号
+    request.setRevAuthCode(authCode);//原预授权完成交易授权码
+    request.setTraceNum(traceNum);//原预授权完成交易凭证号
+    request.setBatchNum(batchNum);//原预授权完成交易批次号
+    request.setTransDatetime(originalTradeDate);//原预授权完成交易日期
+
+    CILSDK.revokePreAuthComplete(request, cardType, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+</code></pre>
+
+<p><strong>9、DCC转EDC</strong>  </p>
+<p>当交易卡片为外卡时，消费类（消费、预授权完成）交易可选择进行DCC转EDC。</p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setCardNum(cardNum);//卡号
+    request.setTransDatetime(datetime);//原交易时间
+    request.setAmount(amount);//原交易金额
+    request.setBillingAmt(biilingAmt);//原扣币金额
+    request.setReferenceNumber(refNum);//原交易参考号
+    request.setRevAuthCode(revAuthCode);//原交易授权码
+    request.setBatchNum(batchNum);//原交易批次号
+    request.setTraceNum(traceNum);//原交易凭证号
+    request.setTransCurr(transCurr);//原交易币种
+    request.setBillingCurr(billingCurr);//原交易扣款币种
+    CILSDK.dccToEdc(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse cilResponse) {
+            ...
+        }
+
+        @Override
+        public void onError(Parcelable p, Exception e) {
+            ...
+        }
+    });
+
+</code></pre>
+
+<p><strong>交易结果字段说明</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>备注</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>additionalResData</td>
+<td>String</td>
+<td>受理方标识码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>afterTransCode</td>
+<td>String</td>
+<td>原交易类型</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>batchNum</td>
+<td>String</td>
+<td>批次号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>billingAmt</td>
+<td>String</td>
+<td>持卡人扣帐金额</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>billingCurr</td>
+<td>String</td>
+<td>持卡人扣帐货币代码符号，三位字母</td>
+<td>例如USD</td>
+<td></td>
+</tr>
+<tr>
+<td>billingCurrNum</td>
+<td>String</td>
+<td>持卡人扣帐货币代码,三位数字</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>cardBrand</td>
+<td>String</td>
+<td>国际信用卡公司代码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>cardNo</td>
+<td>String</td>
+<td>银行卡号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>cardType</td>
+<td>String</td>
+<td>刷卡方式</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>cashierName</td>
+<td>String</td>
+<td>收银员</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>cashierNum</td>
+<td>String</td>
+<td>收银员号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>clearingDate</td>
+<td>String</td>
+<td>清算日期</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA1</td>
+<td>String</td>
+<td>签购单收单行</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA2</td>
+<td>String</td>
+<td>签购单商户号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA3</td>
+<td>String</td>
+<td>签购单终端号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA4</td>
+<td>String</td>
+<td>markup</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA6</td>
+<td>String</td>
+<td>借贷记标识</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA7</td>
+<td>String</td>
+<td>营销信息</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>compInfoA8</td>
+<td>String</td>
+<td>二维码信息</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>coupon</td>
+<td>String</td>
+<td>支付宝/微信优惠金额</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>field55</td>
+<td>String</td>
+<td>IC卡交易的TAG信息</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>insCode</td>
+<td>String</td>
+<td>受理方标识码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>localTransDate</td>
+<td>String</td>
+<td>受卡方所在地日期</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>localTransTime</td>
+<td>String</td>
+<td>受卡方所在地时间</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>merCode</td>
+<td>String</td>
+<td>受卡方标识码（商户号）</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>merDiscount</td>
+<td>String</td>
+<td>商家优惠金额</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>originTraceNum</td>
+<td>String</td>
+<td>原交易凭证号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>outOrderNum</td>
+<td>String</td>
+<td>外部订单号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>posInputStyle</td>
+<td>String</td>
+<td>服务点输入方式码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>processflag</td>
+<td>String</td>
+<td>扫码支付09状态的交易是否成功</td>
+<td>附件表1</td>
+<td></td>
+</tr>
+<tr>
+<td>refNum</td>
+<td>String</td>
+<td>检索参考号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>respCode</td>
+<td>String</td>
+<td>应答码</td>
+<td>"00"表示成功</td>
+<td></td>
+</tr>
+<tr>
+<td>revAuthCode</td>
+<td>String</td>
+<td>授权标识应答码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>revInsCode</td>
+<td>String</td>
+<td>附加响应数据</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>revOrderNum</td>
+<td>String</td>
+<td>自定义域，用于扫码支付业务。</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>scanCodeId</td>
+<td>String</td>
+<td>扫码号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>termCode</td>
+<td>String</td>
+<td>终端号</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>traceNum</td>
+<td>String</td>
+<td>受卡方系统跟踪号</td>
+<td>合作方交易流水</td>
+<td></td>
+</tr>
+<tr>
+<td>transAmt</td>
+<td>String</td>
+<td>交易金额</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>transCode</td>
+<td>String</td>
+<td>交易类型码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>transCurr</td>
+<td>String</td>
+<td>交易货币代码</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>transDate</td>
+<td>String</td>
+<td>原交易日期</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>transDatetime</td>
+<td>String</td>
+<td>受卡方所在地日期＋受卡方所在地时</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>transRate</td>
+<td>String</td>
+<td>持卡人扣帐汇率</td>
+<td>无</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../signIn/" title="1.3. 签到" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                1.3. 签到
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Qr/" title="1.5. 码交易" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                1.5. 码交易
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://cardinfolink.com" class="md-footer-social__link fa fa-globe"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
