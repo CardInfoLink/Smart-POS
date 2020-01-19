@@ -1,16 +1,15 @@
 
-### 快速体验
+### **快速体验**
 
 讯联智能 POS SDK 为开发者准备了一个简单的 demo 程序,可以快速体验 SDK 接入流程。可以在这里 [下载demo](https://github.com/CardInfoLink/POS-demo) 。
-下载 POS-demo 之后将整个目录导入到您的 Android Studio 之中。
-
-### 快速集成
+下载 POS-demo 之后将整个目录导入到您的 Android Studio 之中。  
+### **快速集成**
 
 为了方便 SDK 的集成使用，本 SDK 已使用 jcenter 托管，配置如下
 
 ```gradle
 gradle:
-    implementation 'com.cardinfolink.smart.pos:PosSDK:2.3.8'
+    implementation 'com.cardinfolink.smart.pos:PosSDK:2.5.2'
 ```
 
 or
@@ -20,7 +19,7 @@ maven:
     <dependency>
       <groupId>com.cardinfolink.smart.pos</groupId>
       <artifactId>PosSDK</artifactId>
-      <version>2.3.6</version>
+      <version>2.5.2</version>
       <type>pom</type>
     </dependency>
 ```
@@ -46,7 +45,7 @@ maven:
 >`读卡、输入密码的颜色取自colorPrimary。如果需要自定义样式，请参考` [Demo]( https://github.com/CardInfoLink/POS-demo.git) `，下载源码修改`
 
 >`注意：1.1.1版本直接指定了PosSDK的版本号，不再使用默认最新版的PosSDK，如非必要，不要再配置PosSDK的版本`
-### 连接POS机
+### **连接POS机**
 
 使用 N900 智能 POS 机器, 我们的应用首先需要连接 POS 机硬件, 使用 SDK 提供的 `connect` 方法连接。
 建议在 `Application` 的 `onCreate` 方法中进行连接。
@@ -69,7 +68,7 @@ maven:
 保证使用过程中设备连接不断开；另外推荐在ActivityLifecycleCallbacks中处理设备连接。
 
 
-### 激活POS机
+### **激活POS机**
 
 * a、新激活接口（推荐）
 
@@ -127,7 +126,7 @@ maven:
 ```
 
 
-### 终端参数下载
+### **终端参数下载**
 
 激活成功之后,你的应用还需要下载一些交易时使用的参数,比如`交易地址和端口`、`交易超时时间`、`终端支持的功能`、`TPDU` 等,
 在你拿到 POS 终端之前,这些参数都会在讯联后台已经配置好,全部参数见 `CILResponse.Info` 返回值。下载成功之后 SKD 会
@@ -156,7 +155,7 @@ maven:
     });
 ```
 
-### 终端密钥下载
+### **终端密钥下载**
 
 终端密钥下载只需要成功执行一次就可以,成功下载的密钥会被转载到POS硬件模块里面,后面就不需要再次调用了,建议你的应用可以在成功下载密钥之后持久化一个标志位,
 下次进入应用就不再去下载密钥了。整个过程可能会需要1~2分钟左右(依赖当前的网络状况),会经历以下步骤:
@@ -188,7 +187,7 @@ maven:
 ```
 
 
-### 签到
+### **签到**
 
 签到其实也就是更新工作密钥的一个过程 (`下载工作密钥+装载工作密钥` ),讯联网关平台要求应用需要每天签到一次。
 
@@ -207,7 +206,7 @@ maven:
 ```
 
 
-### 发起交易
+### **发起交易**
 
 SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(支付宝和微信)两种。银行卡相关交易需要POS机硬件模块读卡器,扫码相关交易则不需要。
 
@@ -252,11 +251,18 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
          * 读卡的结果（sdk2.4.1版本及以上新增RateInfo参数，返回DCC读卡流程中进行汇率查询的结果）
          *
          * @param isSuccess 是否成功
-         * @param cardType  卡片种类
+         * @param cardType  卡片种类(-1(unknow) 1(msc) 2(ic) 3(nfc) 4(scancode) 5(other))
          * @param cardInfo  读取卡片信息
 		 * @param rateInfo  汇率信息
          */
-        public abstract void cardReaderHandler(boolean isSuccess, @CardType.Type int cardType, CardInfo cardInfo, RateInfo rateInfo){
+        public void cardReaderHandler(boolean isSuccess, @CardType.Type int cardType, CardInfo cardInfo, RateInfo rateInfo){    
+            //读卡成功后才发起交易
+            if (!isSuccess || cardInfo == null) {
+            Toast.makeText(getApplicationContext(), "读卡失败", Toast.LENGTH_SHORT).show();
+            initCardEvent();
+            return;
+            }
+        
             //1. 根据银联85号文规定，智能终端需上送经度，纬度，坐标系信息到卡组织
 			CILRequest request = new CILRequest();
 			
@@ -285,21 +291,21 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
         /**
          * 显示读卡时的缓冲页面
          */
-        public abstract void waitLoadingShow(){
+        public void waitLoadingShow(){
         
         }
     
         /**
          * 取消读卡时的缓冲页面
          */
-        public abstract void waitLoadingDismiss(){
+        public void waitLoadingDismiss(){
         
         }
     
         /**
          * 读卡失败
          */
-        public abstract void cardHandlerError(Exception e){
+        public void cardHandlerError(Exception e){
         
         }
             
@@ -316,7 +322,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
     /**
     * 刷卡获取的cardInfo信息
     */
-    request.setCardNumber(cardInfo.getCardNumber());//卡号
+    request.setCardNumb(cardInfo.getCardNumber());//卡号
     request.setCardExpirationDate(cardInfo.getCardExpirationDate());//卡片有效期
     request.setPinEmv(cardInfo.getPinBins());//卡bin
     request.setCardSequenceNumber(cardInfo.getSequenceSerialNum());//卡片序列号
@@ -527,7 +533,56 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
             }
         });
 
-```
+```  
+
+##### 交易结果字段说明  
+  
+   字段 | 类型 | 含义 | 备注 | 备注
+---|---|---|---|---
+additionalResData  |String |受理方标识码 |无|
+afterTransCode  |String |原交易类型 |无|
+batchNum   |String |批次号 |无|
+billingAmt   |String |持卡人扣帐金额 |无|
+billingCurr   |String |持卡人扣帐货币代码符号，三位字母 |例如USD|
+billingCurrNum   |String |持卡人扣帐货币代码,三位数字 |无|
+cardBrand   |String |国际信用卡公司代码 |无|
+cardNo   |String |银行卡号 |无|
+cardType |String |刷卡方式 |无|
+cashierName |String |收银员 |无|
+cashierNum |String |收银员号 |无|
+clearingDate |String |清算日期 |无|
+compInfoA1 |String |签购单收单行 |无|
+compInfoA2 |String |签购单商户号 |无|
+compInfoA3 |String |签购单终端号 |无|
+compInfoA4 |String |markup |无|
+compInfoA6 |String |借贷记标识 |无|
+compInfoA7 |String |营销信息 |无|
+compInfoA8 |String |二维码信息 |无|
+coupon |String |支付宝/微信优惠金额 |无|
+field55 |String |IC卡交易的TAG信息 |无|
+insCode |String |受理方标识码 |无|
+localTransDate |String |受卡方所在地日期 |无|
+localTransTime |String |受卡方所在地时间 |无|
+merCode |String |受卡方标识码（商户号） |无|
+merDiscount |String |商家优惠金额 |无|
+originTraceNum |String |原交易凭证号 |无|
+outOrderNum |String |外部订单号 |无|
+posInputStyle |String |服务点输入方式码 |无|
+processflag |String |扫码支付09状态的交易是否成功 |附件表1|
+refNum |String |检索参考号 |无|
+respCode |String |应答码 |"00"表示成功|
+revAuthCode |String |授权标识应答码 |无|
+revInsCode |String |附加响应数据 |无|
+revOrderNum |String |自定义域，用于扫码支付业务。 |无|
+scanCodeId |String |扫码号 |无|
+termCode |String |终端号 |无|
+traceNum |String |受卡方系统跟踪号 |合作方交易流水|
+transAmt |String |交易金额 |无|
+transCode |String |交易类型码 |无|
+transCurr |String |交易货币代码 |无|
+transDate |String |原交易日期 |无|
+transDatetime |String |受卡方所在地日期＋受卡方所在地时 |无|
+transRate |String |持卡人扣帐汇率 |无|
 
 ##### 10、CFCardSDK工具类
 
@@ -859,7 +914,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 
 ```
 
-### 账单查询
+### **账单查询**
 
 智能 POS SDK 分别提供了近7天的`账单列表查询`和`账单统计接口`接口,接口会根据 type 值确定返回`银行卡账单`或`扫码账单`。
 交易成功还是失败最终以返回账单中应答码为准，见[应答码表](/user-guide/attachments/#v320160811) 。
@@ -941,7 +996,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 > SDK 的网络部分使用的是第三方库 `okhttp`,以上账单接口分别还提供了相对应的同步接口 `getBills` 和 `getBillStat` 。
 对于异步接口来说,都会返回一个 `Call` 对象,你可以在应用出错的时候调用 `call.cancel()` 取消这次请求,以免造成内存泄露。
 
-### 结算
+### **结算**
 
 结算需求主要用于每日交易结束时或收银员交接班时,对某段时间内的账款核对。商户每日交易结束后,收银员需要统计并核对所有的交易,核对交易统计准确后结算，打印出结算单。
 结算会涉及到一个概念--`批次号`,我们在前面的交易都会传入一个批次号给 request ,调用结算之后,后续的交易需要将这个批次号加1,因为此批次已经打包结算掉了。
@@ -970,7 +1025,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
     SettleDaoUtil.getInstance().gotoLiquidation(context)
 ```
 
-### 打印
+### **打印**
 
 
 本模块可用于根据交易信息打印所需的消费票据。接口不仅提供了一套固定格式的小票样式，而且还可以根据需要自定义打印样式。
@@ -1136,7 +1191,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 ```
 
 
-### 其他设置
+### **其他设置**
 
 考虑到使用 SDK 的时候可能还会有其他需求,比如`获取 POS 机的 SN 号`、`设置密钥索引`等,在这里,我们也提供了一部分接口。
 
@@ -1200,7 +1255,7 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 ```
 以上两个方法请在连接刷卡器(CILSDK.connect)之前使用
 
-### 工具类
+### **工具类**
 
 * CILPayUtil
 
@@ -1245,11 +1300,11 @@ SDK 将交易分为`银行卡交易`(刷卡、插卡和挥卡)和`扫码交易`(
 
 ```
 
-### 许可证
+### **许可证**
 
 Copyright (c) 2016 cardinfolink.com
 
-### JAVADOC
+### **JAVADOC**
 
 java document 详情见 [javadoc](sdkapi/javadoc/)
 

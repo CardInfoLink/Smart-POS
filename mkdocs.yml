@@ -1,15 +1,57 @@
-site_name: CRAZYFOX
-repo_name: GitHub
-repo_url: https://github.com/CardInfoLink/Smart-POS
-pages:
-- HOME: index.md
-- USER GUIDE:
-    - GET STARTED: user-guide/getstarted.md
-    - OVERVIEW: user-guide/overview.md
-    - ATTACHMENTS: user-guide/attachments.md
-- DOCUMENTATION:
-    - SDK API: documentation/sdkapi.md
-    - BLUETOOTH: documentation/bluetooth.md
-- DOWNLOADS: download.md
-- ABOUT: about.md
-theme: mkdocs
+  site_name: CRAZYFOX
+  repo_name: GitHub
+  repo_url: https://github.com/CardInfoLink/Smart-POS
+
+  theme:  
+    name: 'material'  
+    feature:
+      tabs: true      
+    palette:
+      primary: 'light green'
+      accent: 'green'
+    font:
+      text: 'Ubuntu'
+      code: 'Ubuntu Mono'
+    logo:
+      icon: 'cloud'
+    language: 'zh'   
+  extra:
+    search:
+      language: 'jp'
+     
+    manifest: 'manifest.webmanifest'
+    social:  
+      - type: 'globe'
+        link: 'https://cardinfolink.com'  
+      
+  nav:  
+    - 功能预览: index.md   
+    - 快速接入:
+         - 1. SDK API:
+            - 1.1. 快速集成: documentation/intergration.md
+            - 1.2. 激活: documentation/active.md 
+            - 1.3. 签到: documentation/signIn.md  
+            - 1.4. 卡交易: documentation/card.md 
+            - 1.5. 码交易: documentation/Qr.md
+            - 1.6. 账单查询: documentation/bill.md  
+            - 1.7. 结算: documentation/transSettle.md  
+            - 1.8. 打印: documentation/print.md  
+            - 1.9. 其它设置: documentation/otherSetting.md   
+         - 2. BLUETOOTH API: documentation/bluetooth.md            
+    - 交互流程图:
+         - 概述和序列图: flowChart/overview.md    
+         - 系统交互图: flowChart/systemFlowChart.md   
+            
+    - 交易类型和应答码: 
+           - 1. 应答码表:
+              - 1.1. sdk应答码表: attached/sdkAnserCode.md 
+              - 1.2. 风狐App应答码: attached/fenghuAnserCode.md
+           - 2. 交易处理标志和冲正标志: attached/symbol.md
+           - 3. 签购单规范: attached/ticket.md
+           - 4. 交易类型: attached/transType.md
+           
+           
+    - 版本说明与sample下载: 
+           - sample下载: download.md     
+    - SDK环境地址: 
+           - 环境地址: about.md   

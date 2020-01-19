@@ -1,4 +1,4 @@
-#### 平台地址
+平台地址
 
 系统|生产地址|测试地址
 :--|:--|:--
@@ -8,7 +8,7 @@
 云收银平台|[showmoney.cn](https://showmoney.cn)|[test.quick.ipay.so](http://test.quick.ipay.so/)
 
 
-#### 智能 POS 连接的环境
+智能 POS 连接的环境
 
 | 环境 | 地址 | 表现形式 |
 |:--|:--|:--|
