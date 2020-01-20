@@ -763,7 +763,7 @@
                 
                 <p><strong>账单查询</strong></p>
 <p>智能 POS SDK 分别提供了最多30天的<code>账单列表查询</code>和<code>账单统计接口</code>接口,接口会根据 type 值确定返回<code>银行卡账单</code>或<code>扫码账单</code>。
-交易成功还是失败最终以返回账单中应答码为准，见<a href="/attached/attachments">应答码表</a> 。</p>
+交易成功还是失败最终以返回账单中应答码为准，见<a href="https://gongluis.github.io/Smart-POS/attached/sdkAnserCode/">应答码表</a> 。</p>
 <blockquote>
 <p>交互设计建议：交易中，具体来说，调用CILSDK.consumeQr()或是CILSDK.consume()方法时，当因为网络中断进入onError callback时，建议在交互中加入<code>查询账单列表</code>的逻辑，这样交易失败后可方便收银员通过账单来确认这笔订单的实际状态。</p>
 <p>注意：对于 <code>09</code>（请求正在处理中）状态的交易账单数据，还需要看 <code>处理标志位</code> 才能判定此次交易成功与否，使用 <code>getProcessFlag()</code> 获取。
