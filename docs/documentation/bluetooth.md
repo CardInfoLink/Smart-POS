@@ -1,17 +1,17 @@
-### 一、使用场景和流程
+**一、使用场景和流程**
 
 传统收银机需要连接讯联的智能 POS 进行收银，但是为了适应收银机上已有的一些业务系统，需要做到收银机唤起智能 POS，
 同时接收来自收银机的一些参数，如金额，参考号等。待智能 POS 接收到请求并处理完毕之后，会立即将交易的处理结果返回给收银机。
 
 ![](../img/pos_coco.png)
 
-需要下载风狐智能 POS 蓝牙版，才能具备串口唤起我们的应用功能，请扫描下方二维码，或 [下载到本地](http://ob7kiv99z.bkt.clouddn.com/2017-04-12_smartposcoco_v5.0.0_2017041214_externaldebug.apk)
+需要下载风狐智能 POS 蓝牙版，才能具备串口唤起我们的应用功能，请扫描下方二维码，或 [下载到本地](http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2019-10-12/2019-09-19_smartposcoco_v5.6.0_2019092003_release.apk)
 
 ![](../img/download_bluetooth.png)
 
 注：目前只支持新大陆 N900 智能 POS + 新大陆 N900 蓝牙底座
 
-### 二、传输数据格式定义
+**二、传输数据格式定义**
 
 ```json
 //request 报文 (收银机 -> 智能 POS)
@@ -71,14 +71,13 @@
 
 注意：respCode 应答码表可参见[交易应答码表V3](/user-guide/attachments/#v320160811)
 
-### 三、调试方法
+**三、调试方法**
 
 将蓝牙底座和串口正确连接，并且将智能 POS 机上的蓝牙底座应用打开，找到底座蓝牙并且连接成功。然后就可以使用串口调试工具发送示例报文了。
 
-<img src="/Smart-POS/img/bluetooth1.png" width="180" height="300" />
-<img src="/Smart-POS/img/bluetooth2.png" width="260" height="300" />
+![](../img/bluetooth1.png)![](../img/bluetooth2.png)
 
-### 四、交易报文示例
+**四、交易报文示例**
 
 * 银行卡消费
 
@@ -438,7 +437,7 @@
 }
 ```
 
-### 五、错误码(TODO)
+**五、错误码(TODO)**
 
 |代码|意义
 |:--|:--|
@@ -454,7 +453,7 @@
 |-17|无权限|
 |-2|设备被占用|
 
-### 六、Q&A (TODO)
+**六、Q&A (TODO)**
 
 * 1、为什么智能 POS 在有些界面接收到蓝牙发去的报文没任何反应呢？
 

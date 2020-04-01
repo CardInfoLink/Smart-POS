@@ -447,7 +447,7 @@ revflag取值如下，用于标记源交易。
 
 * 小票（签购单）样例，银行卡类小票和扫码类小票：
 
-<img src="/Smart-POS/img/slip.png" width="250" height="420" /> <img src="/Smart-POS/img/slipqr.png" width="250" height="420" />
+![](../img/slip.png)![](../img/slipqr.png)
 
 * 其他说明
 

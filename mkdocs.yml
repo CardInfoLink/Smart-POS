@@ -1,15 +1,46 @@
-site_name: CRAZYFOX
-repo_name: GitHub
-repo_url: https://github.com/CardInfoLink/Smart-POS
-pages:
-- HOME: index.md
-- USER GUIDE:
-    - GET STARTED: user-guide/getstarted.md
-    - OVERVIEW: user-guide/overview.md
-    - ATTACHMENTS: user-guide/attachments.md
-- DOCUMENTATION:
-    - SDK API: documentation/sdkapi.md
-    - BLUETOOTH: documentation/bluetooth.md
-- DOWNLOADS: download.md
-- ABOUT: about.md
-theme: mkdocs
+  site_name: CRAZYFOX
+  repo_name: GitHub
+  repo_url: https://github.com/CardInfoLink/Smart-POS
+
+  theme:  
+    name: 'mkdocs'  
+    #feature:
+      #tabs: true      
+    palette:
+      primary: 'light green'
+      accent: 'green'
+    font:
+      text: 'Ubuntu'
+      code: 'Ubuntu Mono'
+    logo:
+      icon: 'cloud'
+    language: 'zh'   
+  #extra:
+    #search:
+      #language: 'jp'
+     
+    manifest: 'manifest.webmanifest'
+    social:  
+      - type: 'globe'
+        link: 'https://cardinfolink.com'  
+      
+  pages:  
+    - 功能预览: index.md   
+    - 快速接入:
+         - 1. SDK API: documentation/quik.md 
+         - 2. BLUETOOTH API: documentation/bluetooth.md 
+         - 3. TEST: documentation/test.md   
+    - 交互流程图:
+         - 概述和序列图: flowChart/overview.md    
+         - 系统交互图: flowChart/systemFlowChart.md   
+            
+    - 交易类型和应答码: 
+           - 1. 应答码表:sdk应答码表: attached/sdkAnserCode.md 
+           - 2. 交易处理标志和冲正标志: attached/symbol.md
+           - 3. 签购单规范: attached/ticket.md
+           - 4. 交易类型: attached/transType.md
+           
+           
+    - sdk环境与版本说明: 
+           - 版本说明与sample下载: download.md     
+           - 环境地址: about.md   
