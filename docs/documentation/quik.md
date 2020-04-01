@@ -1,4 +1,4 @@
-### **快速接入**
+### 快速接入
 为了方便快速接入，提供了demo供接入参考
 [demo下载](http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2020-01-07/pos-demo.zip)
 
@@ -9,58 +9,45 @@ gradle:
     implementation 'com.cardinfolink.smart.pos:PosSDK:2.5.2'
 ```
 
-or
-
-```maven
-maven:
-    <dependency>
-      <groupId>com.cardinfolink.smart.pos</groupId>
-      <artifactId>PosSDK</artifactId>
-      <version>2.5.2</version>
-      <type>pom</type>
-    </dependency>
-```
-
 2. 如果想使用讯联集成的结算UI和逻辑，请配置
 
 ```gradle
 gradle:
     implementation 'com.cardinfolink.smart.pos:SDK-ZaiHui:1.1.1'
 ```
-or
+### 初始化（连接POS机硬件）
 
-```maven
-maven:
-    <dependency>
-     <groupId>com.cardinfolink.smart.pos</groupId>
-     <artifactId>SDK-ZaiHui</artifactId>
-     <version>1.1.1</version>
-    <type>pom</type>
-    </dependency>
-```  
+使用 N900 智能 POS 机器, 首先需要连接 POS 机硬件, 使用 SDK 提供的 `connect` 方法连接。
+建议在 `Application` 的 `onCreate` 方法中进行连接。
 
-###   **激活POS机**  
+```
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        
+        ...
+        CILSDK.setDebug(true);//调试阶段使用测试环境，发版时请改为 false
+        CILSDK.connect(this);
+        
+        ...
+    }
+```
+使用联迪A8设备的，联迪设备连接需要传入activity的context,
+除了在 `Application` 的 `onCreate` 方法中进行连接，建议在每个可能调用设备刷卡、加密、打印的activity onCreat方法中再调用 CILSDK.connect(this)进行连接，
+保证使用过程中设备连接不断开；另外推荐在ActivityLifecycleCallbacks中处理设备连接。
+
+### 激活POS机 
 完整的激活环节分为三步，分别是：激活，终端参数下载，终端密钥下载，三步都成功，表示激活成功，激活成功之后才能正常使用后面的交易流程。  
-```
-graph LR  
 
-   激活--success-->参数下载
-            参数下载--success-->密钥下载 
-    
-```
-**激活**  
+![](../img/activeprocess.png)  
 
+**1、激活**  
 * a、新激活流程（推荐）
 
 根据用户反馈，为了简化激活流程，我们新增了激活码的方式激活，当你拿到 POS 机器之后，我们会为这个商户发放激活码，一个激活码只可以激活一台 POS 机。
-建议先调用[根据激活码获取商户信息接口:](#load_merInfo)（返回商户名商户号终端号等信息），确认信息无误后，在调用激活码激活接口激活。
-  ```
-graph LR  
-    获取商户信息--success-->激活
-        激活--success-->参数下载
-            参数下载--success-->密钥下载 
-    
-```
+建议先调用[根据激活码获取商户信息接口:](#load_merInfo)（返回商户名商户号终端号等信息），确认信息无误后，在调用激活码激活接口激活。  
+
+![](../img/newloginprocess.png) 
  
 > 注意:一台终端能且仅能成功激活一次,无法重复进行激活操作。若有多次激活的需求(如debug阶段),请联系讯联客服。
 
@@ -86,12 +73,9 @@ graph LR
 
 * b、旧激活流程
 
-第一次使用智能 POS 终端的时候,需要使用讯联下发的商户号（merCode） 和终端号（termCode）激活
-```
-graph LR
-    激活--success-->参数下载
-        参数下载--success-->密钥下载
-```
+第一次使用智能 POS 终端的时候,需要使用讯联下发的商户号（merCode） 和终端号（termCode）激活  
+
+![](../img/activeprocess.png) 
 
 > 注意:一台终端能且仅能成功激活一次,无法重复进行激活操作。若有多次激活的需求(如debug阶段),请联系讯联客服。推荐APP本身能够保持设备是否已经激活标志
 
@@ -133,8 +117,9 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
         });
 
 ```
-
-**终端参数下载**
+  
+  
+**2、终端参数下载**
 
 激活成功之后,你的应用还需要下载一些交易时使用的参数,比如`交易地址和端口`、`交易超时时间`、`终端支持的功能`、`TPDU` 等,
 在你拿到 POS 终端之前,这些参数都会在讯联后台已经配置好,全部参数见 `CILResponse.Info` 返回值。下载成功之后 SKD 会
@@ -163,7 +148,7 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
     });
 ```
 
-**终端密钥下载**
+**3、终端密钥下载**
 
 终端密钥下载只需要成功执行一次就可以,成功下载的密钥会被转载到POS硬件模块里面,后面就不需要再次调用了,建议你的应用可以在成功下载密钥之后持久化一个标志位,
 下次进入应用就不再去下载密钥了。整个过程可能会需要1~2分钟左右(依赖当前的网络状况),会经历以下步骤:
@@ -193,8 +178,8 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
         }
     });
 ```  
-### **签到**
 
+### 签到
 签到其实也就是更新工作密钥的一个过程 (`下载工作密钥+装载工作密钥` ),讯联网关平台要求应用需要每天签到一次。
 
 ```
@@ -210,9 +195,7 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
         }
     });
 ```    
-
-### **银行卡交易**
-
+### 银行卡交易
 由于银行卡交易逻辑有点复杂,讯联提供了一个 `BaseCardActivity` 基础类,你只需要继承这个类便可以做银行卡类的交易了。具体使用方法可以见 demo 
 里的 `CommonCardHandlerActivity` 类。下面给个大概说明:
 
@@ -585,7 +568,7 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
 
 ```    
 
-**预授权手输卡号**  
+**10、预授权手输卡号**  
     ```
     //需要手输的卡信息有卡号和卡有效期两个字段
     
@@ -608,7 +591,7 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
         });
     ```  
     
-**预授权撤销手输卡号**  
+**11、预授权撤销手输卡号**  
 ```
     CILRequest request = new CILRequest();
      
@@ -636,7 +619,7 @@ CILSDK.getMerchantInfo(HashUtils.encryptActiveCode(authCode), true, new Callback
     
 ```  
     
-**预授权完成手输卡号**   
+**12、预授权完成手输卡号**   
 >注意1：这个地方一定要进行DCC汇率查询，预授权完成属于消费类接口，默认是做Dcc的，同样如果需要做DCC转EDC,在预授权交易成功页面调用Dcc转EDC接口即可。  
 
 >注意2：汇率查询一般sdk在刷卡的流程中自动完成，但是手输类的交易不走sdk的刷卡流程，需要调用方自行调用汇率查询api进行汇率查询，流程如下：
@@ -695,7 +678,7 @@ graph LR
         });
 ```
 
-**预授权完成撤销手输卡号**  
+**13、预授权完成撤销手输卡号**  
 ```
     CILRequest request = new CILRequest();
      
@@ -728,7 +711,7 @@ graph LR
 
 
 
-**交易结果字段说明**  
+**14、交易结果字段说明**  
   
    字段 | 类型 | 含义 | 备注 | 备注
 ---|---|---|---|---
@@ -778,11 +761,11 @@ transDatetime |String |受卡方所在地日期＋受卡方所在地时 |无|
 transRate |String |持卡人扣帐汇率 |无|
   
     
-###  **扫码交易**
+### 扫码交易
 
 扫码相关的交易则是不依赖 POS 机器的读卡模块的,但是你需要将`微信`或者`支付宝`的二维码读出来传给扫码消费接口,扫码可以使用第三方库,如 `zxing`。
   
-  **扫码消费**
+**1、扫码消费**
 ```
     CILRequest request = new CILRequest();
     request.setAmount(amount);//交易金额
@@ -811,7 +794,7 @@ transRate |String |持卡人扣帐汇率 |无|
 >注意,如果应答码返回09或98，需要调用讯联扫码查询接口，查询该笔订单的实际状态。
 
     
-**扫码撤销**  
+**2、扫码撤销**  
 ```
     CILRequest request = new CILRequest();
     request.setAmount(amount);//原交易金额
@@ -833,7 +816,7 @@ transRate |String |持卡人扣帐汇率 |无|
 ```
     
 
-**扫码退货**  
+**3、扫码退货**  
 
 ```   
     CILRequest request = new CILRequest();  
@@ -854,7 +837,7 @@ transRate |String |持卡人扣帐汇率 |无|
         });
 ```
 
-**扫码查询**
+**4、扫码查询**
 ```
     CILRequest request = new CILRequest();
     request.setBatchNum(response.getTrans().getBatchNum());//批次号
@@ -879,7 +862,7 @@ transRate |String |持卡人扣帐汇率 |无|
         });
 ```
 
-**扫码消费查询,只查询一次，不含取消接口**  
+**5、扫码消费查询,只查询一次，不含取消接口**  
 ```
     CILRequest request = new CILRequest();
     request.setBatchNum(response.getTrans().getBatchNum());//批次号
@@ -900,7 +883,7 @@ transRate |String |持卡人扣帐汇率 |无|
             }
         });
 ```  
-**扫码取消**  
+**6、扫码取消**  
 ```
     /**
      * 扫码取消
@@ -931,7 +914,7 @@ transRate |String |持卡人扣帐汇率 |无|
 ```	
 	
 
-**扫码预授权**  
+**7、扫码预授权**  
 ```
     CILRequest request = new CILRequest();
     request.setAmount(amount);
@@ -960,7 +943,7 @@ transRate |String |持卡人扣帐汇率 |无|
 ```		
 	
 
-**扫码预授权撤销**
+**8、扫码预授权撤销**
 ```
 	CILRequest request = new CILRequest();
     request.setAmount(transAmt);//原预授权交易金额
@@ -983,7 +966,7 @@ transRate |String |持卡人扣帐汇率 |无|
 		
 ```	
 
-**扫码预授权完成**
+**9、扫码预授权完成**
 ```
 		CILRequest request = new CILRequest();
         request.setAmount(transAmt);//原预授权交易金额
@@ -1002,7 +985,7 @@ transRate |String |持卡人扣帐汇率 |无|
         });  
 ```		
 
-**扫码预授权完成撤销**
+**10、扫码预授权完成撤销**
 ```
 	CILRequest request = new CILRequest();
     request.setAmount(transaction.getTransAmt());//原预授权完成交易金额
@@ -1026,7 +1009,7 @@ transRate |String |持卡人扣帐汇率 |无|
 
 
 
-**单品券功能接入指引**   
+**11、单品券功能接入指引**   
 > 注意：sdk v2.5.3及之后版本支持该功能
 1. 扫码消费接口增加单品券核销功能，扫码消费接口增加入参两个参数，订单优惠标记（为配券时候的填的优惠标记）,商品列表；
 ```
@@ -1138,7 +1121,7 @@ CouponInfo响应报文样例：
 附：最多支持传入9个商品    
 
 
-### **账单查询**
+### 账单查询
 
 智能 POS SDK 分别提供了最多30天的`账单列表查询`和`账单统计接口`接口,接口会根据 type 值确定返回`银行卡账单`或`扫码账单`。
 交易成功还是失败最终以返回账单中应答码为准，见[应答码表](https://gongluis.github.io/Smart-POS/attached/sdkAnserCode/) 。
@@ -1151,7 +1134,7 @@ CouponInfo响应报文样例：
   
   
   
-**根据外部订单号获取该笔订单信息（同步）**  
+**1、根据外部订单号获取该笔订单信息（同步）**  
 ```
 //outOrderNum为传入数据
 CILSDK.getBillsAsync(outOrderNum, new Callback<CILResponse>() {
@@ -1166,7 +1149,7 @@ CILSDK.getBillsAsync(outOrderNum, new Callback<CILResponse>() {
             }
         })
 ```  
-**根据凭证号获取当前批次号下该笔订单详情(异步)**    
+**2、根据凭证号获取当前批次号下该笔订单详情(异步)**    
 
 ```
 /**
@@ -1187,7 +1170,7 @@ CILSDK.getBillByTraceNum(traceNum, new Callback<CILResponse>() {
             }
         });
 ```  
-**根据参考号获取当前批次下的订单详情（异步操作）**
+**3、根据参考号获取当前批次下的订单详情（异步操作）**
 ```
 /**
 * @param refNum 参考号
@@ -1206,7 +1189,7 @@ CILSDK.getBillByRefNumAsync(refNum, callBackIsOnMainThread, new Callback<CILResp
         });
 ```
 
-**根据批次号获取当前批次下的订单详情（异步操作）**  
+**4、根据批次号获取当前批次下的订单详情（异步操作）**  
 ```
 
 /**
@@ -1226,7 +1209,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
         });
 ```
 
-**获取账单列表**
+**5、获取账单列表**
 ```
  1. 默认获取三十天的账单列表
     /**
@@ -1280,7 +1263,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
 ```  
 
 
-**获取今日交易统计**      
+**6、获取今日交易统计**      
 ```
     /**
      * 获取今日交易统计 异步
@@ -1323,13 +1306,14 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
 > SDK 的网络部分使用的是第三方库 `okhttp`,以上账单接口分别还提供了相对应的同步接口 `getBills` 和 `getBillStat` 。
 对于异步接口来说,都会返回一个 `Call` 对象,你可以在应用出错的时候调用 `call.cancel()` 取消这次请求,以免造成内存泄露。  
 
-### **小费**  
+### 小费 
 > 注意:
 通过对一笔交易收取小费。  
 小费最多收取交易金额的20%  
 小费只能成功收取一次
 消费撤销后不能再次收取  
 
+**1、小费**   
 
 ```  
 
@@ -1355,7 +1339,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
             }
         });
 ```
-**小费撤销**  
+**2、小费撤销**  
 
 ```
         CILRequest request = new CILRequest();
@@ -1380,7 +1364,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
         });
 ```  
 
-### **结算**
+### 结算
 
 结算需求主要用于每日交易结束时或收银员交接班时,对某段时间内的账款核对。商户每日交易结束后,收银员需要统计并核对所有的交易,核对交易统计准确后结算，打印出结算单。
 结算会涉及到一个概念--`批次号`,我们在前面的交易都会传入一个批次号给 request ,调用结算之后,后续的交易需要将这个批次号加1,因为此批次已经打包结算掉了。
@@ -1409,7 +1393,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
     SettleDaoUtil.getInstance().gotoLiquidation(context)
 ```    
 
-### **打印**
+### 打印
 
 
 本模块可用于根据交易信息打印所需的消费票据。接口不仅提供了一套固定格式的小票样式，而且还可以根据需要自定义打印样式。
@@ -1576,7 +1560,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback<CIL
 ```    
 
 
-### **其他设置**
+### 其他设置
 
 考虑到使用 SDK 的时候可能还会有其他需求,比如`获取 POS 机的 SN 号`、`设置密钥索引`等,在这里,我们也提供了一部分接口。
 
