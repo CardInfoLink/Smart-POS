@@ -1,11 +1,11 @@
 
 
-**一、激活环节**  
+### **一、激活环节**  
 只需要在初次使用终端时操作一次，内容包括了激活、初始化、下载参数。  
 * 序列图
 ![](../img/active.png)
 
-**激活**  
+#### **激活**  
 激活设备，有老版和新版两种激活方式
 
  
@@ -24,7 +24,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 
 
 
-**参数下载**  
+#### **参数下载**  
 参数下载在主要应用在以下两种情况：
 1. 激活时下载参数 
 2. 参数修改后下载参数
@@ -33,7 +33,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 `  CILSDK.downloadParams(merCode, termCode, new com.cardinfolink.pos.listener.Callback<CILResponse>() `
 其中，`new com.cardinfolink.pos.listener.Callback<CILResponse>() `是回调函数
 
-**初始化**  
+#### **初始化**  
 初始化主要是终端密钥下载，包含了主密钥下载和工作密钥下载。其主要应用在以下两种情况：
 1.激活时初始化密钥 
 2.需要更新密钥时初始化
@@ -42,13 +42,13 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 ` CILSDK.downloadParamsWithProgress(new ProgressCallback<CILResponse>()`
 
 
-**二、签到**  
+### **二、签到**  
 签到其实就是一个更新密钥的过程，激活时已经覆盖了每日一次签到的操作。
 
 
 `CILSDK.signIn(new Callback<CILResponse>()`
 
-**三、配置**
+### **三、配置**
 
 **可配置参数**  
 1. 批次号、流水号
@@ -64,7 +64,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 获取流水号  
 `int serialNum = CILSDK.getSerialNum();`
 
-**四、打印**  
+### **四、打印**  
 交易成功后，需要打印签购单，一般打印两联：商户联和客户联。商户联在持卡人签名后由商户保存。交易成功后，会自动打印商户联。
 需要补打小票时，可以早交易明细中找到补打功能，打印商户联。
 
@@ -135,7 +135,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 | offset  |偏移量|
 |callback | 回调|
 
-**五、消费**  
+#### **五、消费**  
 
 **1. 消费（插卡、刷卡、挥卡、手机NFC ）**  
 支持开发者调用接口实现商家银行卡收款需求。
@@ -167,7 +167,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 
 
 
-**六、撤销**  
+#### **六、撤销**  
 支持开发者调用接口实现商家撤销当日交易需求。
 包括银行卡撤销和扫码撤销。
 
@@ -181,7 +181,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 5. SDK返回打印结果
 
 
-**七、退货**  
+#### **七、退货**  
 支持开发者调用接口实现商家非当日交易的退货需求。
 包括银行卡退货和扫码退货。
 
@@ -194,7 +194,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 4. 退货成功时，APP发送打印请求
 5. SDK返回打印结果
 
-**八、预授权类**  
+#### **八、预授权类**  
 支持开发者调用接口实现部分商家（如酒店、租车）的预授权类需求。
 支持银行卡和微信支付宝付款码业务。  
 **卡预授权类**  
@@ -302,7 +302,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 5. SDK返回打印结果
 
 
-**九、交易明细**  
+#### **九、交易明细**  
 支持开发者调用接口实现商家查看交易订单需求，同时可以补打、撤销订单。
 
 * 序列图  
@@ -326,7 +326,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 |  type |账单类型|
 |  callback |回调|
 
-**十、结算**  
+#### **十、结算**  
 支持开发者调用接口实现商家结算需求。
 结算需求主要用于每日交易结束时或收银员交接班时，对某段时间内的账款核对。
 

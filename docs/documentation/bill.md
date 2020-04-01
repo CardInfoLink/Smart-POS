@@ -1,7 +1,8 @@
 **账单查询**
 
 智能 POS SDK 分别提供了最多30天的`账单列表查询`和`账单统计接口`接口,接口会根据 type 值确定返回`银行卡账单`或`扫码账单`。
-交易成功还是失败最终以返回账单中应答码为准，见[应答码表](/attached/attachments) 。
+交易成功还是失败最终以返回账单中应答码为准，见[应答码表](https://gongluis.github.io/Smart-POS/attached/sdkAnserCode/) 。
+
 
 > 交互设计建议：交易中，具体来说，调用CILSDK.consumeQr()或是CILSDK.consume()方法时，当因为网络中断进入onError callback时，建议在交互中加入`查询账单列表`的逻辑，这样交易失败后可方便收银员通过账单来确认这笔订单的实际状态。
  

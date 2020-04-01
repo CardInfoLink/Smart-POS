@@ -6,7 +6,7 @@
 
 <p style="color:red; font-size:18">特别注意: 中国人民银行和中国银联为了规范市场上的POS机终端，要求终端打印的签购单必须合乎规范，规范内容包括必须打印的字段与正确的字段内容。</p>
 
-签购单规范详情见 [签购单规范](/attached/ticket)
+签购单规范详情见 [签购单规范](https://gongluis.github.io/Smart-POS/attached/ticket)
 
 
 * 打印银行卡类交易、扫码类交易小票

@@ -1,6 +1,6 @@
 
 为了方便快速接入，提供了demo供接入参考
-[demo下载](https://git.cardinfolink.net/Cardinfolink/pos-demo/repository/v2.0.0/archive.zip)
+[demo下载](http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2020-01-07/pos-demo.zip)
 
 1. 本 SDK 已使用 jcenter 托管，配置如下
 
