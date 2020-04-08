@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>BLUETOOTH - CRAZYFOX</title>
+        <title>2. BLUETOOTH API - CRAZYFOX</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -47,43 +47,71 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">HOME</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER GUIDE <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="../../user-guide/getstarted/">GET STARTED</a>
-</li>
-                                    
-<li >
-    <a href="../../user-guide/overview/">OVERVIEW</a>
-</li>
-                                    
-<li >
-    <a href="../../user-guide/attachments/">ATTACHMENTS</a>
-</li>
-                                </ul>
+                                <a href="../..">功能预览</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../sdkapi/">SDK API</a>
+    <a href="../quik/">1. SDK API</a>
 </li>
                                     
 <li class="active">
-    <a href="./">BLUETOOTH</a>
+    <a href="./">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../test/">3. TEST</a>
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../download/">DOWNLOADS</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../flowChart/overview/">概述和序列图</a>
+</li>
+                                    
+<li >
+    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+</li>
+                                </ul>
                             </li>
-                            <li >
-                                <a href="../../about/">ABOUT</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/transType/">4. 交易类型</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -94,12 +122,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../sdkapi/">
+                                <a rel="next" href="../quik/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../download/">
+                                <a rel="prev" href="../test/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -114,24 +142,18 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">一、使用场景和流程</a></li>
-        <li class="main "><a href="#_2">二、传输数据格式定义</a></li>
-        <li class="main "><a href="#_3">三、调试方法</a></li>
-        <li class="main "><a href="#_4">四、交易报文示例</a></li>
-        <li class="main "><a href="#todo">五、错误码(TODO)</a></li>
-        <li class="main "><a href="#qa-todo">六、Q&amp;A (TODO)</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">一、使用场景和流程</h3>
+<p><strong>一、使用场景和流程</strong></p>
 <p>传统收银机需要连接讯联的智能 POS 进行收银，但是为了适应收银机上已有的一些业务系统，需要做到收银机唤起智能 POS，
 同时接收来自收银机的一些参数，如金额，参考号等。待智能 POS 接收到请求并处理完毕之后，会立即将交易的处理结果返回给收银机。</p>
 <p><img alt="" src="../../img/pos_coco.png" /></p>
 <p>需要下载风狐智能 POS 蓝牙版，才能具备串口唤起我们的应用功能，请扫描下方二维码，或 <a href="http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2019-10-12/2019-09-19_smartposcoco_v5.6.0_2019092003_release.apk">下载到本地</a></p>
 <p><img alt="" src="../../img/download_bluetooth.png" /></p>
 <p>注：目前只支持新大陆 N900 智能 POS + 新大陆 N900 蓝牙底座</p>
-<h3 id="_2">二、传输数据格式定义</h3>
+<p><strong>二、传输数据格式定义</strong></p>
 <pre><code class="json">//request 报文 (收银机 -&gt; 智能 POS)
 {
     &quot;action&quot;:&quot;CBANK&quot;,                                   //CBANK:银行卡消费, CQR:扫码消费, CANBANK:银行卡撤销, CANQR:扫码撤销, RETBANK:银行卡退货, RETQR:扫码退货, ORDER:订单查询
@@ -188,10 +210,10 @@
 </code></pre>
 
 <p>注意：respCode 应答码表可参见<a href="/user-guide/attachments/#v320160811">交易应答码表V3</a></p>
-<h3 id="_3">三、调试方法</h3>
+<p><strong>三、调试方法</strong></p>
 <p>将蓝牙底座和串口正确连接，并且将智能 POS 机上的蓝牙底座应用打开，找到底座蓝牙并且连接成功。然后就可以使用串口调试工具发送示例报文了。</p>
 <p><img alt="" src="../../img/bluetooth1.png" /><img alt="" src="../../img/bluetooth2.png" /></p>
-<h3 id="_4">四、交易报文示例</h3>
+<p><strong>四、交易报文示例</strong></p>
 <ul>
 <li>银行卡消费</li>
 </ul>
@@ -551,7 +573,7 @@
 }
 </code></pre>
 
-<h3 id="todo">五、错误码(TODO)</h3>
+<p><strong>五、错误码(TODO)</strong></p>
 <table>
 <thead>
 <tr>
@@ -606,7 +628,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="qa-todo">六、Q&amp;A (TODO)</h3>
+<p><strong>六、Q&amp;A (TODO)</strong></p>
 <ul>
 <li>1、为什么智能 POS 在有些界面接收到蓝牙发去的报文没任何反应呢？</li>
 </ul>

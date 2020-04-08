@@ -1139,7 +1139,7 @@ lunr.Pipeline.registerFunction(lunr.stopWordFilter, 'stopWordFilter')
  */
 lunr.trimmer = function (token) {
   return token.update(function (s) {
-    return s.replace(/^\W+/, '').replace(/\W+$/, '')
+    return s.replace(/^\s+/, '').replace(/\s+$/, '')
   })
 }
 
@@ -2123,15 +2123,18 @@ lunr.Builder.prototype.k1 = function (number) {
  *
  * @param {object} doc - The document to add to the index.
  */
-lunr.Builder.prototype.add = function (doc) {
-  var docRef = doc[this._ref]
+lunr.Builder.prototype.add = function (doc, attributes) {
+  var docRef = doc[this._ref],
+      fields = Object.keys(this._fields)
 
+  this._documents[docRef] = attributes || {}
   this.documentCount += 1
 
-  for (var i = 0; i < this._fields.length; i++) {
-    var fieldName = this._fields[i],
-        field = doc[fieldName],
-        tokens = this.tokenizer(field),
+  for (var i = 0; i < fields.length; i++) {
+    var fieldName = fields[i],
+        extractor = this._fields[fieldName].extractor,
+        field = extractor ? extractor(doc) : doc[fieldName],
+        tokens = doc[fieldName + '_tokens'],
         terms = this.pipeline.run(tokens),
         fieldRef = new lunr.FieldRef (docRef, fieldName),
         fieldTerms = Object.create(null)

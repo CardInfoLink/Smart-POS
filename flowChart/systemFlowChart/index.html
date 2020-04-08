@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>GET STARTED - CRAZYFOX</title>
+        <title>系统交互图 - CRAZYFOX</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -47,43 +47,71 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">HOME</a>
+                                <a href="../..">功能预览</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER GUIDE <b class="caret"></b></a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+<li >
+    <a href="../../documentation/quik/">1. SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/bluetooth/">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/test/">3. TEST</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../overview/">概述和序列图</a>
+</li>
+                                    
 <li class="active">
-    <a href="./">GET STARTED</a>
-</li>
-                                    
-<li >
-    <a href="../overview/">OVERVIEW</a>
-</li>
-                                    
-<li >
-    <a href="../attachments/">ATTACHMENTS</a>
+    <a href="./">系统交互图</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../documentation/sdkapi/">SDK API</a>
+    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
 </li>
                                     
 <li >
-    <a href="../../documentation/bluetooth/">BLUETOOTH</a>
+    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/transType/">4. 交易类型</a>
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../download/">DOWNLOADS</a>
-                            </li>
-                            <li >
-                                <a href="../../about/">ABOUT</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -94,17 +122,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../..">
+                                <a rel="next" href="../overview/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../overview/">
+                                <a rel="prev" href="../../attached/sdkAnserCode/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/user-guide/getstarted.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/flowChart/systemFlowChart.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -114,25 +142,13 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">概要</a></li>
-        <li class="main "><a href="#_2">初始化</a></li>
-        <li class="main "><a href="#_3">消费</a></li>
-        <li class="main "><a href="#_4">撤销</a></li>
-        <li class="main "><a href="#_5">退货</a></li>
-        <li class="main "><a href="#_6">预授权类</a></li>
-            <li><a href="#_7">卡预授权类</a></li>
-            <li><a href="#_8">码预授权类</a></li>
-        <li class="main "><a href="#_9">明细查询</a></li>
-        <li class="main "><a href="#_10">结算</a></li>
-        <li class="main "><a href="#_11">小费</a></li>
-        <li class="main "><a href="#_12">余额查询</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="_1">概要</h3>
+<p><strong>概要</strong></p>
 <p>本文档详细介绍了用户APP、SDK与后台之间的交互作用，用图形直观简洁的介绍每个功能，并附有详细的文字说明加以解释。</p>
-<h3 id="_2">初始化</h3>
+<p><strong>初始化</strong></p>
 <ul>
 <li>
 <p>激活
@@ -151,7 +167,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<h3 id="_3">消费</h3>
+<p><strong>消费</strong></p>
 <ul>
 <li>
 <p>银行卡消费
@@ -165,7 +181,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<h3 id="_4">撤销</h3>
+<p><strong>撤销</strong></p>
 <ul>
 <li>
 <p>银行卡撤销
@@ -179,7 +195,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<h3 id="_5">退货</h3>
+<p><strong>退货</strong></p>
 <ul>
 <li>
 <p>银行卡退货
@@ -193,8 +209,8 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<h3 id="_6">预授权类</h3>
-<h4 id="_7">卡预授权类</h4>
+<p><strong>预授权类</strong></p>
+<p><strong>卡预授权类</strong>  </p>
 <ul>
 <li>
 <p>预授权
@@ -217,13 +233,11 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 预授权完成撤销：输入相关信息获取预授权完成交易，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
 </li>
 </ul>
-<h4 id="_8">码预授权类</h4>
-<ul>
-<li>
-<p>扫码预授权
+<p><strong>码预授权类</strong>
+* 扫码预授权
 <img alt="" src="../../img/扫码预授权.png" />
 扫码预授权：输入金额后，扫描消费者付款码，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
-</li>
+<ul>
 <li>
 <p>扫码预授权撤销
 <img alt="" src="../../img/扫码预授权撤销.png" />
@@ -241,21 +255,21 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<h3 id="_9">明细查询</h3>
+<p><strong>明细查询</strong></p>
 <ul>
 <li>明细查询
 <img alt="" src="../../img/明细查询.png" />
 明细查询：发送终端信息到api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到管理平台，管理平台返回应答报文，终端显示。</li>
 </ul>
 <p></br></p>
-<h3 id="_10">结算</h3>
+<p><strong>结算</strong></p>
 <ul>
 <li>结算
 <img alt="" src="../../img/结算.png" />
 结算：发送终端信息、商户号、结算批次号到api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到管理平台，管理平台返回应答报文，终端显示。</li>
 </ul>
 <p></br></p>
-<h3 id="_11">小费</h3>
+<p><strong>小费</strong></p>
 <ul>
 <li>
 <p>收取小费
@@ -269,7 +283,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<h3 id="_12">余额查询</h3>
+<p><strong>余额查询</strong></p>
 <ul>
 <li>余额查询
 <img alt="" src="../../img/余额查询.png" />

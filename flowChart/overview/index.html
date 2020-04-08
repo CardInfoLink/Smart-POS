@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>OVERVIEW - CRAZYFOX</title>
+        <title>概述和序列图 - CRAZYFOX</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -47,43 +47,71 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">HOME</a>
+                                <a href="../..">功能预览</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER GUIDE <b class="caret"></b></a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../getstarted/">GET STARTED</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">OVERVIEW</a>
+    <a href="../../documentation/quik/">1. SDK API</a>
 </li>
                                     
 <li >
-    <a href="../attachments/">ATTACHMENTS</a>
+    <a href="../../documentation/bluetooth/">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/test/">3. TEST</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">概述和序列图</a>
+</li>
+                                    
+<li >
+    <a href="../systemFlowChart/">系统交互图</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DOCUMENTATION <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../documentation/sdkapi/">SDK API</a>
+    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
 </li>
                                     
 <li >
-    <a href="../../documentation/bluetooth/">BLUETOOTH</a>
+    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/transType/">4. 交易类型</a>
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../download/">DOWNLOADS</a>
-                            </li>
-                            <li >
-                                <a href="../../about/">ABOUT</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -94,17 +122,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../getstarted/">
+                                <a rel="next" href="../../documentation/test/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../attachments/">
+                                <a rel="prev" href="../systemFlowChart/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/user-guide/overview.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/flowChart/overview.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -114,25 +142,39 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#sdk">智能终端应用需求【sdk】完成版</a></li>
-            <li><a href="#_1">智能终端业务文档</a></li>
+        <li class="main active"><a href="#_1">一、激活环节</a></li>
+            <li><a href="#_2">激活</a></li>
+            <li><a href="#_3">参数下载</a></li>
+            <li><a href="#_4">初始化</a></li>
+        <li class="main "><a href="#_5">二、签到</a></li>
+        <li class="main "><a href="#_6">三、配置</a></li>
+        <li class="main "><a href="#_7">四、打印</a></li>
+            <li><a href="#_8">五、消费</a></li>
+            <li><a href="#_9">六、撤销</a></li>
+            <li><a href="#_10">七、退货</a></li>
+            <li><a href="#_11">八、预授权类</a></li>
+            <li><a href="#_12">九、交易明细</a></li>
+            <li><a href="#_13">十、结算</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="sdk">智能终端应用需求【sdk】完成版</h1>
-<p>标签（空格分隔）： 智能pos</p>
-<hr />
-<h2 id="_1">智能终端业务文档</h2>
-<h3 id="_2">一、管理类</h3>
-<p>管理类sdk作为基础服务包，内容包括了激活、初始化、下载参数和签到；</p>
-<h5 id="_3">序列图</h5>
-<p><img alt="" src="../../img/管理类时序图.png" /></p>
-<h4 id="_4">激活</h4>
-<p>激活界面，输入商户号终端号，点击【激活】，实现终端与支付server交互，确认身份信息。支付server后续将密钥等信息反馈给终端。 
-<em>只需要在初次使用终端时操作一次。激活操作直接完成激活、参数下载、初始化、签到等流程。</em></p>
-<h5 id="_5">调用方法</h5>
-<p><code>CILSDK.active(merCode, termCode, new Callback&lt;CILResponse&gt;()</code></p>
+<h3 id="_1"><strong>一、激活环节</strong></h3>
+<p>只需要在初次使用终端时操作一次，内容包括了激活、初始化、下载参数。<br />
+* 序列图
+<img alt="" src="../../img/active.png" /></p>
+<h4 id="_2"><strong>激活</strong></h4>
+<p>激活设备，有老版和新版两种激活方式</p>
+<ol>
+<li>
+<p>新版激活接口(入参激活码)：<br />
+CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());  </p>
+</li>
+<li>
+<p>老版激活接口：<br />
+<code>CILSDK.active(merCode, termCode, new Callback&lt;CILResponse&gt;()</code></p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -157,51 +199,42 @@
 </tr>
 </tbody>
 </table>
-<p><code>new Callback&lt;CILResponse&gt;</code> 是回调函数</p>
-<h4 id="_6">参数下载</h4>
+<p><code>new Callback&lt;CILResponse&gt;</code> 是回调函数  </p>
+<h4 id="_3"><strong>参数下载</strong></h4>
 <p>参数下载在主要应用在以下两种情况：
 1. 激活时下载参数 
 2. 参数修改后下载参数</p>
-<h5 id="_7">调用方法</h5>
 <p><code>CILSDK.downloadParams(merCode, termCode, new com.cardinfolink.pos.listener.Callback&lt;CILResponse&gt;()</code>
 其中，<code>new com.cardinfolink.pos.listener.Callback&lt;CILResponse&gt;()</code>是回调函数</p>
-<h4 id="_8">初始化</h4>
+<h4 id="_4"><strong>初始化</strong></h4>
 <p>初始化主要是终端密钥下载，包含了主密钥下载和工作密钥下载。其主要应用在以下两种情况：
 1.激活时初始化密钥 
 2.需要更新密钥时初始化</p>
-<h5 id="_9">调用方法</h5>
 <p><code>CILSDK.downloadParamsWithProgress(new ProgressCallback&lt;CILResponse&gt;()</code></p>
-<h4 id="_10">签到</h4>
+<h3 id="_5"><strong>二、签到</strong></h3>
 <p>签到其实就是一个更新密钥的过程，激活时已经覆盖了每日一次签到的操作。</p>
-<h5 id="_11">调用方法</h5>
 <p><code>CILSDK.signIn(new Callback&lt;CILResponse&gt;()</code></p>
-<h3 id="_12">二、配置</h3>
-<h5 id="_13">可配置参数</h5>
-<p><strong>1. 批次号、流水号</strong> 
+<h3 id="_6"><strong>三、配置</strong></h3>
+<p><strong>可配置参数</strong><br />
+1. 批次号、流水号
 批次号用于结算，流水号（凭证号）定位本批每一笔交易唯一索引；</p>
-<h5 id="_14">调用方法</h5>
-<p>设置批次号
-<code>boolean isSuccess = CILSDK.setBatchNum(int batchNum);</code>
-获取批次号
-<code>int batchNum = CILSDK.getBatchNum();</code>
-设置流水号
-<code>boolean isSuccess = CILSDK.setSerialNum(int serialNum);</code>
-获取流水号
+<p>设置批次号<br />
+<code>boolean isSuccess = CILSDK.setBatchNum(int batchNum);</code><br />
+获取批次号<br />
+<code>int batchNum = CILSDK.getBatchNum();</code><br />
+设置流水号<br />
+<code>boolean isSuccess = CILSDK.setSerialNum(int serialNum);</code><br />
+获取流水号<br />
 <code>int serialNum = CILSDK.getSerialNum();</code></p>
-<p><strong>2. 主色调</strong> 
-为融合app颜色风格，提供一个调整支付demo颜色的方法，可调整主色调（输入颜色值即可，提供几个参数供参考），图标不可调；</p>
-<p><strong>3. 语言</strong>
-为方便适应境内外app使用场景，提供一个输入语言控制的方法，可调整支付demo的语言。</p>
-<h5 id="_15">序列图</h5>
-<p><img alt="" src="../../img/配置序列图.png" /></p>
-<h3 id="_16">三、打印</h3>
+<h3 id="_7"><strong>四、打印</strong></h3>
 <p>交易成功后，需要打印签购单，一般打印两联：商户联和客户联。商户联在持卡人签名后由商户保存。交易成功后，会自动打印商户联。
-<em>需要补打小票时，可以早交易明细中找到补打功能，打印商户联。</em></p>
-<h5 id="_17">序列图</h5>
-<p><img alt="" src="../../img/打印序列图.png" /></p>
-<h5 id="_18">调用方法</h5>
-<h6 id="_19">打印银行类／扫码交易小票</h6>
-<p><code>CILSDK.printKindsReceipts(trans,lineBreak,formatTransCode, kind, isForeignTrans,  new Callback&lt;PrinterResult&gt;()</code></p>
+需要补打小票时，可以早交易明细中找到补打功能，打印商户联。</p>
+<ul>
+<li>序列图<br />
+<img alt="" src="../../img/打印序列图.png" />  </li>
+<li>打印银行类／扫码交易小票<br />
+<code>CILSDK.printKindsReceipts(trans,lineBreak,formatTransCode, kind, isForeignTrans,  bitmap, new Callback&lt;PrinterResult&gt;()</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -231,13 +264,19 @@
 <td>是否是外卡类交易</td>
 </tr>
 <tr>
+<td>bitmap</td>
+<td>logo图标</td>
+</tr>
+<tr>
 <td>Callback</td>
 <td>回调</td>
 </tr>
 </tbody>
 </table>
-<h6 id="_20">打印结算小票</h6>
-<p><code>CILSDK.printSettleReceipts(transSettles, transDatetime,batchNum, lineBreak, formatTransCode, new Callback&lt;PrinterResult&gt;()</code></p>
+<ul>
+<li>打印结算小票<br />
+<code>CILSDK.printSettleReceipts(transSettles, transDatetime,batchNum, lineBreak, formatTransCode, new Callback&lt;PrinterResult&gt;()</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -272,8 +311,10 @@
 </tr>
 </tbody>
 </table>
-<h6 id="_21">自定义打印</h6>
-<p><code>CILSDK.printBufferReceipt(buffer, lineBreak,new Callback&lt;PrinterResult&gt;()</code></p>
+<ul>
+<li>自定义打印<br />
+<code>CILSDK.printBufferReceipt(buffer, lineBreak,new Callback&lt;PrinterResult&gt;()</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -296,8 +337,10 @@
 </tr>
 </tbody>
 </table>
-<h6 id="_22">打印二维码</h6>
-<p><code>CILSDK.printQRCode(qrCode,position,width,lineBreak,new Callback&lt;PrinterResult&gt;()</code></p>
+<ul>
+<li>打印二维码<br />
+<code>CILSDK.printQRCode(qrCode,position,width,lineBreak,new Callback&lt;PrinterResult&gt;()</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -328,8 +371,10 @@
 </tr>
 </tbody>
 </table>
-<h6 id="_23">打印条形码</h6>
-<p><code>CILSDK.printBarCode(String barCode, int position, int lineBreak, new Callback&lt;PrinterResult&gt;()</code></p>
+<ul>
+<li>打印条形码<br />
+<code>CILSDK.printBarCode(String barCode, int position, int lineBreak, new Callback&lt;PrinterResult&gt;()</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -356,8 +401,10 @@
 </tr>
 </tbody>
 </table>
-<h6 id="_24">打印图片</h6>
-<p><code>CILSDK.printImage(bitmap, lineBreak, offset, new Callback&lt;PrinterResult&gt;()</code></p>
+<ul>
+<li>打印图片<br />
+<code>CILSDK.printImage(bitmap, lineBreak, offset, new Callback&lt;PrinterResult&gt;()</code></li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -384,64 +431,80 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_25">四、消费</h3>
-<h4 id="1-nfc">1. 消费【插卡、刷卡、挥卡、手机NFC】</h4>
-<p>支持开发者调用接口实现商家银行卡收款需求。
+<h4 id="_8"><strong>五、消费</strong></h4>
+<p><strong>1. 消费（插卡、刷卡、挥卡、手机NFC ）</strong><br />
+支持开发者调用接口实现商家银行卡收款需求。
 主要类型包括刷卡、插卡、挥卡以及手机NFC支付。</p>
-<h5 id="_26">序列图</h5>
-<p><img alt="" src="../../img/银行卡消费序列图.png" />  </p>
-<ol>
-<li>APP界面输入消费金额，选择银行卡支付，发起银行卡付款请求</li>
+<ul>
+<li>
+<p>序列图<br />
+<img alt="" src="../../img/银行卡消费序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面输入消费金额，选择银行卡支付，发起银行卡付款请求</p>
+</li>
 <li>SDK处理交易，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>如果消费成功，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h4 id="2">2. 消费【扫码】</h4>
-<p>支持开发者调用接口实现商家扫码收款需求。
+</ul>
+<p><strong>2. 消费【扫码】</strong><br />
+支持开发者调用接口实现商家扫码收款需求。
 主要类型包括微信扫码和支付宝扫码。</p>
-<h5 id="_27">序列图</h5>
-<p><img alt="" src="../../img/扫码消费序列图.png" />  </p>
-<ol>
-<li>APP界面输入消费金额，扫描二维码获取付款码信息，发起扫码付款请求</li>
+<ul>
+<li>
+<p>序列图 
+<img alt="" src="../../img/扫码消费序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面输入消费金额，扫描二维码获取付款码信息，发起扫码付款请求</p>
+</li>
 <li>SDK处理消费请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>如果消费成功，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h3 id="_28">五、撤销</h3>
+</ul>
+<h4 id="_9"><strong>六、撤销</strong></h4>
 <p>支持开发者调用接口实现商家撤销当日交易需求。
 包括银行卡撤销和扫码撤销。</p>
-<h5 id="_29">序列图</h5>
-<p><img alt="" src="../../img/撤销序列图.png" />  </p>
-<ol>
-<li>APP界面输入原交易凭证号，核对该笔交易，发起撤销请求</li>
+<ul>
+<li>
+<p>序列图<br />
+<img alt="" src="../../img/撤销序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面输入原交易凭证号，核对该笔交易，发起撤销请求</p>
+</li>
 <li>SDK处理撤销请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>撤销成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h3 id="_30">六、退货</h3>
+</ul>
+<h4 id="_10"><strong>七、退货</strong></h4>
 <p>支持开发者调用接口实现商家非当日交易的退货需求。
 包括银行卡退货和扫码退货。</p>
-<h5 id="_31">序列图</h5>
-<p><img alt="" src="../../img/退货序列图.png" />  </p>
-<ol>
-<li>APP界面输入订单相关信息（参考号／交易日期／退货金额），核对该笔交易，发起退货请求</li>
+<ul>
+<li>
+<p>序列图<br />
+<img alt="" src="../../img/退货序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面输入订单相关信息（参考号／交易日期／退货金额），核对该笔交易，发起退货请求</p>
+</li>
 <li>SDK处理退货请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>退货成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h3 id="_32">七、预授权类</h3>
+</ul>
+<h4 id="_11"><strong>八、预授权类</strong></h4>
 <p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权类需求。
-支持银行卡和微信支付宝付款码业务。  </p>
-<h4 id="_33">卡预授权类</h4>
-<h5 id="1">1. 卡预授权</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权需求。
-<em>持卡人在宾馆、酒店或出租公司消费，消费与结算不在同一时间完成，特约单位通过POS预先向发卡机构索要授权的行为。</em></p>
-<h6 id="_34">序列图</h6>
-<p><img alt="" src="../../img/卡预授权序列图.png" />  </p>
+支持银行卡和微信支付宝付款码业务。<br />
+<strong>卡预授权类</strong><br />
+<strong>1. 卡预授权</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权需求。
+<em>持卡人在宾馆、酒店或出租公司消费，消费与结算不在同一时间完成，特约单位通过POS预先向发卡机构索要授权的行为。</em><br />
+* 序列图 <br />
+<img alt="" src="../../img/卡预授权序列图.png" />  </p>
 <ol>
 <li>APP界面输入消费金额，发起预授权请求</li>
 <li>SDK处理预授权请求，返回应答码</li>
@@ -449,23 +512,27 @@
 <li>如果预授权成功，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
 </ol>
-<h5 id="2_1">2. 卡预授权撤销</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权撤销需求。
+<p><strong>2. 卡预授权撤销</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权撤销需求。
 <em>预授权撤销用来撤销之前的预授权交易，不限制当日。</em></p>
-<h6 id="_35">序列图</h6>
-<p><img alt="" src="../../img/卡预授权撤销序列图.png" />  </p>
-<ol>
-<li>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</li>
+<ul>
+<li>
+<p>序列图
+<img alt="" src="../../img/卡预授权撤销序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</p>
+</li>
 <li>SDK处理撤销请求，返回应答码</li>
 <li>APP翻译应答码，输出结果页面</li>
 <li>预授权撤销成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h5 id="3">3. 卡预授权完成</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成需求。
-<em>预授权完成是持卡人消费完成并确定消费金额时，已取得预授权的特约商户在预授权金额或超出预授权金额一定比例的范围内，根据持卡人实际消费金额通过POS终端或手工方式完成持卡人付款的过程。</em></p>
-<h6 id="_36">序列图</h6>
-<p><img alt="" src="../../img/卡预授权完成序列图.png" />  </p>
+</ul>
+<p><strong>3. 卡预授权完成</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成需求。
+<em>预授权完成是持卡人消费完成并确定消费金额时，已取得预授权的特约商户在预授权金额或超出预授权金额一定比例的范围内，根据持卡人实际消费金额通过POS终端或手工方式完成持卡人付款的过程。</em>
+* 序列图
+<img alt="" src="../../img/卡预授权完成序列图.png" />  </p>
 <ol>
 <li>APP界面：输入预授权完成金额和原预授权信息（原交易日期\授权码），核对该笔交易，发起预授权完成请求</li>
 <li>SDK处理预授权完成请求，返回应答码</li>
@@ -473,82 +540,106 @@
 <li>如果预授权完成成功，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
 </ol>
-<h5 id="4">4. 卡预授权完成撤销</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成撤销需求。
-<em>用来撤销已经成功的预授权完成交易。不限当日。要解冻相应的预授权交易金额，需要完成撤销预授权.</em></p>
-<h6 id="_37">序列图</h6>
-<p><img alt="" src="../../img/卡预授权完成撤销序列图.png" />   </p>
-<ol>
-<li>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</li>
+<p><strong>4. 卡预授权完成撤销</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成撤销需求。
+<em>用来撤销已经成功的预授权完成交易。不限当日。要解冻相应的预授权交易金额，需要完成撤销预授权.</em>  </p>
+<ul>
+<li>
+<p>序列图<br />
+<img alt="" src="../../img/卡预授权完成撤销序列图.png" />   </p>
+</li>
+<li>
+<p>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</p>
+</li>
 <li>SDK处理预授权完成撤销请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>预授权完成撤销成功时，APP发送打印请求</li>
-<li>SDK返回打印结果</li>
-</ol>
-<h4 id="_38">码预授权类</h4>
-<h5 id="1_1">1. 码预授权</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权需求。
-<em>在宾馆、酒店或出租公司消费，消费与结算不在同一时间完成，特约单位通过POS预先向微信或支付宝冻结资金。</em> </p>
-<h6 id="_39">序列图</h6>
-<p><img alt="" src="../../img/卡预授权序列图.png" /></p>
-<ol>
-<li>APP界面输入消费金额，发起预授权请求</li>
+<li>SDK返回打印结果  </li>
+<li>
+<p><strong>码预授权类</strong><br />
+<strong>1. 码预授权</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权需求。
+<em>在宾馆、酒店或出租公司消费，消费与结算不在同一时间完成，特约单位通过POS预先向微信或支付宝冻结资金。</em>   </p>
+</li>
+<li>
+<p>序列图 
+ <img alt="" src="../../img/卡预授权序列图.png" /></p>
+</li>
+<li>
+<p>APP界面输入消费金额，发起预授权请求</p>
+</li>
 <li>SDK处理预授权请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>如果预授权成功，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h5 id="2_2">2. 码预授权撤销</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权撤销需求。
+</ul>
+<p><strong>2. 码预授权撤销</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权撤销需求。
 <em>预授权撤销用来撤销之前的预授权交易，不限制当日。</em></p>
-<h6 id="_40">序列图</h6>
-<p><img alt="" src="../../img/卡预授权撤销序列图.png" />  </p>
-<ol>
-<li>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</li>
+<ul>
+<li>
+<p>序列图
+<img alt="" src="../../img/卡预授权撤销序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</p>
+</li>
 <li>SDK处理撤销请求，返回应答码</li>
 <li>APP翻译应答码，输出结果页面</li>
 <li>预授权撤销成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h5 id="3_1">3. 码预授权完成</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成需求。
-<em>预授权完成是消费者消费完成并确定消费金额时，已取得预授权的特约商户在预授权金额或超出预授权金额一定比例的范围内，根据消费者实际消费金额通过POS终端或手工方式完成消费者付款的过程。</em></p>
-<h6 id="_41">序列图</h6>
-<p><img alt="" src="../../img/卡预授权完成序列图.png" />  </p>
-<ol>
-<li>APP界面：输入预授权完成金额和原预授权信息（原交易日期\授权码），核对该笔交易，发起预授权完成请求</li>
+</ul>
+<p><strong>3. 码预授权完成</strong><br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成需求。
+<em>预授权完成是消费者消费完成并确定消费金额时，已取得预授权的特约商户在预授权金额或超出预授权金额一定比例的范围内，根据消费者实际消费金额通过POS终端或手工方式完成消费者付款的过程。</em>  </p>
+<ul>
+<li>
+<p>序列图
+<img alt="" src="../../img/卡预授权完成序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面：输入预授权完成金额和原预授权信息（原交易日期\授权码），核对该笔交易，发起预授权完成请求</p>
+</li>
 <li>SDK处理预授权完成请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>如果预授权完成成功，APP发送打印请求</li>
-<li>SDK返回打印结果</li>
-</ol>
-<h5 id="4_1">4. 码预授权完成撤销</h5>
-<p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成撤销需求。
-<em>用来撤销已经成功的预授权完成交易。不限当日。要解冻相应的预授权交易金额，需要完成撤销预授权.</em></p>
-<h6 id="_42">序列图</h6>
-<p><img alt="" src="../../img/卡预授权完成撤销序列图.png" />   </p>
-<ol>
-<li>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</li>
+<li>SDK返回打印结果  </li>
+</ul>
+<p><strong>4. 码预授权完成撤销</strong> <br />
+支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成撤销需求。
+<em>用来撤销已经成功的预授权完成交易。不限当日。要解冻相应的预授权交易金额，需要完成撤销预授权.</em>  </p>
+<ul>
+<li>
+<p>序列图 
+<img alt="" src="../../img/卡预授权完成撤销序列图.png" />   </p>
+</li>
+<li>
+<p>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</p>
+</li>
 <li>SDK处理预授权完成撤销请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>预授权完成撤销成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
-</ol>
-<h3 id="_43">八、交易明细</h3>
+</ul>
+<h4 id="_12"><strong>九、交易明细</strong></h4>
 <p>支持开发者调用接口实现商家查看交易订单需求，同时可以补打、撤销订单。</p>
-<h5 id="_44">序列图</h5>
-<p><img alt="" src="../../img/交易明细序列图.png" />  </p>
-<ol>
-<li>APP界面：发起查看交易明细请求</li>
+<ul>
+<li>
+<p>序列图<br />
+<img alt="" src="../../img/交易明细序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面：发起查看交易明细请求</p>
+</li>
 <li>SDK处理请求，返回应答码</li>
 <li>APP翻译应答码，输出交易明细结果</li>
 <li>对某一笔订单，APP发送打印商户联请求</li>
 <li>SDK返回打印商户联结果</li>
 <li>对某一笔订单，APP发送撤销请求</li>
 <li>SDK返回撤销结果</li>
-</ol>
-<h5 id="_45">调用方法</h5>
-<p><code>CILSDK.getBillsAsync(page, size,@BillType int txnType, new Callback&lt;CILResponse&gt;()</code></p>
+</ul>
+<p><strong>调用方法</strong><br />
+<code>CILSDK.getBillsAsync(page, size, startTime, endTime, @BillType int type, callBackIsOnMainThread, new Callback&lt;CILResponse&gt;()</code></p>
 <table>
 <thead>
 <tr>
@@ -575,20 +666,24 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_46">九、结算</h3>
+<h4 id="_13"><strong>十、结算</strong></h4>
 <p>支持开发者调用接口实现商家结算需求。
 结算需求主要用于每日交易结束时或收银员交接班时，对某段时间内的账款核对。</p>
-<h5 id="_47">序列图</h5>
-<p><img alt="" src="../../img/结算序列图.png" />  </p>
-<ol>
-<li>APP界面：点击【去结算】，核对交易明细无误后【结算】，发起结算请求</li>
+<ul>
+<li>
+<p>序列图<br />
+<img alt="" src="../../img/结算序列图.png" />  </p>
+</li>
+<li>
+<p>APP界面：点击【去结算】，核对交易明细无误后【结算】，发起结算请求</p>
+</li>
 <li>SDK处理结算请求，返回应答码</li>
 <li>APP翻译应答码，输出结果</li>
 <li>结算成功时，APP发送打印结算单请求</li>
 <li>SDK返回打印结算单结果</li>
-</ol>
-<h5 id="_48">调用方法</h5>
-<p><code>CILSDK.transSettleAsync(batchNum, new Callback&lt;CILResponse&gt;()</code></p>
+</ul>
+<p><strong>调用方法</strong><br />
+<code>CILSDK.transSettleAsync(batchNum, new Callback&lt;CILResponse&gt;()</code></p>
 <table>
 <thead>
 <tr>

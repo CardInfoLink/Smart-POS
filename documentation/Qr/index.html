@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Qr - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">功能预览</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../quik/">1. SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../bluetooth/">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../test/">3. TEST</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../flowChart/overview/">概述和序列图</a>
+</li>
+                                    
+<li >
+    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/transType/">4. 交易类型</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/Qr.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong> 扫码交易</strong></p>
+<p>扫码相关的交易则是不依赖 POS 机器的读卡模块的,但是你需要将<code>微信</code>或者<code>支付宝</code>的二维码读出来传给扫码消费接口,扫码可以使用第三方库,如 <code>zxing</code>。</p>
+<p><strong>扫码消费</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(amount);//交易金额
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+
+    CILSDK.consumeQr(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse response) {
+//        处理扫码消费结果，字段说明见底部
+//        如果结果返回`09`，需要查询该订单获取最终结果，如下：
+//        resultCode = response.getTrans().getRespCode();
+//        if (&quot;09&quot;.equals(resultCode)) {
+//            CILSDK.queryQr(); // `queryQr` 方法见下文
+//        }
+
+        }
+
+        @Override
+        public void onError(Parcelable cilRequest, Exception e) {
+            // 扫码消费出错
+        }
+    });  
+</code></pre>
+
+<blockquote>
+<p>注意,如果应答码返回09或98，需要调用讯联扫码查询接口，查询该笔订单的实际状态。</p>
+</blockquote>
+<p><strong>扫码撤销</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(amount);//原交易金额
+    request.setBatchNum(batchNum);//原交易批次号
+    request.setTraceNum(traceNum);//原交易凭证(流水)号
+    request.setReferenceNumber(refNum);  //原交易参考号
+
+    CILSDK.revokeConsumeQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+              ...
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码退货</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();  
+    request.setAmount(amount);//退款金额  
+    request.setReferenceNumber(serialNum);//原交易参考号  
+    request.setTransDatetime(tradeDate);//原交易时间
+
+    CILSDK.returnConsumeQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });
+</code></pre>
+
+<p><strong>扫码查询</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setBatchNum(response.getTrans().getBatchNum());//批次号
+    request.setTraceNum(response.getTrans().getTraceNum());//凭证号
+    request.setPeriod(10000L);//10s
+    request.setLimitTime(6);//6 次
+    request.setReferenceNumber(response.getTrans().getRefNum());//参考号
+    request.setPosInputStyle(response.getTrans().getPosInputStyle());//pos输入服务方式码
+    request.setScanCodeId(response.getTrans().getScanCodeId());//扫码号
+    request.setAmount(response.getTrans().getTransAmt());//交易金额
+
+    CILSDK.queryQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+</code></pre>
+
+<p><strong>扫码消费查询,只查询一次，不含取消接口</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setBatchNum(response.getTrans().getBatchNum());//批次号
+    request.setTraceNum(response.getTrans().getTraceNum());//凭证号
+    request.setReferenceNumber(response.getTrans().getRefNum());//参考号
+    request.setPosInputStyle(response.getTrans().getPosInputStyle());//pos输入服务方式码
+    request.setScanCodeId(response.getTrans().getScanCodeId());//扫码号  
+
+    CILSDK.queryQrJustOnce(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });
+</code></pre>
+
+<p><strong>扫码取消</strong>  </p>
+<pre><code>    /**
+     * 扫码取消
+     * 对于09状态的消费订单，最终需要取消、关单
+     * @param request
+     * @param listener
+     */  
+
+    CILRequest cilRequest = new CILRequest();
+    cilRequest.setOriginalTradeDate(response.getTrans().getTransDate());//原交易日期
+    cilRequest.setAmount(response.getTrans().getTransAmt());//交易金额
+    cilRequest.setBatchNum(response.getTrans().getBatchNum());//批次号
+    cilRequest.setTraceNum(response.getTrans().getTraceNum());//凭证号
+    cilRequest.setPosInputStyle(response.getTrans().getPosInputStyle());//pos输入服务方式码
+    cilRequest.setReferenceNumber(response.getTrans().getRefNum());//参考号  
+
+    CILSDK.voidQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码预授权</strong>  </p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(amount);
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+
+    CILSDK.preAuthQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+            // 处理扫码预授权结果
+            // 如果结果返回`09`，需要查询该订单获取最终结果，如下：
+            /**
+             *      resultCode = response.getTrans().getRespCode();
+             *      if (&quot;09&quot;.equals(resultCode)
+             ) {
+             *          CILSDK.queryQr(); // `queryQr` 方法见下文
+             *      }
+             */
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                //扫码预授权出错
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码预授权撤销</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(transAmt);//原预授权交易金额
+    request.setReferenceNumber(revAuthCode);//原预授权交易参考号
+    request.setTransDatetime(transDate);//原预授权交易时间
+    request.setBatchNum(curTrans.getBatchNum());//原预授权交易批次号
+    request.setTraceNum(curTrans.getTraceNum());//原预授权交易凭证（流水）号
+
+    CILSDK.revokePreAuthQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+               ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+               ...
+            }
+        });  
+
+</code></pre>
+
+<p><strong>扫码预授权完成</strong></p>
+<pre><code>        CILRequest request = new CILRequest();
+        request.setAmount(transAmt);//原预授权交易金额
+        request.setReferenceNumber(revAuthCode);//原预授权交易参考号
+        request.setTransDatetime(transDate);//原预授权交易时间
+        CILSDK.preAuthCompleteQr(request, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });  
+</code></pre>
+
+<p><strong>扫码预授权完成撤销</strong></p>
+<pre><code>    CILRequest request = new CILRequest();
+    request.setAmount(transaction.getTransAmt());//原预授权完成交易金额
+    request.setBatchNum(transaction.getBatchNum());//原预授权完成交易批次号
+    request.setTraceNum(transaction.getTraceNum());//原预授权完成交易凭证（流水）号
+    request.setReferenceNumber(transaction.getRefNum());//原预授权完成交易参考号
+
+    CILSDK.revokePreAuthCompleteQr(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse cilResponse) {
+            ...
+        }
+
+        @Override
+        public void onError(Parcelable cilRequest, Exception e) {
+            ...
+        }
+    });
+</code></pre>
+
+<p><strong>单品券功能接入指引</strong>   </p>
+<blockquote>
+<p>注意：sdk v2.5.3及之后版本支持该功能
+1. 扫码消费接口增加单品券核销功能，扫码消费接口增加入参两个参数，订单优惠标记（为配券时候的填的优惠标记）,商品列表；</p>
+</blockquote>
+<pre><code>    /**
+     * 扫码消费
+     */
+    CILRequest request = new CILRequest();
+    request.setAmount(amount);
+    request.setScanCodeId(result);//二维码code
+    request.setOrderId(orderId);//外部订单号（可选参数）
+
+    request.setOrderPromotionMark(orderPromotionMark);//订单优惠标记（类型String可选参数）
+    request.setGoodsList(goodsList);//商品列表（类型String可选参数）详见下新增字段说明
+
+    CILSDK.consumeQr(request, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse response) {
+            // 处理扫码消费结果
+            // 如果结果返回`09`，需要查询该订单获取最终结果，如下：
+            /**
+             *      resultCode = response.getTrans().getRespCode();
+             *      if (&quot;09&quot;.equals(resultCode)
+             ) {
+             *          CILSDK.queryQr(); // `queryQr` 方法见下文
+             *      }
+             */
+
+        }
+
+        @Override
+        public void onError(Parcelable cilRequest, Exception e) {
+            // 扫码消费出错
+        }
+    });
+</code></pre>
+
+<ul>
+<li>新增字段说明  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否可选</th>
+<th>备注1</th>
+<th>备注2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderPromotionMark</td>
+<td>String</td>
+<td>订单优惠标记</td>
+<td>Y</td>
+<td>ans32</td>
+<td>来源于配券时选填字段</td>
+</tr>
+<tr>
+<td>goodsList</td>
+<td>String</td>
+<td>商品列表</td>
+<td>Y</td>
+<td>最多9个商品</td>
+<td>按照以下样例格式传输</td>
+</tr>
+</tbody>
+</table>
+<p>报文样例：</p>
+<pre><code>&quot;orderPromotionMark&quot;:&quot;1111&quot;,
+&quot;[
+    {
+        &quot;goodsName&quot;:&quot;小面包&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;1111&quot;
+    },
+    {
+        &quot;goodsName&quot;:&quot;棒棒糖&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;2222&quot;
+    },
+    {
+        &quot;goodsName&quot;:&quot;彩虹糖&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;3333&quot;
+    },
+    {
+        &quot;goodsName&quot;:&quot;矿泉水&quot;,
+        &quot;price&quot;:&quot;1&quot;,
+        &quot;goodsNum&quot;:&quot;1&quot;,
+        &quot;goodsId&quot;:&quot;4444&quot;
+    }
+]&quot;
+</code></pre>
+
+<ul>
+<li>响应报文新增一个CouponInfo的实例,内部包含属性字段有：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否可选</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>couponId</td>
+<td>String</td>
+<td>优惠券id</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>couponName</td>
+<td>String</td>
+<td>优惠券名称</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>channelContribution</td>
+<td>String</td>
+<td>渠道出资</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>MerchantContribution</td>
+<td>String</td>
+<td>商家出资</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>otherContribution</td>
+<td>String</td>
+<td>其它出资</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>discountType</td>
+<td>String</td>
+<td>优惠类型</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>discountRange</td>
+<td>String</td>
+<td>优惠范围</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>discountbatchaId</td>
+<td>String</td>
+<td>优惠活动批次ID</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>goodsList</td>
+<td>String</td>
+<td>单品优惠商品列表</td>
+<td>Y</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>单品优惠列表商品字段  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>含义</th>
+<th>是否可选</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>goodsBarCode</td>
+<td>String</td>
+<td>商品条码号</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>goodsDiscount</td>
+<td>String</td>
+<td>单品优惠金</td>
+<td>Y</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>CouponInfo响应报文样例：</p>
+<pre><code>{
+    &quot;MerchantContribution&quot;:&quot;000000000100&quot;,
+    &quot;couponId&quot;:&quot;9026256969&quot;,
+    &quot;couponName&quot;:&quot;讯联满1.1减1 tag&quot;,
+    &quot;discountRange&quot;:&quot;SINGLE&quot;,
+    &quot;discountType&quot;:&quot;DISCOUNT&quot;,
+    &quot;discountbatchaId&quot;:&quot;9803978&quot;,
+    &quot;goodsList&quot;:&quot;[{&quot;goodsBarCode&quot;:&quot;1111&quot;,&quot;goodsDiscount&quot;:&quot;000000000034&quot;}, {&quot;goodsBarCode&quot;:&quot;2222&quot;,&quot;goodsDiscount&quot;:&quot;000000000034&quot;}, {&quot;goodsBarCode&quot;:&quot;3333&quot;,&quot;goodsDiscount&quot;:&quot;000000000032&quot;}]&quot;,
+    &quot;otherContribution&quot;:&quot;000000000000&quot;
+}
+</code></pre>
+
+<p>附：最多支持传入9个商品  </p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

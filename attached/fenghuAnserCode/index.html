@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>fenghuAnserCode - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">功能预览</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../documentation/quik/">1. SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/bluetooth/">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/test/">3. TEST</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../flowChart/overview/">概述和序列图</a>
+</li>
+                                    
+<li >
+    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+</li>
+                                    
+<li >
+    <a href="../symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../transType/">4. 交易类型</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/attached/fenghuAnserCode.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong>交易应答码表V2(智能POS)</strong></p>
+<blockquote>
+<p>注1:银行卡的09和扫码的09有区别</p>
+<p>注2:位置应答码展示为 "XX-交易失败-请联系客服"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">代码</th>
+<th align="left">意义</th>
+<th align="left">原因/采取的措施</th>
+<th align="left">说明</th>
+<th align="left">POS显示(计划实施)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">00</td>
+<td align="left">承兑或交易成功</td>
+<td align="left">承兑或交易成功</td>
+<td align="left">交易成功</td>
+<td align="left">交易成功</td>
+</tr>
+<tr>
+<td align="left">01</td>
+<td align="left">查发卡行</td>
+<td align="left">查发卡行</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">01交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">02</td>
+<td align="left">查发卡行的特殊条件</td>
+<td align="left">可电话向发卡行查询</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">02交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">03</td>
+<td align="left">无效商户</td>
+<td align="left">商户需要在银行或中心登记</td>
+<td align="left">商户未登记</td>
+<td align="left">03无效商户-请联系客服</td>
+</tr>
+<tr>
+<td align="left">04</td>
+<td align="left">没收卡</td>
+<td align="left">操作员没收卡</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">04卡片异常-请联系客服或换卡重试</td>
+</tr>
+<tr>
+<td align="left">05</td>
+<td align="left">不予承兑</td>
+<td align="left">发卡不予承兑</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">05交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">06</td>
+<td align="left">出错</td>
+<td align="left">发卡行故障</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">06交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">07</td>
+<td align="left">特殊条件下没收卡</td>
+<td align="left">特殊条件下没收卡</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">07卡片异常-请联系客服或换卡重试</td>
+</tr>
+<tr>
+<td align="left">09</td>
+<td align="left">请求正在处理中</td>
+<td align="left">重新提交交易请求</td>
+<td align="left">交易失败-请重试</td>
+<td align="left">09请重新操作</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">无效交易</td>
+<td align="left">发卡行不支持的交易</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">12无效交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">无效金额</td>
+<td align="left">金额为0 或太大</td>
+<td align="left">交易金额超限-请重试</td>
+<td align="left">13无效金额-请联系客服</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">无效卡号</td>
+<td align="left">卡种未在中心登记或读卡号有误</td>
+<td align="left">无效卡号-请联系发卡行</td>
+<td align="left">14无效卡号-请联系客服或换卡重试</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">无此发卡行</td>
+<td align="left">此发卡行未与中心开通业务</td>
+<td align="left">此卡不能受理</td>
+<td align="left">15无此发卡行-请联系客服或换卡重试</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">重新送入交易</td>
+<td align="left">刷卡读取数据有误-可重新刷卡</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">19交易失败-请重试</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">无效应答</td>
+<td align="left">无效应答</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">20交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">不做任何处理</td>
+<td align="left">不做任何处理</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">21交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">怀疑操作有误</td>
+<td align="left">POS状态与中心不符-可重新签到</td>
+<td align="left">操作有误-请重试</td>
+<td align="left">22操作有误-请重试</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">不可接受的交易费</td>
+<td align="left">不可接受的交易费</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">23交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">未能找到文件上记录</td>
+<td align="left">发卡行未能找到有关记录</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">25无效交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left">格式错误</td>
+<td align="left">格式错误</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">30格式错误-请联系客服</td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left">不支持的银行</td>
+<td align="left">此发卡方未与中心开通业务</td>
+<td align="left">此卡不能受理</td>
+<td align="left">31银行未联网-请联系客服</td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left">过期的卡</td>
+<td align="left">过期的卡-操作员可以没收</td>
+<td align="left">过期卡-请联系发卡行</td>
+<td align="left">33过期卡-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left">有作弊嫌疑</td>
+<td align="left">有作弊嫌疑的卡-操作员可以没收</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">34卡片异常-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">受卡方与安全保密部门联系</td>
+<td align="left">有作弊嫌疑的卡-操作员可以没收</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">35卡片异常--请换卡重试</td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">受限制的卡</td>
+<td align="left">有作弊嫌疑的卡-操作员可以没收</td>
+<td align="left">此卡有误-请换卡重试</td>
+<td align="left">36卡片异常--请换卡重试</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">受卡方呼受理方安全保密部门(没收卡)</td>
+<td align="left">有作弊嫌疑的卡-操作员可以没收</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">37卡片异常-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left">超过允许的PIN试输入</td>
+<td align="left">密码错次数超限-操作员可以没收</td>
+<td align="left">密码错误次数超限</td>
+<td align="left">38密码错误次数超限</td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">无此信用卡账户</td>
+<td align="left">可能刷卡操作有误</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">39交易失败-请重试</td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left">请求的功能尚不支持</td>
+<td align="left">发卡行不支持的交易类型</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">40不支持的交易类型</td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left">丢失卡</td>
+<td align="left">挂失的卡- 操作员可以没收</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">41卡片异常-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left">无此账户</td>
+<td align="left">发卡行找不到此账户</td>
+<td align="left">交易失败-请联系发卡方</td>
+<td align="left">42卡片异常-请联系客服</td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">被窃卡</td>
+<td align="left">被窃卡- 操作员可以没收</td>
+<td align="left">没收卡-请联系收单行</td>
+<td align="left">43卡片异常-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">44</td>
+<td align="left">无此投资账户</td>
+<td align="left">可能刷卡操作有误</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">44交易失败-请联系客服或换卡重试</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">请插卡交易</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">45请插卡交易</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">无足够的存款</td>
+<td align="left">账户内余额不足</td>
+<td align="left">余额不足-请查询</td>
+<td align="left">51余额不足</td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">无此支票账户</td>
+<td align="left">无此支票账户</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">52交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left">无此储蓄卡账户</td>
+<td align="left">无此储蓄卡账户</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">53交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">过期的卡</td>
+<td align="left">过期的卡</td>
+<td align="left">过期卡-请联系发卡行</td>
+<td align="left">54过期卡-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">不正确的PIN</td>
+<td align="left">密码输错</td>
+<td align="left">密码错-请重试</td>
+<td align="left">55密码错误-请重试</td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">无此卡记录</td>
+<td align="left">发卡行找不到此账户</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">56交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">不允许持卡人进行的交易</td>
+<td align="left">不允许持卡人进行的交易</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">57未授权的交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">58</td>
+<td align="left">不允许终端进行的交易</td>
+<td align="left">该商户不允许进行的交易</td>
+<td align="left">终端无效-请联系收单行或银联</td>
+<td align="left">58未授权的交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">59</td>
+<td align="left">有作弊嫌疑</td>
+<td align="left"></td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">59交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">60</td>
+<td align="left">受卡方与安全保密部门联系</td>
+<td align="left"></td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">60交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">61</td>
+<td align="left">超出取款金额限制</td>
+<td align="left">一次交易的金额太大</td>
+<td align="left">金额太大</td>
+<td align="left">61超交易限额-请联系客服或换卡重试</td>
+</tr>
+<tr>
+<td align="left">62</td>
+<td align="left">受限制的卡</td>
+<td align="left"></td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">62卡片异常-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">63</td>
+<td align="left">违反安全保密规定</td>
+<td align="left">违反安全保密规定</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">63交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">64</td>
+<td align="left">原始金额不正确</td>
+<td align="left">原始金额不正确</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">64原金额错误-请联系客服或重试</td>
+</tr>
+<tr>
+<td align="left">65</td>
+<td align="left">超出取款次数限制</td>
+<td align="left">超出取款次数限制</td>
+<td align="left">超出取款次数限制</td>
+<td align="left">65超交易次数-请联系客服</td>
+</tr>
+<tr>
+<td align="left">66</td>
+<td align="left">受卡方呼受理方安全保密部门</td>
+<td align="left">受卡方呼受理方安全保密部门</td>
+<td align="left">交易失败-请联系收单行或银联</td>
+<td align="left">66交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">67</td>
+<td align="left">捕捉（没收卡）</td>
+<td align="left">捕捉（没收卡）</td>
+<td align="left">没收卡</td>
+<td align="left">67卡片异常-请换卡重试</td>
+</tr>
+<tr>
+<td align="left">68</td>
+<td align="left">收到的回答太迟</td>
+<td align="left">发卡行规定时间内没有回答</td>
+<td align="left">交易超时-请重试</td>
+<td align="left">68交易超时-请重试</td>
+</tr>
+<tr>
+<td align="left">75</td>
+<td align="left">允许的输入PIN次数超限</td>
+<td align="left">允许的输入PIN次数超限</td>
+<td align="left">密码错误次数超限</td>
+<td align="left">75密码错误次数超限</td>
+</tr>
+<tr>
+<td align="left">76</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">76交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">77</td>
+<td align="left">需要向网络中心签到</td>
+<td align="left">POS批次与网络中心不一致</td>
+<td align="left">请向网络中心签到</td>
+<td align="left">77交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">78</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">78交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">79</td>
+<td align="left">脱机交易对账不平</td>
+<td align="left">POS终端上传的脱机数据对账不平</td>
+<td align="left">POS终端重传脱机数据</td>
+<td align="left">79对账不平-请联系客服</td>
+</tr>
+<tr>
+<td align="left">80</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">80交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">81</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">81交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">83</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">83交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">84</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">84交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">85</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">85交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">86</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">86交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">88</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">88交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">89</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">89交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">90</td>
+<td align="left">日期切换正在处理</td>
+<td align="left">日期切换正在处理</td>
+<td align="left">交易失败-请稍后重试</td>
+<td align="left">90交易失败-请稍后重试</td>
+</tr>
+<tr>
+<td align="left">91</td>
+<td align="left">发卡行或收单银行不能操作</td>
+<td align="left">电话查询发卡方或收单银行-可重作</td>
+<td align="left">交易失败-请稍后重试</td>
+<td align="left">91交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">92</td>
+<td align="left">金融机构或中间网络设施找不到或无法达到</td>
+<td align="left">电话查询发卡方或网络中心-可重作</td>
+<td align="left">交易失败-请稍后重试</td>
+<td align="left">92交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">93</td>
+<td align="left">交易违法、不能完成</td>
+<td align="left">交易违法、不能完成</td>
+<td align="left">交易失败-请联系发卡行</td>
+<td align="left">93交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">94</td>
+<td align="left">重复交易</td>
+<td align="left">查询网络中心-可重新签到作交易</td>
+<td align="left">交易失败-请稍后重试</td>
+<td align="left">94重复交易</td>
+</tr>
+<tr>
+<td align="left">95</td>
+<td align="left">调节控制错</td>
+<td align="left">调节控制错</td>
+<td align="left">交易失败-请稍后重试</td>
+<td align="left">95交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">96</td>
+<td align="left">系统异常、失效</td>
+<td align="left">发卡方或网络中心出现故障</td>
+<td align="left">交易失败-请稍后重试</td>
+<td align="left">96交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">97</td>
+<td align="left">POS终端号找不到</td>
+<td align="left">终端未在中心或银行登记</td>
+<td align="left">终端未登记-请联系收单行或银联</td>
+<td align="left">97无效终端-请联系客服或检查配置</td>
+</tr>
+<tr>
+<td align="left">98</td>
+<td align="left">收不到发卡行应答</td>
+<td align="left">收不到发卡行应答</td>
+<td align="left">交易超时-请重试</td>
+<td align="left">98交易超时-请重试</td>
+</tr>
+<tr>
+<td align="left">99</td>
+<td align="left">PIN格式错</td>
+<td align="left">可重新签到作交易</td>
+<td align="left">校验错-请重新签到</td>
+<td align="left">99交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">A0</td>
+<td align="left">MAC校验错</td>
+<td align="left">可重新签到作交易</td>
+<td align="left">校验错-请重新签到</td>
+<td align="left">A0请重新签到或联系客服</td>
+</tr>
+<tr>
+<td align="left">C1</td>
+<td align="left">卡券已被核销</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C1卡券已被核销</td>
+</tr>
+<tr>
+<td align="left">C2</td>
+<td align="left">卡券已过期</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C2卡券已过期</td>
+</tr>
+<tr>
+<td align="left">C3</td>
+<td align="left">无效的卡券</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C3无效的卡券</td>
+</tr>
+<tr>
+<td align="left">09</td>
+<td align="left">处理中</td>
+<td align="left">正常应答-表明该交易需要输入密码-完成后发起查询确认交易状态</td>
+<td align="left"></td>
+<td align="left">09处理中</td>
+</tr>
+<tr>
+<td align="left">Y1</td>
+<td align="left">商户密钥错误</td>
+<td align="left">核实商户交易密钥是否正确</td>
+<td align="left">12改为Y1</td>
+<td align="left">Y1交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Y0</td>
+<td align="left">付款码错误或过期</td>
+<td align="left">刷新条码后-重新扫码-发起支付</td>
+<td align="left">14改为Y0</td>
+<td align="left">Y0付款码错误或过期</td>
+</tr>
+<tr>
+<td align="left">ZH</td>
+<td align="left">订单号重复</td>
+<td align="left">订单号重复-使用新订单号发起交易-建议订单号加上时间防止重复</td>
+<td align="left">19改为ZH</td>
+<td align="left">ZH订单号重复</td>
+</tr>
+<tr>
+<td align="left">Y3</td>
+<td align="left">订单不存在</td>
+<td align="left">该订单系统不存在-不能进行相应操作</td>
+<td align="left">25改为Y3</td>
+<td align="left">Y3订单不存在</td>
+</tr>
+<tr>
+<td align="left">Y4</td>
+<td align="left">商户未申请开通此支付方式</td>
+<td align="left">查看商户是否提交该渠道申请-如以提交-核实是否有配置路由信息</td>
+<td align="left">31改为Y4</td>
+<td align="left">Y4不支持此支付方式</td>
+</tr>
+<tr>
+<td align="left">Y5</td>
+<td align="left">退款失败-商家账户余额不足</td>
+<td align="left">建议商家先进行一笔收款-再发起退款</td>
+<td align="left">61改为Y5</td>
+<td align="left">Y5退款失败-商家账户余额不足</td>
+</tr>
+<tr>
+<td align="left">Y6</td>
+<td align="left">退款金额超过原订单金额</td>
+<td align="left">退款金额需要小于等于可退款金额</td>
+<td align="left">64改为Y6</td>
+<td align="left">Y6退款金额超过原订单金额</td>
+</tr>
+<tr>
+<td align="left">Y7</td>
+<td align="left">外部系统错误</td>
+<td align="left">具体描述可返回渠道中文描述字段</td>
+<td align="left">91改为Y7</td>
+<td align="left">Y7交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Y2</td>
+<td align="left">商户无此交易渠道权限</td>
+<td align="left"></td>
+<td align="left">H1改为Y2</td>
+<td align="left">Y2未授权的交易</td>
+</tr>
+<tr>
+<td align="left">Y8</td>
+<td align="left">商户无此接口权限</td>
+<td align="left">核实该商户是否配置了该接口权限</td>
+<td align="left">H2改为Y8</td>
+<td align="left">Y8交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Y9</td>
+<td align="left">订单已关闭或取消</td>
+<td align="left">订单已关闭或取消-不能进行相应操作</td>
+<td align="left">H3改为Y9</td>
+<td align="left">Y9订单已关闭或取消</td>
+</tr>
+<tr>
+<td align="left">YA</td>
+<td align="left">[字段名]不能为空</td>
+<td align="left">检查出错字段</td>
+<td align="left">H4改为YA</td>
+<td align="left">YA交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YB</td>
+<td align="left">[字段名]格式错误</td>
+<td align="left">检查出错字段</td>
+<td align="left">H5改为YB</td>
+<td align="left">YB交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YC</td>
+<td align="left">交易状态不合法</td>
+<td align="left">检查交易状态是否正常</td>
+<td align="left">H6改为YC</td>
+<td align="left">YC交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YD</td>
+<td align="left">交易信息中包含违禁词汇</td>
+<td align="left">检查交易信息中是否包含违禁词汇</td>
+<td align="left">H7改为YD</td>
+<td align="left">YD交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YE</td>
+<td align="left">原交易非支付交易</td>
+<td align="left">原交易非支付交易-不能执行此类操作</td>
+<td align="left">R1改为YE</td>
+<td align="left">YE原交易非支付交易</td>
+</tr>
+<tr>
+<td align="left">YF</td>
+<td align="left">原交易未成功支付</td>
+<td align="left">原交易未成功支付-部分交易不能执行</td>
+<td align="left">R2改为YF</td>
+<td align="left">YF原交易未成功支付</td>
+</tr>
+<tr>
+<td align="left">YG</td>
+<td align="left">原交易已退款</td>
+<td align="left"></td>
+<td align="left">R3改为YG</td>
+<td align="left">YG原交易已退款</td>
+</tr>
+<tr>
+<td align="left">YH</td>
+<td align="left">只能隔天退款</td>
+<td align="left"></td>
+<td align="left">R4改为YH</td>
+<td align="left">YH只能隔天退款</td>
+</tr>
+<tr>
+<td align="left">YJ</td>
+<td align="left">不支持的卡类型-请换卡或绑新卡</td>
+<td align="left"></td>
+<td align="left">R5改为YJ</td>
+<td align="left">YJ不支持的卡类型-请换卡或绑新卡</td>
+</tr>
+<tr>
+<td align="left">YK</td>
+<td align="left">只能撤销当天交易</td>
+<td align="left"></td>
+<td align="left">R6改为YK</td>
+<td align="left">YK只能撤销当天交易</td>
+</tr>
+<tr>
+<td align="left">YL</td>
+<td align="left">顾客账户状态异常</td>
+<td align="left"></td>
+<td align="left">R7改为YL</td>
+<td align="left">YL顾客账户状态异常</td>
+</tr>
+<tr>
+<td align="left">YM</td>
+<td align="left">商家账户状态异常</td>
+<td align="left"></td>
+<td align="left">R8改为YM</td>
+<td align="left">YM商家账户状态异常</td>
+</tr>
+<tr>
+<td align="left">YN</td>
+<td align="left">付款码与交易渠道不符</td>
+<td align="left"></td>
+<td align="left">R9改为YN</td>
+<td align="left">YN付款码与交易渠道不符</td>
+</tr>
+<tr>
+<td align="left">YP</td>
+<td align="left">分账信息不正确</td>
+<td align="left"></td>
+<td align="left">S1改为YP</td>
+<td align="left">YP交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YQ</td>
+<td align="left">软件版本过低-请升级</td>
+<td align="left"></td>
+<td align="left">S2改为YQ</td>
+<td align="left">YQ软件版本过低-请升级</td>
+</tr>
+<tr>
+<td align="left">YR</td>
+<td align="left">付款金额小于最低限额</td>
+<td align="left"></td>
+<td align="left">S3改为YR</td>
+<td align="left">YR付款金额小于最低限额</td>
+</tr>
+<tr>
+<td align="left">YS</td>
+<td align="left">Openid错误</td>
+<td align="left"></td>
+<td align="left">S4改为YS</td>
+<td align="left">YS交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YT</td>
+<td align="left">姓名校验错误</td>
+<td align="left"></td>
+<td align="left">S5改为YT</td>
+<td align="left">YT姓名校验错误</td>
+</tr>
+<tr>
+<td align="left">YU</td>
+<td align="left">对同一用户操作过于频繁-请稍候重试</td>
+<td align="left"></td>
+<td align="left">S6改为YU</td>
+<td align="left">YU对同一用户操作过于频繁-请稍候重试</td>
+</tr>
+<tr>
+<td align="left">YV</td>
+<td align="left">购汇金额或币种错误</td>
+<td align="left"></td>
+<td align="left">S7改为YV</td>
+<td align="left">YV购汇金额或币种错误</td>
+</tr>
+<tr>
+<td align="left">YW</td>
+<td align="left">额度超限</td>
+<td align="left"></td>
+<td align="left">S8改为YW</td>
+<td align="left">YW额度超限</td>
+</tr>
+<tr>
+<td align="left">YX</td>
+<td align="left">顾客关闭相关功能</td>
+<td align="left"></td>
+<td align="left">S9改为YX</td>
+<td align="left">YX顾客关闭相关功能</td>
+</tr>
+<tr>
+<td align="left">YY</td>
+<td align="left">授权码code错误</td>
+<td align="left"></td>
+<td align="left">J1改为YY</td>
+<td align="left">YY交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">YZ</td>
+<td align="left">渠道商户秘钥未配置或配置错误</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">YZ交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">C0</td>
+<td align="left">核销失败</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C0核销失败</td>
+</tr>
+<tr>
+<td align="left">C4</td>
+<td align="left">券状态异常</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C4券状态异常</td>
+</tr>
+<tr>
+<td align="left">C5</td>
+<td align="left">未到卡券使用时间</td>
+<td align="left">请在卡券有效期内使用</td>
+<td align="left"></td>
+<td align="left">C5未到卡券使用时间</td>
+</tr>
+<tr>
+<td align="left">C6</td>
+<td align="left">商户不能使用该卡券</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C6商户不能使用该卡券</td>
+</tr>
+<tr>
+<td align="left">C7</td>
+<td align="left">金额达不到满足优惠条件的最小金额</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C7金额太小-不可参与优惠</td>
+</tr>
+<tr>
+<td align="left">C8</td>
+<td align="left">此卡券不能使用此方式进行支付</td>
+<td align="left">请使用卡券指定的支付方式</td>
+<td align="left"></td>
+<td align="left">C8此卡券不能使用此方式进行支付</td>
+</tr>
+<tr>
+<td align="left">Z0</td>
+<td align="left">渠道商户信息有误</td>
+<td align="left">检查系统渠道商户配置和渠道是否一致-或者看渠道商户具体应答</td>
+<td align="left">E0改为Z0</td>
+<td align="left">Z0交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z1</td>
+<td align="left">渠道受理机构信息配置有误</td>
+<td align="left">检查与渠道给出信息是否一致-或者看具体应答错误码</td>
+<td align="left">E1改为Z1</td>
+<td align="left">Z1交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z2</td>
+<td align="left">渠道不支持该业务</td>
+<td align="left">如不支持部分退款等</td>
+<td align="left">E2改为Z2</td>
+<td align="left">Z2未授权的交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z3</td>
+<td align="left">接入渠道IP验证异常</td>
+<td align="left">看渠道方是否有将我方IP配置</td>
+<td align="left">99改为Z3</td>
+<td align="left">Z3交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z4</td>
+<td align="left">门店状态异常</td>
+<td align="left">门店状态被改为异常状态</td>
+<td align="left">G1改为Z4</td>
+<td align="left">Z4交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z5</td>
+<td align="left">渠道商户状态异常</td>
+<td align="left">渠道商户状态被改为异常状态</td>
+<td align="left">G2改为Z5</td>
+<td align="left">Z5交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z6</td>
+<td align="left">卖家买家账号相同-不能进行交易</td>
+<td align="left">通知商户不能用自己账户进行交易-一定要使用其他人账户</td>
+<td align="left">G3改为Z6</td>
+<td align="left">Z6账号有误-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z7</td>
+<td align="left">没有签约扫码支付接口或签约失效</td>
+<td align="left">通知商户进行签约</td>
+<td align="left">G4改为Z7</td>
+<td align="left">Z7未授权的交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">Z8</td>
+<td align="left">支付失败-请顾客刷新付款码后重新收款-如再次收款失败-请联系管理员处理</td>
+<td align="left">重新扫码收款</td>
+<td align="left">G5改为Z8</td>
+<td align="left">Z8交易失败-请重试</td>
+</tr>
+<tr>
+<td align="left">Z9</td>
+<td align="left">未进行应用授权或授权已过期</td>
+<td align="left">通知商户重新进行授权操作</td>
+<td align="left">G6改为Z9</td>
+<td align="left">Z9未授权的交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">ZA</td>
+<td align="left">该银行卡已失效-请联系发卡行了解详情-或更换其他支付方式</td>
+<td align="left">更换其他支付方式-比如换一张卡或使用钱包余额支付</td>
+<td align="left">G7改为ZA</td>
+<td align="left">ZA交易失败-请更换支付方式</td>
+</tr>
+<tr>
+<td align="left">ZB</td>
+<td align="left">内部系统操作超时</td>
+<td align="left">请重试交易</td>
+<td align="left">G9改为ZB</td>
+<td align="left">ZB交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">ZC</td>
+<td align="left">渠道验签错误</td>
+<td align="left">请至支付宝后台上传公玥</td>
+<td align="left">K1改为ZC</td>
+<td align="left">ZC交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">ZD</td>
+<td align="left">商户未签约该产品-请按流程完成签约</td>
+<td align="left">请按流程完成签约并确认签约成功</td>
+<td align="left">K2改为ZD</td>
+<td align="left">ZD未授权交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">ZE</td>
+<td align="left">商户需授权服务商退款接口权限</td>
+<td align="left">请服务商按照指引流程-完成授权</td>
+<td align="left">K3改为ZE</td>
+<td align="left">ZE未授权交易-请联系客服</td>
+</tr>
+<tr>
+<td align="left">ZF</td>
+<td align="left">交易失败-如顾客反馈扣款成功-款项将会在一段时间后退回</td>
+<td align="left">不进行发货处理-重新进行一笔收款</td>
+<td align="left">F1改为ZF</td>
+<td align="left">ZF交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">ZG</td>
+<td align="left">交易失败-请重新发起交易</td>
+<td align="left"></td>
+<td align="left">F8改为ZG</td>
+<td align="left">ZG交易失败-请重试</td>
+</tr>
+<tr>
+<td align="left">E1</td>
+<td align="left">程序异常</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">E1交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">E2</td>
+<td align="left">配置错误</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">E2交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">E4</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">E4交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">L1</td>
+<td align="left">机构额度超限</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">L1交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">L2</td>
+<td align="left">商户额度单笔超限</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">L2交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">L3</td>
+<td align="left">商户额度单日超限</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">B1</td>
+<td align="left">卡片黑名单</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">B1交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">RA</td>
+<td align="left">规则预警</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">RA交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">RB</td>
+<td align="left">预警联机拒交易</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">RB交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">RC</td>
+<td align="left">预警降额拒交易类P</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">RC交易失败-请联系客服</td>
+</tr>
+<tr>
+<td align="left">RD</td>
+<td align="left">预警降额拒交易类A</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">RD交易失败-请联系客服</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>1. 应答码表:sdk应答码表 - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">功能预览</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../documentation/quik/">1. SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/bluetooth/">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../../documentation/test/">3. TEST</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../flowChart/overview/">概述和序列图</a>
+</li>
+                                    
+<li >
+    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">1. 应答码表:sdk应答码表</a>
+</li>
+                                    
+<li >
+    <a href="../symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../transType/">4. 交易类型</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../flowChart/systemFlowChart/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../symbol/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/attached/sdkAnserCode.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong>交易应答码表V3(20160811更新)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">代码</th>
+<th align="left">POS显示(计划实施)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">00</td>
+<td align="left">交易成功</td>
+</tr>
+<tr>
+<td align="left">01</td>
+<td align="left">"01-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">02</td>
+<td align="left">"02-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">03</td>
+<td align="left">"03-无效商户请联系客服"</td>
+</tr>
+<tr>
+<td align="left">04</td>
+<td align="left">"04-卡片异常请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">05</td>
+<td align="left">"05-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">06</td>
+<td align="left">"06-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">07</td>
+<td align="left">"07-卡片异常请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">09</td>
+<td align="left">"09-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">"12-发卡行不支持的交易"</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">"13-无效金额"</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">"14-无效卡号请联系发卡行或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">"15-无此发卡行请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">"19-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">"20-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">"21-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">"22-操作有误请重试"</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">"23-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">"25-未找到原交易请重试或联系客服"</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left">"30-格式错误请联系客服"</td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left">"31-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left">"33-过期卡请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left">"34-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">"35-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">"36-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">"37-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left">"38-密码错误次数超限"</td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">"39-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left">"40-不支持的交易类型请联系客服"</td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left">"41-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left">"42-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">"43-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">44</td>
+<td align="left">"44-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">"45-请插卡交易或联系客服"</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">"51-余额不足"</td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">"52-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left">"53-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">"54-过期卡请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">"55-密码错误请重试"</td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">"56-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">"57-卡片异常请联系客服或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">58</td>
+<td align="left">"58-未授权的交易请联系客服"</td>
+</tr>
+<tr>
+<td align="left">59</td>
+<td align="left">"59-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">60</td>
+<td align="left">"60-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">61</td>
+<td align="left">"61-超出金额限制请联系客服或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">62</td>
+<td align="left">"62-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">63</td>
+<td align="left">"63-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">64</td>
+<td align="left">"64-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">65</td>
+<td align="left">"65-交易次数超限请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">66</td>
+<td align="left">"66-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">67</td>
+<td align="left">"67-卡片异常请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">68</td>
+<td align="left">"68-交易超时请重试"</td>
+</tr>
+<tr>
+<td align="left">75</td>
+<td align="left">"75-密码错误次数超限"</td>
+</tr>
+<tr>
+<td align="left">76</td>
+<td align="left">"76-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">77</td>
+<td align="left">"77-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">78</td>
+<td align="left">"78-交易失败请换卡重试"</td>
+</tr>
+<tr>
+<td align="left">79</td>
+<td align="left">"79-脱机交易对账不平请重传数据或联系客服"</td>
+</tr>
+<tr>
+<td align="left">80</td>
+<td align="left">"80-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">81</td>
+<td align="left">"81-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">83</td>
+<td align="left">"83-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">84</td>
+<td align="left">"84-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">85</td>
+<td align="left">"85-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">86</td>
+<td align="left">"86-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">88</td>
+<td align="left">"88-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">89</td>
+<td align="left">"89-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">90</td>
+<td align="left">"90-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">91</td>
+<td align="left">"91-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">92</td>
+<td align="left">"92-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">93</td>
+<td align="left">"93-交易失败请联系发卡行"</td>
+</tr>
+<tr>
+<td align="left">94</td>
+<td align="left">"94-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">95</td>
+<td align="left">"95-交易失败请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">96</td>
+<td align="left">"96-系统异常请联系客服"</td>
+</tr>
+<tr>
+<td align="left">97</td>
+<td align="left">"97-无效终端请联系客服或检查配置"</td>
+</tr>
+<tr>
+<td align="left">98</td>
+<td align="left">"98-交易超时请重试"</td>
+</tr>
+<tr>
+<td align="left">99</td>
+<td align="left">"99-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">A0</td>
+<td align="left">"A0-请重新签到或联系客服"</td>
+</tr>
+<tr>
+<td align="left">B1</td>
+<td align="left">"B1-卡片异常请联系客服或换卡重试"</td>
+</tr>
+<tr>
+<td align="left">C0</td>
+<td align="left">"C0-核销失败"</td>
+</tr>
+<tr>
+<td align="left">C1</td>
+<td align="left">"C1-卡券已被核销"</td>
+</tr>
+<tr>
+<td align="left">C2</td>
+<td align="left">"C2-卡券已过期"</td>
+</tr>
+<tr>
+<td align="left">C3</td>
+<td align="left">"C3-无效的卡券"</td>
+</tr>
+<tr>
+<td align="left">C4</td>
+<td align="left">"C4-券状态异常"</td>
+</tr>
+<tr>
+<td align="left">C5</td>
+<td align="left">"C5-未到卡券使用时间"</td>
+</tr>
+<tr>
+<td align="left">C6</td>
+<td align="left">"C6-商户不能使用该卡券"</td>
+</tr>
+<tr>
+<td align="left">C7</td>
+<td align="left">"C7-金额太小不可参与优惠"</td>
+</tr>
+<tr>
+<td align="left">C8</td>
+<td align="left">"C8-此卡券不能使用此方式进行支付"</td>
+</tr>
+<tr>
+<td align="left">C9</td>
+<td align="left">"C9-交易失败，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">CA</td>
+<td align="left">"CA-付款码与卡券指定支付方式不符"</td>
+</tr>
+<tr>
+<td align="left">CB</td>
+<td align="left">"CB-卡券订单不存在"</td>
+</tr>
+<tr>
+<td align="left">CC</td>
+<td align="left">"CC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">CD</td>
+<td align="left">"CD-卡券订单已支付"</td>
+</tr>
+<tr>
+<td align="left">L1</td>
+<td align="left">"L1-交易额度超限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">L2</td>
+<td align="left">"L2-交易额度超限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">L3</td>
+<td align="left">"L3-交易额度超限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RA</td>
+<td align="left">"RA-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RB</td>
+<td align="left">"RB-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RC</td>
+<td align="left">"RC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">RD</td>
+<td align="left">"RD-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y0</td>
+<td align="left">"Y0-付款码错误或过期，请重试"</td>
+</tr>
+<tr>
+<td align="left">Y1</td>
+<td align="left">"Y1-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y2</td>
+<td align="left">"Y2-未开通此支付方式，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y3</td>
+<td align="left">"Y3-订单不存在，请重试"</td>
+</tr>
+<tr>
+<td align="left">Y4</td>
+<td align="left">"Y4-未开通此支付方式，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y5</td>
+<td align="left">"Y5-退款失败，商家账户余额不足"</td>
+</tr>
+<tr>
+<td align="left">Y6</td>
+<td align="left">"Y6-退款金额超过原订单金额"</td>
+</tr>
+<tr>
+<td align="left">Y7</td>
+<td align="left">"Y7-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y8</td>
+<td align="left">"Y8-不支持的交易类型请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Y9</td>
+<td align="left">"Y9-订单已关闭或取消"</td>
+</tr>
+<tr>
+<td align="left">YA</td>
+<td align="left">"YA-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YB</td>
+<td align="left">"YB-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YC</td>
+<td align="left">"YC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YD</td>
+<td align="left">"YD-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YE</td>
+<td align="left">"YE-该交易类型不能执行此操作"</td>
+</tr>
+<tr>
+<td align="left">YF</td>
+<td align="left">"YF-该交易类型不能执行此操作"</td>
+</tr>
+<tr>
+<td align="left">YG</td>
+<td align="left">"YG-原交易已退款"</td>
+</tr>
+<tr>
+<td align="left">YH</td>
+<td align="left">"YH-只能隔天退款"</td>
+</tr>
+<tr>
+<td align="left">YJ</td>
+<td align="left">"YJ-不支持的卡类型，请换卡或绑新卡"</td>
+</tr>
+<tr>
+<td align="left">YK</td>
+<td align="left">"YK-只能撤销当天交易"</td>
+</tr>
+<tr>
+<td align="left">YL</td>
+<td align="left">"YL-顾客账户状态异常"</td>
+</tr>
+<tr>
+<td align="left">YM</td>
+<td align="left">"YM-商家账户状态异常"</td>
+</tr>
+<tr>
+<td align="left">YN</td>
+<td align="left">"YN-付款码与交易渠道不符"</td>
+</tr>
+<tr>
+<td align="left">YP</td>
+<td align="left">"YP-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YQ</td>
+<td align="left">"YQ-软件版本过低，请升级"</td>
+</tr>
+<tr>
+<td align="left">YR</td>
+<td align="left">"YR-付款金额小于最低限额"</td>
+</tr>
+<tr>
+<td align="left">YS</td>
+<td align="left">"YS-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">YT</td>
+<td align="left">"YT-姓名校验错误"</td>
+</tr>
+<tr>
+<td align="left">YU</td>
+<td align="left">"YU-对同一用户操作过于频繁，请稍后重试"</td>
+</tr>
+<tr>
+<td align="left">YV</td>
+<td align="left">"YV-购汇金额或币种错误"</td>
+</tr>
+<tr>
+<td align="left">YW</td>
+<td align="left">"YW-额度超限"</td>
+</tr>
+<tr>
+<td align="left">YX</td>
+<td align="left">"YX-顾客关闭相关功能"</td>
+</tr>
+<tr>
+<td align="left">YY</td>
+<td align="left">"YY-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">YZ</td>
+<td align="left">"YZ-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z0</td>
+<td align="left">"Z0-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z1</td>
+<td align="left">"Z1-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z2</td>
+<td align="left">"Z2-未授权的交易请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z3</td>
+<td align="left">"Z3-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z4</td>
+<td align="left">"Z4-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z5</td>
+<td align="left">"Z5-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z6</td>
+<td align="left">"Z6-卖家买家账号相同，不能进行交易"</td>
+</tr>
+<tr>
+<td align="left">Z7</td>
+<td align="left">"Z7-商户未签约请联系客服"</td>
+</tr>
+<tr>
+<td align="left">Z8</td>
+<td align="left">"Z8-交易失败请重试"</td>
+</tr>
+<tr>
+<td align="left">Z9</td>
+<td align="left">"Z9-商户未授权请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZA</td>
+<td align="left">"ZA-交易失败，请更换支付方式"</td>
+</tr>
+<tr>
+<td align="left">ZB</td>
+<td align="left">"ZB-交易失败请重试或联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZC</td>
+<td align="left">"ZC-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZD</td>
+<td align="left">"ZD-未授权交易请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZE</td>
+<td align="left">"ZE-该商户暂无退款权限请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZF</td>
+<td align="left">"ZF-交易异常，如有扣款，款项稍后退回"</td>
+</tr>
+<tr>
+<td align="left">ZG</td>
+<td align="left">"ZG-交易失败，请重试"</td>
+</tr>
+<tr>
+<td align="left">ZH</td>
+<td align="left">"ZH-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZI</td>
+<td align="left">"ZI-直接进入扫码流程显示流程界面"</td>
+</tr>
+<tr>
+<td align="left">ZJ</td>
+<td align="left">"ZJ-直接进入扫码流程显示流程界面"</td>
+</tr>
+<tr>
+<td align="left">ZK</td>
+<td align="left">"ZK-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZL</td>
+<td align="left">"ZL-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZM</td>
+<td align="left">"ZM-买家付款额度超限"</td>
+</tr>
+<tr>
+<td align="left">ZN</td>
+<td align="left">"ZN-商家收款额度超限"</td>
+</tr>
+<tr>
+<td align="left">ZP</td>
+<td align="left">"ZP-超出每日限额，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZQ</td>
+<td align="left">"ZQ-提升限额申请正在审核中"</td>
+</tr>
+<tr>
+<td align="left">ZR</td>
+<td align="left">"ZR-交易失败，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZS</td>
+<td align="left">"ZS-不支持该交易类型，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZT</td>
+<td align="left">"ZT-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZU</td>
+<td align="left">"ZU-交易失败请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZV</td>
+<td align="left">"ZV-未开通此支付方式，请联系客服"</td>
+</tr>
+<tr>
+<td align="left">ZY</td>
+<td align="left">"ZY-用户取消支付，请重新发起交易"</td>
+</tr>
+<tr>
+<td align="left">ZZ</td>
+<td align="left">"ZZ-交易失败请联系客服"</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

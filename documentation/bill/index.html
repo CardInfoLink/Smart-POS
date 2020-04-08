@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Bill - CRAZYFOX</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../..">功能预览</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../quik/">1. SDK API</a>
+</li>
+                                    
+<li >
+    <a href="../bluetooth/">2. BLUETOOTH API</a>
+</li>
+                                    
+<li >
+    <a href="../test/">3. TEST</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../flowChart/overview/">概述和序列图</a>
+</li>
+                                    
+<li >
+    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/ticket/">3. 签购单规范</a>
+</li>
+                                    
+<li >
+    <a href="../../attached/transType/">4. 交易类型</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../download/">版本说明与sample下载</a>
+</li>
+                                    
+<li >
+    <a href="../../about/">环境地址</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/bill.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><strong>账单查询</strong></p>
+<p>智能 POS SDK 分别提供了最多30天的<code>账单列表查询</code>和<code>账单统计接口</code>接口,接口会根据 type 值确定返回<code>银行卡账单</code>或<code>扫码账单</code>。
+交易成功还是失败最终以返回账单中应答码为准，见<a href="https://gongluis.github.io/Smart-POS/attached/sdkAnserCode/">应答码表</a> 。</p>
+<blockquote>
+<p>交互设计建议：交易中，具体来说，调用CILSDK.consumeQr()或是CILSDK.consume()方法时，当因为网络中断进入onError callback时，建议在交互中加入<code>查询账单列表</code>的逻辑，这样交易失败后可方便收银员通过账单来确认这笔订单的实际状态。</p>
+<p>注意：对于 <code>09</code>（请求正在处理中）状态的交易账单数据，还需要看 <code>处理标志位</code> 才能判定此次交易成功与否，使用 <code>getProcessFlag()</code> 获取。
+当 <code>processFlag 为 '0'</code> 时，此次交易成功；当 <code>processFlag 为非'0'</code> 时，此次交易失败，见<a href="/user-guide/attachments/#_1">处理标志表</a>。</p>
+</blockquote>
+<p><strong>根据外部订单号获取该笔订单信息（同步）</strong>  </p>
+<pre><code>//outOrderNum为传入数据
+CILSDK.getBillsAsync(outOrderNum, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        })
+</code></pre>
+
+<p><strong>根据凭证号获取当前批次号下该笔订单详情(异步)</strong>    </p>
+<pre><code>/**
+* 依据凭证号，获取当前批次下的订单详情 回调在主线程
+* 异步操作
+* @param traceNum 凭证号
+* @param listener
+*/
+CILSDK.getBillByTraceNum(traceNum, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+</code></pre>
+
+<p><strong>根据参考号获取当前批次下的订单详情（异步操作）</strong></p>
+<pre><code>/**
+* @param refNum 参考号
+* @param callBackIsOnMainThread 是否在主线程中回调
+*/
+CILSDK.getBillByRefNumAsync(refNum, callBackIsOnMainThread, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                    ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                   ...
+            }
+        });
+</code></pre>
+
+<p><strong>根据批次号获取当前批次下的订单详情（异步操作）</strong>  </p>
+<pre><code>
+/**
+* @param refNum 批次号
+* @param callBackIsOnMainThread 是否在主线程中回调
+*/
+CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                ...
+            }
+        });
+</code></pre>
+
+<p><strong>获取账单列表</strong></p>
+<pre><code> 1. 默认获取三十天的账单列表
+    /**
+     * 获取账单列表 异步
+     *
+     * @param int page 从0开始
+     * @param int size 每页返回的条数
+     * @param int type 账单类型(TransConstants.CARD_BILL, TransConstants.QR_BILL, TransConstants.ALL_BILL)
+     *
+     */
+    CILSDK.getBillsAsync(page, size, @BillType int type, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(final CILResponse response) {
+            if (null != response &amp;&amp; 0 == response.getStatus()) {
+                //账单获取成功
+                Trans[] trans = response.getTxn(); //账单数据,字段详情见 Trans
+            }
+        }
+
+        @Override
+        public void onError(Parcelable p, Exception ex) {
+            //账单获取出错
+        }
+    });
+
+    2. 获取指定区间的账单列表
+        /**
+     * 获取账单列表 异步
+     *
+     * @param page
+     * @param size
+     * @param startTime 查询订单开始时间，格式：yyyyMMdd
+     * @param endTime 查询订单结束时间，格式：yyyyMMdd
+     * @param type
+     * @param callBackIsOnMainThread
+     * @param listener
+     * @return
+     */
+    CILSDK.getBillsAsync(page, size, startTime, endTime, type, true, new Callback&lt;CILResponse&gt;() {
+            @Override
+            public void onResult(CILResponse cilResponse) {
+                   ...
+            }
+
+            @Override
+            public void onError(Parcelable cilRequest, Exception e) {
+                   ...
+            }
+        });
+
+</code></pre>
+
+<p><strong>获取今日交易统计</strong>      </p>
+<pre><code>    /**
+     * 获取今日交易统计 异步
+     * @param type 账单类型
+     * &lt;ul&gt;
+     *      &lt;li&gt;TransConstants.ALL_BILL:所有账单&lt;/li&gt;
+     *      &lt;li&gt;TransConstants.CARD_BILL:银行卡账单&lt;/li&gt;
+     *      &lt;li&gt;TransConstants.QR_BILL:扫码账单&lt;/li&gt;
+     * &lt;/ul&gt;
+     *
+     */
+    CILSDK.getBillStatAsync(@BillType int type, new Callback&lt;CILResponse&gt;() {
+        @Override
+        public void onResult(CILResponse response) {
+            if (null != response &amp;&amp; 0 == response.getStatus()) {
+                //今日交易统计获取成功
+            }
+
+        }
+
+        @Override
+        public void onError(Parcelable p, Exception ex) {
+            //今日交易统计获取出错
+        }
+    });
+
+</code></pre>
+
+<blockquote>
+<p>SDK 的网络部分使用的是第三方库 <code>okhttp</code>,以上账单接口分别还提供了相对应的同步接口 <code>getBills</code> 和 <code>getBillStat</code> 。
+对于异步接口来说,都会返回一个 <code>Call</code> 对象,你可以在应用出错的时候调用 <code>call.cancel()</code> 取消这次请求,以免造成内存泄露。</p>
+</blockquote></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
