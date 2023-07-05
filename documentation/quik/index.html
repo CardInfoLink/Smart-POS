@@ -9,130 +9,113 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>1. SDK API - CRAZYFOX</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
-                </div>
+                <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../..">功能预览</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">功能预览</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">1. SDK API</a>
+<li>
+    <a href="./" class="dropdown-item active">1. SDK API</a>
 </li>
                                     
-<li >
-    <a href="../bluetooth/">2. BLUETOOTH API</a>
-</li>
-                                    
-<li >
-    <a href="../test/">3. TEST</a>
+<li>
+    <a href="../bluetooth/" class="dropdown-item">2. BLUETOOTH API</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../flowChart/overview/">概述和序列图</a>
+<li>
+    <a href="../../flowChart/overview/" class="dropdown-item">概述和序列图</a>
 </li>
                                     
-<li >
-    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+<li>
+    <a href="../../flowChart/systemFlowChart/" class="dropdown-item">系统交互图</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+<li>
+    <a href="../../attached/sdkAnserCode/" class="dropdown-item">1. 应答码表:sdk应答码表</a>
 </li>
                                     
-<li >
-    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+<li>
+    <a href="../../attached/symbol/" class="dropdown-item">2. 交易处理标志和冲正标志</a>
 </li>
                                     
-<li >
-    <a href="../../attached/ticket/">3. 签购单规范</a>
+<li>
+    <a href="../../attached/ticket/" class="dropdown-item">3. 签购单规范</a>
 </li>
                                     
-<li >
-    <a href="../../attached/transType/">4. 交易类型</a>
+<li>
+    <a href="../../attached/transType/" class="dropdown-item">4. 交易类型</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../download/">版本说明与sample下载</a>
+<li>
+    <a href="../../download/" class="dropdown-item">版本说明与sample下载</a>
 </li>
                                     
-<li >
-    <a href="../../about/">环境地址</a>
+<li>
+    <a href="../../about/" class="dropdown-item">环境地址</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../..">
+                            <li class="nav-item">
+                                <a rel="prev" href="../.." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../bluetooth/">
+                            <li class="nav-item">
+                                <a rel="next" href="../bluetooth/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/quik.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/quik.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -140,40 +123,48 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">快速接入</a></li>
-        <li class="main "><a href="#pos">初始化（连接POS机硬件）</a></li>
-        <li class="main "><a href="#pos_1">激活POS机</a></li>
-        <li class="main "><a href="#_2">签到</a></li>
-        <li class="main "><a href="#_3">银行卡交易</a></li>
-        <li class="main "><a href="#_4">扫码交易</a></li>
-        <li class="main "><a href="#_5">账单查询</a></li>
-        <li class="main "><a href="#_6">小费</a></li>
-        <li class="main "><a href="#_7">结算</a></li>
-        <li class="main "><a href="#_8">打印</a></li>
-        <li class="main "><a href="#_9">其他设置</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h3 id="_1">快速接入</h3>
 <p>为了方便快速接入，提供了demo供接入参考
 <a href="http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2020-01-07/pos-demo.zip">demo下载</a></p>
-<ol>
-<li>本 SDK 已使用 jcenter 托管，配置如下</li>
-</ol>
-<pre><code class="gradle">gradle:
-    implementation 'com.cardinfolink.smart.pos:PosSDK:2.5.2'
+<ul>
+<li>本 SDK 已使用 mavenCentral 托管，配置如下</li>
+</ul>
+<pre><code class="language-gradle">gradle:
+    implementation 'com.cardinfolink.smart.pos:PosSDK:2.6.3'
 </code></pre>
-
-<ol>
+<ul>
 <li>如果想使用讯联集成的结算UI和逻辑，请配置</li>
-</ol>
-<pre><code class="gradle">gradle:
+</ul>
+<pre><code class="language-gradle">gradle:
     implementation 'com.cardinfolink.smart.pos:SDK-ZaiHui:1.1.1'
 </code></pre>
-
 <h3 id="pos">初始化（连接POS机硬件）</h3>
 <p>使用 N900 智能 POS 机器, 首先需要连接 POS 机硬件, 使用 SDK 提供的 <code>connect</code> 方法连接。
 建议在 <code>Application</code> 的 <code>onCreate</code> 方法中进行连接。</p>
@@ -188,7 +179,6 @@
         ...
     }
 </code></pre>
-
 <p>使用联迪A8设备的，联迪设备连接需要传入activity的context,
 除了在 <code>Application</code> 的 <code>onCreate</code> 方法中进行连接，建议在每个可能调用设备刷卡、加密、打印的activity onCreat方法中再调用 CILSDK.connect(this)进行连接，
 保证使用过程中设备连接不断开；另外推荐在ActivityLifecycleCallbacks中处理设备连接。</p>
@@ -220,7 +210,6 @@
         }
     });
 </code></pre>
-
 <ul>
 <li>b、旧激活流程</li>
 </ul>
@@ -248,7 +237,6 @@
         }
     });
 </code></pre>
-
 <p><span id="load_merInfo" style="font-size:20px;color:red" >注意:</span><br/></p>
 <blockquote>
 <p>根据激活码获取商户详情接口：</p>
@@ -267,7 +255,6 @@
         });
 
 </code></pre>
-
 <p><strong>2、终端参数下载</strong></p>
 <p>激活成功之后,你的应用还需要下载一些交易时使用的参数,比如<code>交易地址和端口</code>、<code>交易超时时间</code>、<code>终端支持的功能</code>、<code>TPDU</code> 等,
 在你拿到 POS 终端之前,这些参数都会在讯联后台已经配置好,全部参数见 <code>CILResponse.Info</code> 返回值。下载成功之后 SKD 会
@@ -294,7 +281,6 @@
         }
     });
 </code></pre>
-
 <p><strong>3、终端密钥下载</strong></p>
 <p>终端密钥下载只需要成功执行一次就可以,成功下载的密钥会被转载到POS硬件模块里面,后面就不需要再次调用了,建议你的应用可以在成功下载密钥之后持久化一个标志位,
 下次进入应用就不再去下载密钥了。整个过程可能会需要1~2分钟左右(依赖当前的网络状况),会经历以下步骤:</p>
@@ -322,7 +308,6 @@
         }
     });
 </code></pre>
-
 <h3 id="_2">签到</h3>
 <p>签到其实也就是更新工作密钥的一个过程 (<code>下载工作密钥+装载工作密钥</code> ),讯联网关平台要求应用需要每天签到一次。</p>
 <pre><code>    CILSDK.signIn(new Callback&lt;CILResponse&gt;() {
@@ -337,11 +322,10 @@
         }
     });
 </code></pre>
-
 <h3 id="_3">银行卡交易</h3>
 <p>由于银行卡交易逻辑有点复杂,讯联提供了一个 <code>BaseCardActivity</code> 基础类,你只需要继承这个类便可以做银行卡类的交易了。具体使用方法可以见 demo 
 里的 <code>CommonCardHandlerActivity</code> 类。下面给个大概说明:</p>
-<pre><code class="java">    public class CommonCardHandlerActivity extends BaseCardActivity {
+<pre><code class="language-java">    public class CommonCardHandlerActivity extends BaseCardActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -369,6 +353,24 @@
             //如有DCC需求，因只有刷卡消费和刷卡预授权才支持DCC交易，此方法只需要在这两种交易类型返回true
             //如果接入方无需支持DCC，则此方法返回false即可
             return false;
+        }
+
+        /**
+        * 提供给持卡人选择交易币种
+        *
+        * @param isSuccess
+        * @param cardInfo
+        * @param rateInfo
+        */
+        @Override
+        public void selectCurrency(boolean isSuccess, CardInfo cardInfo, RateInfo rateInfo) {
+            // 1、提供 UI 界面给持卡人选择交易币种
+
+            // 2、选择本币调用
+            // cardReaderHandler(isSuccess, cardInfo.getCardType(), cardInfo, null); //EDC
+
+            // 3、选择外币调用
+            // cardReaderHandler(isSuccess, cardInfo.getCardType(), cardInfo, rateInfo); //DCC
         }
 
 
@@ -436,7 +438,6 @@
 
     }
 </code></pre>
-
 <p><span id="base_request" style="font-size:20px;color:red" >注意:</span><br/></p>
 <blockquote>
 <p>调用银行卡类交易接口时，需要传入CILRequest以及CardType，且所有接口中CILRequest均需要传入以下信息：</p>
@@ -455,7 +456,6 @@
     request.setOrderId(orderId);//可选参数。（消费、退货、预授权、预授权完成、扫码下单、扫码退货）
     request.setLocation(location)//有终端具备获取位置信息能力时必选上送（ 用于消费 预授权完成）
 </code></pre>
-
 <p><strong>1、消费</strong></p>
 <p>消费接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    //除了request必须包含的参数外，还需要以下参数
@@ -491,7 +491,6 @@
         });
 
 </code></pre>
-
 <p><strong>2、撤销</strong>  </p>
 <p>撤销接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>
@@ -517,7 +516,6 @@
         });
 
 </code></pre>
-
 <p><strong>3、退货</strong>  </p>
 <p>退货接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>
@@ -540,7 +538,6 @@
         });
 
 </code></pre>
-
 <p><strong>4、余额查询</strong>  </p>
 <p>余额查询接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    CILSDK.checkBalance(request, cardType, new Callback&lt;CILResponse&gt;() {
@@ -556,7 +553,6 @@
         });
 
 </code></pre>
-
 <p><strong>5、卡预授权</strong>  </p>
 <p>预授权接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>
@@ -579,7 +575,6 @@
         });
 
 </code></pre>
-
 <p><strong>6、卡预授权撤销</strong>  </p>
 <p>预授权撤销接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    /**
@@ -602,7 +597,6 @@
         });
 
 </code></pre>
-
 <p><strong>7、卡预授权完成</strong>  </p>
 <p>预授权完成接口<a href="#base_request">request必须包含参数:</a>  </p>
 <blockquote>
@@ -637,7 +631,6 @@
             }
         });
 </code></pre>
-
 <p><strong>8、卡预授权完成撤销</strong>  </p>
 <p>预授权完成撤销接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    /**
@@ -662,7 +655,6 @@
             }
         });
 </code></pre>
-
 <p><strong>9、DCC转EDC</strong>  </p>
 <p>当交易卡片为外卡时，消费类（消费、预授权完成）交易可选择进行DCC转EDC。  </p>
 <blockquote>
@@ -695,7 +687,6 @@
     });
 
 </code></pre>
-
 <p><strong>10、预授权手输卡号</strong><br />
     ```
     //需要手输的卡信息有卡号和卡有效期两个字段</p>
@@ -744,7 +735,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
         });
 
 </code></pre>
-
 <p><strong>12、预授权完成手输卡号</strong>   </p>
 <blockquote>
 <p>注意1：这个地方一定要进行DCC汇率查询，预授权完成属于消费类接口，默认是做Dcc的，同样如果需要做DCC转EDC,在预授权交易成功页面调用Dcc转EDC接口即可。  </p>
@@ -755,7 +745,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
     手输卡号和卡有效期--success--&gt;DCC汇率查询
         DCC汇率查询--succ or fail--&gt;预授权完成
 </code></pre>
-
 <pre><code>    //1.进行DCC汇率查询
     RateQueryListener listener = new RateQueryListener() {
                 @Override
@@ -802,7 +791,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });
 </code></pre>
-
 <p><strong>13、预授权完成撤销手输卡号</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();
 
@@ -832,7 +820,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
         });
 
 </code></pre>
-
 <p><strong>14、交易结果字段说明</strong>  </p>
 <table>
 <thead>
@@ -1181,7 +1168,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
         }
     });  
 </code></pre>
-
 <blockquote>
 <p>注意,如果应答码返回09或98，需要调用讯联扫码查询接口，查询该笔订单的实际状态。</p>
 </blockquote>
@@ -1204,7 +1190,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });  
 </code></pre>
-
 <p><strong>3、扫码退货</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();  
     request.setAmount(amount);//退款金额  
@@ -1223,7 +1208,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });
 </code></pre>
-
 <p><strong>4、扫码查询</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setBatchNum(response.getTrans().getBatchNum());//批次号
@@ -1247,7 +1231,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });
 </code></pre>
-
 <p><strong>5、扫码消费查询,只查询一次，不含取消接口</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setBatchNum(response.getTrans().getBatchNum());//批次号
@@ -1268,7 +1251,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });
 </code></pre>
-
 <p><strong>6、扫码取消</strong>  </p>
 <pre><code>    /**
      * 扫码取消
@@ -1297,7 +1279,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });  
 </code></pre>
-
 <p><strong>7、扫码预授权</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setAmount(amount);
@@ -1324,7 +1305,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });  
 </code></pre>
-
 <p><strong>8、扫码预授权撤销</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setAmount(transAmt);//原预授权交易金额
@@ -1346,7 +1326,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
         });  
 
 </code></pre>
-
 <p><strong>9、扫码预授权完成</strong></p>
 <pre><code>        CILRequest request = new CILRequest();
         request.setAmount(transAmt);//原预授权交易金额
@@ -1364,7 +1343,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
             }
         });  
 </code></pre>
-
 <p><strong>10、扫码预授权完成撤销</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setAmount(transaction.getTransAmt());//原预授权完成交易金额
@@ -1384,7 +1362,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
         }
     });
 </code></pre>
-
 <p><strong>11、单品券功能接入指引</strong>   </p>
 <blockquote>
 <p>注意：sdk v2.5.3及之后版本支持该功能
@@ -1422,7 +1399,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
         }
     });
 </code></pre>
-
 <ul>
 <li>新增字段说明  </li>
 </ul>
@@ -1485,7 +1461,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
     }
 ]&quot;
 </code></pre>
-
 <ul>
 <li>响应报文新增一个CouponInfo的实例,内部包含属性字段有：</li>
 </ul>
@@ -1607,7 +1582,6 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
     &quot;otherContribution&quot;:&quot;000000000000&quot;
 }
 </code></pre>
-
 <p>附：最多支持传入9个商品    </p>
 <h3 id="_5">账单查询</h3>
 <p>智能 POS SDK 分别提供了最多30天的<code>账单列表查询</code>和<code>账单统计接口</code>接口,接口会根据 type 值确定返回<code>银行卡账单</code>或<code>扫码账单</code>。
@@ -1631,7 +1605,6 @@ CILSDK.getBillsAsync(outOrderNum, new Callback&lt;CILResponse&gt;() {
             }
         })
 </code></pre>
-
 <p><strong>2、根据凭证号获取当前批次号下该笔订单详情(异步)</strong>    </p>
 <pre><code>/**
 * 依据凭证号，获取当前批次下的订单详情 回调在主线程
@@ -1651,7 +1624,6 @@ CILSDK.getBillByTraceNum(traceNum, new Callback&lt;CILResponse&gt;() {
             }
         });
 </code></pre>
-
 <p><strong>3、根据参考号获取当前批次下的订单详情（异步操作）</strong></p>
 <pre><code>/**
 * @param refNum 参考号
@@ -1669,7 +1641,6 @@ CILSDK.getBillByRefNumAsync(refNum, callBackIsOnMainThread, new Callback&lt;CILR
             }
         });
 </code></pre>
-
 <p><strong>4、根据批次号获取当前批次下的订单详情（异步操作）</strong>  </p>
 <pre><code>
 /**
@@ -1688,7 +1659,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
             }
         });
 </code></pre>
-
 <p><strong>5、获取账单列表</strong></p>
 <pre><code> 1. 默认获取三十天的账单列表
     /**
@@ -1740,7 +1710,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
         });
 
 </code></pre>
-
 <p><strong>6、获取今日交易统计</strong>      </p>
 <pre><code>    /**
      * 获取今日交易统计 异步
@@ -1779,7 +1748,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
     });
 
 </code></pre>
-
 <blockquote>
 <p>SDK 的网络部分使用的是第三方库 <code>okhttp</code>,以上账单接口分别还提供了相对应的同步接口 <code>getBills</code> 和 <code>getBillStat</code> 。
 对于异步接口来说,都会返回一个 <code>Call</code> 对象,你可以在应用出错的时候调用 <code>call.cancel()</code> 取消这次请求,以免造成内存泄露。  </p>
@@ -1816,7 +1784,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
             }
         });
 </code></pre>
-
 <p><strong>2、小费撤销</strong>  </p>
 <pre><code>        CILRequest request = new CILRequest();
         request.setCardNum(cardNo);
@@ -1839,7 +1806,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
             }
         });
 </code></pre>
-
 <h3 id="_7">结算</h3>
 <p>结算需求主要用于每日交易结束时或收银员交接班时,对某段时间内的账款核对。商户每日交易结束后,收银员需要统计并核对所有的交易,核对交易统计准确后结算，打印出结算单。
 结算会涉及到一个概念--<code>批次号</code>,我们在前面的交易都会传入一个批次号给 request ,调用结算之后,后续的交易需要将这个批次号加1,因为此批次已经打包结算掉了。</p>
@@ -1856,7 +1822,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
         }
     });
 </code></pre>
-
 <p>如果使用讯联样式结算UI、逻辑直接使用</p>
 <blockquote>
 <p>注意,使用SettleDaoUtil工具类是必须先初始化，SettleDaoUtil.getInstance().init();</p>
@@ -1864,7 +1829,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
 <pre><code>
     SettleDaoUtil.getInstance().gotoLiquidation(context)
 </code></pre>
-
 <h3 id="_8">打印</h3>
 <p>本模块可用于根据交易信息打印所需的消费票据。接口不仅提供了一套固定格式的小票样式，而且还可以根据需要自定义打印样式。
 主要功能包括小票打印、二维码打印、条形码打印以及图片打印。</p>
@@ -1895,7 +1859,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
           }
     }); 
 </code></pre>
-
 <ul>
 <li>打印结算小票</li>
 </ul>
@@ -1922,7 +1885,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
      });
 
 </code></pre>
-
 <ul>
 <li>自定义打印</li>
 </ul>
@@ -1950,7 +1912,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
     });
 
 </code></pre>
-
 <ul>
 <li>打印二维码</li>
 </ul>
@@ -1976,7 +1937,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
          }
     });
 </code></pre>
-
 <ul>
 <li>打印条形码</li>
 </ul>
@@ -2001,7 +1961,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
          }
     });
 </code></pre>
-
 <ul>
 <li>打印图片</li>
 </ul>
@@ -2027,7 +1986,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
          }
     });
 </code></pre>
-
 <h3 id="_9">其他设置</h3>
 <p>考虑到使用 SDK 的时候可能还会有其他需求,比如<code>获取 POS 机的 SN 号</code>、<code>设置密钥索引</code>等,在这里,我们也提供了一部分接口。</p>
 <ul>
@@ -2038,42 +1996,36 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
     //版本号
     int versionCode = CILSDK.VERSION_CODE;
 </code></pre>
-
 <ul>
 <li>获取 SN 号</li>
 </ul>
 <pre><code>    //SN号
     String snCode = CILSDK.getDeviceSN();
 </code></pre>
-
 <ul>
 <li>设置流水号</li>
 </ul>
 <pre><code>    //serialNum范围：1~999999
     boolean isSuccess = CILSDK.setSerialNum(int serialNum);
 </code></pre>
-
 <ul>
 <li>获取流水号</li>
 </ul>
 <pre><code>    //序列号
     int serialNum = CILSDK.getSerialNum();
 </code></pre>
-
 <ul>
 <li>设置批次号</li>
 </ul>
 <pre><code>    //batchNum范围：1~999999
     boolean isSuccess = CILSDK.setBatchNum(int batchNum);
 </code></pre>
-
 <ul>
 <li>获取批次号</li>
 </ul>
 <pre><code>    //批次号
     int batchNum = CILSDK.getBatchNum();
 </code></pre>
-
 <!--* 设置密钥索引-->
 
 <ul>
@@ -2082,7 +2034,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
 <pre><code>    //1-15的设值范围
     CILSDK.setTingA8KeyIndex(2);
 </code></pre>
-
 <ul>
 <li>设置密钥索引  </li>
 </ul>
@@ -2091,7 +2042,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
     //可以使用下方提供数值,也可以根据自身程序设值
      CILSDK.setTingKeyIndex(4,101,10,150);
 </code></pre>
-
 <p>以上两个方法请在连接刷卡器(CILSDK.connect)之前使用  </p>
 <p><strong>工具类</strong></p>
 <ul>
@@ -2122,7 +2072,6 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
     CILPayUtil.isQrPay(transCode);
 
 </code></pre>
-
 <ul>
 <li>ReceiptFormatUtils</li>
 </ul>
@@ -2136,11 +2085,11 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
     ReceiptFormatUtils.handleCardNum(cardNum);
 
 </code></pre>
-
 <p><strong>许可证</strong></p>
 <p>Copyright (c) 2016 cardinfolink.com</p>
 <p><strong>JAVADOC</strong></p>
 <p>java document 详情见 <a href="sdkapi/javadoc/">javadoc</a>  </p></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -2154,35 +2103,32 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

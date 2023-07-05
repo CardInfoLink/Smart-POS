@@ -9,130 +9,113 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>概述和序列图 - CRAZYFOX</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
-                </div>
+                <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../..">功能预览</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">功能预览</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../documentation/quik/">1. SDK API</a>
+<li>
+    <a href="../../documentation/quik/" class="dropdown-item">1. SDK API</a>
 </li>
                                     
-<li >
-    <a href="../../documentation/bluetooth/">2. BLUETOOTH API</a>
-</li>
-                                    
-<li >
-    <a href="../../documentation/test/">3. TEST</a>
+<li>
+    <a href="../../documentation/bluetooth/" class="dropdown-item">2. BLUETOOTH API</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">概述和序列图</a>
+<li>
+    <a href="./" class="dropdown-item active">概述和序列图</a>
 </li>
                                     
-<li >
-    <a href="../systemFlowChart/">系统交互图</a>
+<li>
+    <a href="../systemFlowChart/" class="dropdown-item">系统交互图</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+<li>
+    <a href="../../attached/sdkAnserCode/" class="dropdown-item">1. 应答码表:sdk应答码表</a>
 </li>
                                     
-<li >
-    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+<li>
+    <a href="../../attached/symbol/" class="dropdown-item">2. 交易处理标志和冲正标志</a>
 </li>
                                     
-<li >
-    <a href="../../attached/ticket/">3. 签购单规范</a>
+<li>
+    <a href="../../attached/ticket/" class="dropdown-item">3. 签购单规范</a>
 </li>
                                     
-<li >
-    <a href="../../attached/transType/">4. 交易类型</a>
+<li>
+    <a href="../../attached/transType/" class="dropdown-item">4. 交易类型</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../download/">版本说明与sample下载</a>
+<li>
+    <a href="../../download/" class="dropdown-item">版本说明与sample下载</a>
 </li>
                                     
-<li >
-    <a href="../../about/">环境地址</a>
+<li>
+    <a href="../../about/" class="dropdown-item">环境地址</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../../documentation/test/">
+                            <li class="nav-item">
+                                <a rel="prev" href="../../documentation/bluetooth/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../systemFlowChart/">
+                            <li class="nav-item">
+                                <a rel="next" href="../systemFlowChart/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/flowChart/overview.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/flowChart/overview.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -140,24 +123,25 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">一、激活环节</a></li>
-            <li><a href="#_2">激活</a></li>
-            <li><a href="#_3">参数下载</a></li>
-            <li><a href="#_4">初始化</a></li>
-        <li class="main "><a href="#_5">二、签到</a></li>
-        <li class="main "><a href="#_6">三、配置</a></li>
-        <li class="main "><a href="#_7">四、打印</a></li>
-            <li><a href="#_8">五、消费</a></li>
-            <li><a href="#_9">六、撤销</a></li>
-            <li><a href="#_10">七、退货</a></li>
-            <li><a href="#_11">八、预授权类</a></li>
-            <li><a href="#_12">九、交易明细</a></li>
-            <li><a href="#_13">十、结算</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h3 id="_1"><strong>一、激活环节</strong></h3>
 <p>只需要在初次使用终端时操作一次，内容包括了激活、初始化、下载参数。<br />
@@ -231,7 +215,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 需要补打小票时，可以早交易明细中找到补打功能，打印商户联。</p>
 <ul>
 <li>序列图<br />
-<img alt="" src="../../img/打印序列图.png" />  </li>
+<img alt="" src="../../img/%E6%89%93%E5%8D%B0%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </li>
 <li>打印银行类／扫码交易小票<br />
 <code>CILSDK.printKindsReceipts(trans,lineBreak,formatTransCode, kind, isForeignTrans,  bitmap, new Callback&lt;PrinterResult&gt;()</code></li>
 </ul>
@@ -438,7 +422,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图<br />
-<img alt="" src="../../img/银行卡消费序列图.png" />  </p>
+<img alt="" src="../../img/%E9%93%B6%E8%A1%8C%E5%8D%A1%E6%B6%88%E8%B4%B9%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面输入消费金额，选择银行卡支付，发起银行卡付款请求</p>
@@ -454,7 +438,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图 
-<img alt="" src="../../img/扫码消费序列图.png" />  </p>
+<img alt="" src="../../img/%E6%89%AB%E7%A0%81%E6%B6%88%E8%B4%B9%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面输入消费金额，扫描二维码获取付款码信息，发起扫码付款请求</p>
@@ -470,7 +454,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图<br />
-<img alt="" src="../../img/撤销序列图.png" />  </p>
+<img alt="" src="../../img/%E6%92%A4%E9%94%80%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面输入原交易凭证号，核对该笔交易，发起撤销请求</p>
@@ -486,7 +470,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图<br />
-<img alt="" src="../../img/退货序列图.png" />  </p>
+<img alt="" src="../../img/%E9%80%80%E8%B4%A7%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面输入订单相关信息（参考号／交易日期／退货金额），核对该笔交易，发起退货请求</p>
@@ -504,7 +488,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 支持开发者调用接口实现部分商家（如酒店、租车）的预授权需求。
 <em>持卡人在宾馆、酒店或出租公司消费，消费与结算不在同一时间完成，特约单位通过POS预先向发卡机构索要授权的行为。</em><br />
 * 序列图 <br />
-<img alt="" src="../../img/卡预授权序列图.png" />  </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 <ol>
 <li>APP界面输入消费金额，发起预授权请求</li>
 <li>SDK处理预授权请求，返回应答码</li>
@@ -518,7 +502,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图
-<img alt="" src="../../img/卡预授权撤销序列图.png" />  </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E6%92%A4%E9%94%80%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</p>
@@ -532,7 +516,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 支持开发者调用接口实现部分商家（如酒店、租车）的预授权完成需求。
 <em>预授权完成是持卡人消费完成并确定消费金额时，已取得预授权的特约商户在预授权金额或超出预授权金额一定比例的范围内，根据持卡人实际消费金额通过POS终端或手工方式完成持卡人付款的过程。</em>
 * 序列图
-<img alt="" src="../../img/卡预授权完成序列图.png" />  </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E5%AE%8C%E6%88%90%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 <ol>
 <li>APP界面：输入预授权完成金额和原预授权信息（原交易日期\授权码），核对该笔交易，发起预授权完成请求</li>
 <li>SDK处理预授权完成请求，返回应答码</li>
@@ -546,7 +530,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图<br />
-<img alt="" src="../../img/卡预授权完成撤销序列图.png" />   </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E5%AE%8C%E6%88%90%E6%92%A4%E9%94%80%E5%BA%8F%E5%88%97%E5%9B%BE.png" />   </p>
 </li>
 <li>
 <p>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</p>
@@ -563,7 +547,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 </li>
 <li>
 <p>序列图 
- <img alt="" src="../../img/卡预授权序列图.png" /></p>
+ <img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E5%BA%8F%E5%88%97%E5%9B%BE.png" /></p>
 </li>
 <li>
 <p>APP界面输入消费金额，发起预授权请求</p>
@@ -579,7 +563,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图
-<img alt="" src="../../img/卡预授权撤销序列图.png" />  </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E6%92%A4%E9%94%80%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面：输入原预授权信息（金额\原交易日期\授权码），核对该笔交易，发起预授权撤销请求</p>
@@ -595,7 +579,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图
-<img alt="" src="../../img/卡预授权完成序列图.png" />  </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E5%AE%8C%E6%88%90%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面：输入预授权完成金额和原预授权信息（原交易日期\授权码），核对该笔交易，发起预授权完成请求</p>
@@ -611,7 +595,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图 
-<img alt="" src="../../img/卡预授权完成撤销序列图.png" />   </p>
+<img alt="" src="../../img/%E5%8D%A1%E9%A2%84%E6%8E%88%E6%9D%83%E5%AE%8C%E6%88%90%E6%92%A4%E9%94%80%E5%BA%8F%E5%88%97%E5%9B%BE.png" />   </p>
 </li>
 <li>
 <p>APP界面：输入原凭证号，找到该笔预授权完成，发起预授权完成撤销请求</p>
@@ -626,7 +610,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图<br />
-<img alt="" src="../../img/交易明细序列图.png" />  </p>
+<img alt="" src="../../img/%E4%BA%A4%E6%98%93%E6%98%8E%E7%BB%86%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面：发起查看交易明细请求</p>
@@ -672,7 +656,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <ul>
 <li>
 <p>序列图<br />
-<img alt="" src="../../img/结算序列图.png" />  </p>
+<img alt="" src="../../img/%E7%BB%93%E7%AE%97%E5%BA%8F%E5%88%97%E5%9B%BE.png" />  </p>
 </li>
 <li>
 <p>APP界面：点击【去结算】，核对交易明细无误后【结算】，发起结算请求</p>
@@ -702,6 +686,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 </tr>
 </tbody>
 </table></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -715,35 +700,32 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
