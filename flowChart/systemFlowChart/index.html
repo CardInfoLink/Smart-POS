@@ -134,14 +134,74 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">概要</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">初始化</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">消费</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">撤销</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">退货</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">预授权类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">卡预授权类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_8" class="nav-link">码预授权类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">明细查询</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_10" class="nav-link">结算</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_11" class="nav-link">小费</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_12" class="nav-link">余额查询</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><strong>概要</strong></p>
+<h2 id="_1"><strong>概要</strong></h2>
 <p>本文档详细介绍了用户APP、SDK与后台之间的交互作用，用图形直观简洁的介绍每个功能，并附有详细的文字说明加以解释。</p>
-<p><strong>初始化</strong></p>
+<h2 id="_2"><strong>初始化</strong></h2>
 <ul>
 <li>
 <p>激活
@@ -160,7 +220,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<p><strong>消费</strong></p>
+<h2 id="_3"><strong>消费</strong></h2>
 <ul>
 <li>
 <p>银行卡消费
@@ -174,7 +234,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<p><strong>撤销</strong></p>
+<h2 id="_4"><strong>撤销</strong></h2>
 <ul>
 <li>
 <p>银行卡撤销
@@ -188,7 +248,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<p><strong>退货</strong></p>
+<h2 id="_5"><strong>退货</strong></h2>
 <ul>
 <li>
 <p>银行卡退货
@@ -202,8 +262,8 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<p><strong>预授权类</strong></p>
-<p><strong>卡预授权类</strong>  </p>
+<h2 id="_6"><strong>预授权类</strong></h2>
+<h2 id="_7"><strong>卡预授权类</strong></h2>
 <ul>
 <li>
 <p>预授权
@@ -226,11 +286,13 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 预授权完成撤销：输入相关信息获取预授权完成交易，刷卡操作后，读卡模块获取卡片信息，加密模块获得密码密文，同卡片信息一起，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
 </li>
 </ul>
-<p><strong>码预授权类</strong>
-* 扫码预授权
+<h2 id="_8"><strong>码预授权类</strong></h2>
+<ul>
+<li>
+<p>扫码预授权
 <img alt="" src="../../img/%E6%89%AB%E7%A0%81%E9%A2%84%E6%8E%88%E6%9D%83.png" />
 扫码预授权：输入金额后，扫描消费者付款码，全部报文经过加密模块加密后返回mac数据，经过8583报文处理模块处理后，发送给交易网关，网关返回应答报文。</p>
-<ul>
+</li>
 <li>
 <p>扫码预授权撤销
 <img alt="" src="../../img/%E6%89%AB%E7%A0%81%E9%A2%84%E6%8E%88%E6%9D%83%E6%92%A4%E9%94%80.png" />
@@ -248,21 +310,21 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<p><strong>明细查询</strong></p>
+<h2 id="_9"><strong>明细查询</strong></h2>
 <ul>
 <li>明细查询
 <img alt="" src="../../img/%E6%98%8E%E7%BB%86%E6%9F%A5%E8%AF%A2.png" />
 明细查询：发送终端信息到api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到管理平台，管理平台返回应答报文，终端显示。</li>
 </ul>
 <p></br></p>
-<p><strong>结算</strong></p>
+<h2 id="_10"><strong>结算</strong></h2>
 <ul>
 <li>结算
 <img alt="" src="../../img/%E7%BB%93%E7%AE%97.png" />
 结算：发送终端信息、商户号、结算批次号到api，加密模块加密全部报文后返回mac数据，经过8583报文处理模块处理后，发送到管理平台，管理平台返回应答报文，终端显示。</li>
 </ul>
 <p></br></p>
-<p><strong>小费</strong></p>
+<h2 id="_11"><strong>小费</strong></h2>
 <ul>
 <li>
 <p>收取小费
@@ -276,7 +338,7 @@ CIL分配商户号、终端号；sdk从终端获取sn号验证身份，从云端
 </li>
 </ul>
 <p></br></p>
-<p><strong>余额查询</strong></p>
+<h2 id="_12"><strong>余额查询</strong></h2>
 <ul>
 <li>余额查询
 <img alt="" src="../../img/%E4%BD%99%E9%A2%9D%E6%9F%A5%E8%AF%A2.png" />

@@ -135,22 +135,66 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">快速接入</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#pos" class="nav-link">初始化（连接POS机硬件）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#pos_1" class="nav-link">激活POS机</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">签到</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">银行卡交易</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">扫码交易</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">账单查询</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">小费</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">结算</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_8" class="nav-link">打印</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">其他设置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="_1">快速接入</h3>
+<h2 id="_1">快速接入</h2>
 <p>为了方便快速接入，提供了demo供接入参考
 <a href="http://hd2-prod-smartpos.oss-cn-shanghai.aliyuncs.com/apkMgt/2020-01-07/pos-demo.zip">demo下载</a></p>
 <ul>
@@ -165,7 +209,7 @@
 <pre><code class="language-gradle">gradle:
     implementation 'com.cardinfolink.smart.pos:SDK-ZaiHui:1.1.1'
 </code></pre>
-<h3 id="pos">初始化（连接POS机硬件）</h3>
+<h2 id="pos">初始化（连接POS机硬件）</h2>
 <p>使用 N900 智能 POS 机器, 首先需要连接 POS 机硬件, 使用 SDK 提供的 <code>connect</code> 方法连接。
 建议在 <code>Application</code> 的 <code>onCreate</code> 方法中进行连接。</p>
 <pre><code>    @Override
@@ -182,7 +226,7 @@
 <p>使用联迪A8设备的，联迪设备连接需要传入activity的context,
 除了在 <code>Application</code> 的 <code>onCreate</code> 方法中进行连接，建议在每个可能调用设备刷卡、加密、打印的activity onCreat方法中再调用 CILSDK.connect(this)进行连接，
 保证使用过程中设备连接不断开；另外推荐在ActivityLifecycleCallbacks中处理设备连接。</p>
-<h3 id="pos_1">激活POS机</h3>
+<h2 id="pos_1">激活POS机</h2>
 <p>完整的激活环节分为三步，分别是：激活，终端参数下载，终端密钥下载，三步都成功，表示激活成功，激活成功之后才能正常使用后面的交易流程。  </p>
 <p><img alt="" src="../../img/activeprocess.png" />  </p>
 <p><strong>1、激活</strong><br />
@@ -308,7 +352,7 @@
         }
     });
 </code></pre>
-<h3 id="_2">签到</h3>
+<h2 id="_2">签到</h2>
 <p>签到其实也就是更新工作密钥的一个过程 (<code>下载工作密钥+装载工作密钥</code> ),讯联网关平台要求应用需要每天签到一次。</p>
 <pre><code>    CILSDK.signIn(new Callback&lt;CILResponse&gt;() {
         @Override
@@ -322,7 +366,7 @@
         }
     });
 </code></pre>
-<h3 id="_3">银行卡交易</h3>
+<h2 id="_3">银行卡交易</h2>
 <p>由于银行卡交易逻辑有点复杂,讯联提供了一个 <code>BaseCardActivity</code> 基础类,你只需要继承这个类便可以做银行卡类的交易了。具体使用方法可以见 demo 
 里的 <code>CommonCardHandlerActivity</code> 类。下面给个大概说明:</p>
 <pre><code class="language-java">    public class CommonCardHandlerActivity extends BaseCardActivity {
@@ -412,7 +456,7 @@
             }
 
             //3. 在这里面发送银行卡相关的交易(如消费、消费撤销、退货、预授权、预授权撤销、预授权完成、预授权完成撤销、余额查询)
-            //CILSDK.consume(request, cardType, new Callback&lt;CILResponse&gt;() //消费
+            //CILSDK.consume(request, cardType, new Callback&lt;CILResponse&gt;()) //消费
         }
 
         /**
@@ -1142,7 +1186,7 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
 </tr>
 </tbody>
 </table>
-<h3 id="_4">扫码交易</h3>
+<h2 id="_4">扫码交易</h2>
 <p>扫码相关的交易则是不依赖 POS 机器的读卡模块的,但是你需要将<code>微信</code>或者<code>支付宝</code>的二维码读出来传给扫码消费接口,扫码可以使用第三方库,如 <code>zxing</code>。</p>
 <p><strong>1、扫码消费</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
@@ -1583,7 +1627,7 @@ CILSDK.preAuth(request, CardType.MSC_CARD, new Callback&lt;CILResponse&gt;() {
 }
 </code></pre>
 <p>附：最多支持传入9个商品    </p>
-<h3 id="_5">账单查询</h3>
+<h2 id="_5">账单查询</h2>
 <p>智能 POS SDK 分别提供了最多30天的<code>账单列表查询</code>和<code>账单统计接口</code>接口,接口会根据 type 值确定返回<code>银行卡账单</code>或<code>扫码账单</code>。
 交易成功还是失败最终以返回账单中应答码为准，见<a href="https://gongluis.github.io/Smart-POS/attached/sdkAnserCode/">应答码表</a> 。</p>
 <blockquote>
@@ -1752,7 +1796,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
 <p>SDK 的网络部分使用的是第三方库 <code>okhttp</code>,以上账单接口分别还提供了相对应的同步接口 <code>getBills</code> 和 <code>getBillStat</code> 。
 对于异步接口来说,都会返回一个 <code>Call</code> 对象,你可以在应用出错的时候调用 <code>call.cancel()</code> 取消这次请求,以免造成内存泄露。  </p>
 </blockquote>
-<h3 id="_6">小费</h3>
+<h2 id="_6">小费</h2>
 <blockquote>
 <p>注意:
 通过对一笔交易收取小费。<br />
@@ -1806,7 +1850,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
             }
         });
 </code></pre>
-<h3 id="_7">结算</h3>
+<h2 id="_7">结算</h2>
 <p>结算需求主要用于每日交易结束时或收银员交接班时,对某段时间内的账款核对。商户每日交易结束后,收银员需要统计并核对所有的交易,核对交易统计准确后结算，打印出结算单。
 结算会涉及到一个概念--<code>批次号</code>,我们在前面的交易都会传入一个批次号给 request ,调用结算之后,后续的交易需要将这个批次号加1,因为此批次已经打包结算掉了。</p>
 <pre><code>    //batchNum 批次号
@@ -1829,7 +1873,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
 <pre><code>
     SettleDaoUtil.getInstance().gotoLiquidation(context)
 </code></pre>
-<h3 id="_8">打印</h3>
+<h2 id="_8">打印</h2>
 <p>本模块可用于根据交易信息打印所需的消费票据。接口不仅提供了一套固定格式的小票样式，而且还可以根据需要自定义打印样式。
 主要功能包括小票打印、二维码打印、条形码打印以及图片打印。</p>
 <p style="color:red; font-size:18">特别注意: 中国人民银行和中国银联为了规范市场上的POS机终端，要求终端打印的签购单必须合乎规范，规范内容包括必须打印的字段与正确的字段内容。</p>
@@ -1986,7 +2030,7 @@ CILSDK.getBillByBatchNumAsync(batchNum, callBackIsOnMainThread, new Callback&lt;
          }
     });
 </code></pre>
-<h3 id="_9">其他设置</h3>
+<h2 id="_9">其他设置</h2>
 <p>考虑到使用 SDK 的时候可能还会有其他需求,比如<code>获取 POS 机的 SN 号</code>、<code>设置密钥索引</code>等,在这里,我们也提供了一部分接口。</p>
 <ul>
 <li>获取 SDK 版本</li>

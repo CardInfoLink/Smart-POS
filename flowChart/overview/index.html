@@ -135,19 +135,65 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">一、激活环节</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">二、签到</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">三、配置</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#_7" class="nav-link">四、打印</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_8" class="nav-link">五、消费</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">六、撤销</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_10" class="nav-link">七、退货</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_11" class="nav-link">八、预授权类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_12" class="nav-link">九、交易明细</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_13" class="nav-link">十、结算</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="_1"><strong>一、激活环节</strong></h3>
+<h2 id="_1"><strong>一、激活环节</strong></h2>
 <p>只需要在初次使用终端时操作一次，内容包括了激活、初始化、下载参数。<br />
 * 序列图
 <img alt="" src="../../img/active.png" /></p>
-<h4 id="_2"><strong>激活</strong></h4>
+<h3 id="_2"><strong>激活</strong></h3>
 <p>激活设备，有老版和新版两种激活方式</p>
 <ol>
 <li>
@@ -184,21 +230,21 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 </tbody>
 </table>
 <p><code>new Callback&lt;CILResponse&gt;</code> 是回调函数  </p>
-<h4 id="_3"><strong>参数下载</strong></h4>
+<h3 id="_3"><strong>参数下载</strong></h3>
 <p>参数下载在主要应用在以下两种情况：
 1. 激活时下载参数 
 2. 参数修改后下载参数</p>
 <p><code>CILSDK.downloadParams(merCode, termCode, new com.cardinfolink.pos.listener.Callback&lt;CILResponse&gt;()</code>
 其中，<code>new com.cardinfolink.pos.listener.Callback&lt;CILResponse&gt;()</code>是回调函数</p>
-<h4 id="_4"><strong>初始化</strong></h4>
+<h3 id="_4"><strong>初始化</strong></h3>
 <p>初始化主要是终端密钥下载，包含了主密钥下载和工作密钥下载。其主要应用在以下两种情况：
 1.激活时初始化密钥 
 2.需要更新密钥时初始化</p>
 <p><code>CILSDK.downloadParamsWithProgress(new ProgressCallback&lt;CILResponse&gt;()</code></p>
-<h3 id="_5"><strong>二、签到</strong></h3>
+<h2 id="_5"><strong>二、签到</strong></h2>
 <p>签到其实就是一个更新密钥的过程，激活时已经覆盖了每日一次签到的操作。</p>
 <p><code>CILSDK.signIn(new Callback&lt;CILResponse&gt;()</code></p>
-<h3 id="_6"><strong>三、配置</strong></h3>
+<h2 id="_6"><strong>三、配置</strong></h2>
 <p><strong>可配置参数</strong><br />
 1. 批次号、流水号
 批次号用于结算，流水号（凭证号）定位本批每一笔交易唯一索引；</p>
@@ -210,7 +256,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <code>boolean isSuccess = CILSDK.setSerialNum(int serialNum);</code><br />
 获取流水号<br />
 <code>int serialNum = CILSDK.getSerialNum();</code></p>
-<h3 id="_7"><strong>四、打印</strong></h3>
+<h2 id="_7"><strong>四、打印</strong></h2>
 <p>交易成功后，需要打印签购单，一般打印两联：商户联和客户联。商户联在持卡人签名后由商户保存。交易成功后，会自动打印商户联。
 需要补打小票时，可以早交易明细中找到补打功能，打印商户联。</p>
 <ul>
@@ -415,7 +461,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 </tr>
 </tbody>
 </table>
-<h4 id="_8"><strong>五、消费</strong></h4>
+<h2 id="_8"><strong>五、消费</strong></h2>
 <p><strong>1. 消费（插卡、刷卡、挥卡、手机NFC ）</strong><br />
 支持开发者调用接口实现商家银行卡收款需求。
 主要类型包括刷卡、插卡、挥卡以及手机NFC支付。</p>
@@ -448,7 +494,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <li>如果消费成功，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
 </ul>
-<h4 id="_9"><strong>六、撤销</strong></h4>
+<h2 id="_9"><strong>六、撤销</strong></h2>
 <p>支持开发者调用接口实现商家撤销当日交易需求。
 包括银行卡撤销和扫码撤销。</p>
 <ul>
@@ -464,7 +510,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <li>撤销成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
 </ul>
-<h4 id="_10"><strong>七、退货</strong></h4>
+<h2 id="_10"><strong>七、退货</strong></h2>
 <p>支持开发者调用接口实现商家非当日交易的退货需求。
 包括银行卡退货和扫码退货。</p>
 <ul>
@@ -480,7 +526,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <li>退货成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
 </ul>
-<h4 id="_11"><strong>八、预授权类</strong></h4>
+<h2 id="_11"><strong>八、预授权类</strong></h2>
 <p>支持开发者调用接口实现部分商家（如酒店、租车）的预授权类需求。
 支持银行卡和微信支付宝付款码业务。<br />
 <strong>卡预授权类</strong><br />
@@ -605,7 +651,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 <li>预授权完成撤销成功时，APP发送打印请求</li>
 <li>SDK返回打印结果</li>
 </ul>
-<h4 id="_12"><strong>九、交易明细</strong></h4>
+<h2 id="_12"><strong>九、交易明细</strong></h2>
 <p>支持开发者调用接口实现商家查看交易订单需求，同时可以补打、撤销订单。</p>
 <ul>
 <li>
@@ -650,7 +696,7 @@ CILSDK.activeWithCodeSync(activeCode, deviceToken, new Callback<CILResponse>());
 </tr>
 </tbody>
 </table>
-<h4 id="_13"><strong>十、结算</strong></h4>
+<h2 id="_13"><strong>十、结算</strong></h2>
 <p>支持开发者调用接口实现商家结算需求。
 结算需求主要用于每日交易结束时或收银员交接班时，对某段时间内的账款核对。</p>
 <ul>
