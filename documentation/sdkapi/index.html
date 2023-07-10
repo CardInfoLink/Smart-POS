@@ -9,120 +9,103 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Sdkapi - CRAZYFOX</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
-                </div>
+                <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../..">功能预览</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">功能预览</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../quik/">1. SDK API</a>
+<li>
+    <a href="../quik/" class="dropdown-item">1. SDK API</a>
 </li>
                                     
-<li >
-    <a href="../bluetooth/">2. BLUETOOTH API</a>
-</li>
-                                    
-<li >
-    <a href="../test/">3. TEST</a>
+<li>
+    <a href="../bluetooth/" class="dropdown-item">2. BLUETOOTH API</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../flowChart/overview/">概述和序列图</a>
+<li>
+    <a href="../../flowChart/overview/" class="dropdown-item">概述和序列图</a>
 </li>
                                     
-<li >
-    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+<li>
+    <a href="../../flowChart/systemFlowChart/" class="dropdown-item">系统交互图</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+<li>
+    <a href="../../attached/sdkAnserCode/" class="dropdown-item">1. 应答码表:sdk应答码表</a>
 </li>
                                     
-<li >
-    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+<li>
+    <a href="../../attached/symbol/" class="dropdown-item">2. 交易处理标志和冲正标志</a>
 </li>
                                     
-<li >
-    <a href="../../attached/ticket/">3. 签购单规范</a>
+<li>
+    <a href="../../attached/ticket/" class="dropdown-item">3. 签购单规范</a>
 </li>
                                     
-<li >
-    <a href="../../attached/transType/">4. 交易类型</a>
+<li>
+    <a href="../../attached/transType/" class="dropdown-item">4. 交易类型</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../download/">版本说明与sample下载</a>
+<li>
+    <a href="../../download/" class="dropdown-item">版本说明与sample下载</a>
 </li>
                                     
-<li >
-    <a href="../../about/">环境地址</a>
+<li>
+    <a href="../../about/" class="dropdown-item">环境地址</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li>
-                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/sdkapi.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/sdkapi.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -130,40 +113,47 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">快速体验</a></li>
-        <li class="main "><a href="#_2">快速集成</a></li>
-        <li class="main "><a href="#pos">连接POS机</a></li>
-        <li class="main "><a href="#pos_1">激活POS机</a></li>
-        <li class="main "><a href="#_3">终端参数下载</a></li>
-        <li class="main "><a href="#_4">终端密钥下载</a></li>
-        <li class="main "><a href="#_5">签到</a></li>
-        <li class="main "><a href="#_6">发起交易</a></li>
-            <li><a href="#a">a、银行卡交易</a></li>
-            <li><a href="#b">b、扫码交易</a></li>
-        <li class="main "><a href="#_8">账单查询</a></li>
-        <li class="main "><a href="#_9">结算</a></li>
-        <li class="main "><a href="#_10">打印</a></li>
-        <li class="main "><a href="#_11">其他设置</a></li>
-        <li class="main "><a href="#_12">工具类</a></li>
-        <li class="main "><a href="#_13">许可证</a></li>
-        <li class="main "><a href="#javadoc">JAVADOC</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h3 id="_1"><strong>快速体验</strong></h3>
 <p>讯联智能 POS SDK 为开发者准备了一个简单的 demo 程序,可以快速体验 SDK 接入流程。可以在这里 <a href="https://github.com/CardInfoLink/POS-demo">下载demo</a> 。
 下载 POS-demo 之后将整个目录导入到您的 Android Studio 之中。  </p>
 <h3 id="_2"><strong>快速集成</strong></h3>
 <p>为了方便 SDK 的集成使用，本 SDK 已使用 jcenter 托管，配置如下</p>
-<pre><code class="gradle">gradle:
+<pre><code class="language-gradle">gradle:
     implementation 'com.cardinfolink.smart.pos:PosSDK:2.5.2'
 </code></pre>
-
 <p>or</p>
-<pre><code class="maven">maven:
+<pre><code class="language-maven">maven:
     &lt;dependency&gt;
       &lt;groupId&gt;com.cardinfolink.smart.pos&lt;/groupId&gt;
       &lt;artifactId&gt;PosSDK&lt;/artifactId&gt;
@@ -171,14 +161,12 @@
       &lt;type&gt;pom&lt;/type&gt;
     &lt;/dependency&gt;
 </code></pre>
-
 <p>如果想使用讯联集成的结算UI和逻辑，请配置</p>
-<pre><code class="gradle">gradle:
+<pre><code class="language-gradle">gradle:
     implementation 'com.cardinfolink.smart.pos:SDK-ZaiHui:1.1.1'
 </code></pre>
-
 <p>or</p>
-<pre><code class="maven">maven:
+<pre><code class="language-maven">maven:
     &lt;dependency&gt;
      &lt;groupId&gt;com.cardinfolink.smart.pos&lt;/groupId&gt;
      &lt;artifactId&gt;SDK-ZaiHui&lt;/artifactId&gt;
@@ -186,7 +174,6 @@
     &lt;type&gt;pom&lt;/type&gt;
     &lt;/dependency&gt;
 </code></pre>
-
 <blockquote>
 <p><code>读卡、输入密码的颜色取自colorPrimary。如果需要自定义样式，请参考</code> <a href="https://github.com/CardInfoLink/POS-demo.git">Demo</a> <code>，下载源码修改</code></p>
 <p><code>注意：1.1.1版本直接指定了PosSDK的版本号，不再使用默认最新版的PosSDK，如非必要，不要再配置PosSDK的版本</code></p>
@@ -205,7 +192,6 @@
         ...
     }
 </code></pre>
-
 <blockquote>
 <p>如果还适配了联迪A8设备的，联迪设备login需要传入activity的context,
 建议在 主activity onCreate中 再调用 CILSDK.connect(this);
@@ -238,7 +224,6 @@
         }
     });
 </code></pre>
-
 <ul>
 <li>b、旧激活接口</li>
 </ul>
@@ -266,7 +251,6 @@
         }
     });
 </code></pre>
-
 <h3 id="_3"><strong>终端参数下载</strong></h3>
 <p>激活成功之后,你的应用还需要下载一些交易时使用的参数,比如<code>交易地址和端口</code>、<code>交易超时时间</code>、<code>终端支持的功能</code>、<code>TPDU</code> 等,
 在你拿到 POS 终端之前,这些参数都会在讯联后台已经配置好,全部参数见 <code>CILResponse.Info</code> 返回值。下载成功之后 SKD 会
@@ -293,7 +277,6 @@
         }
     });
 </code></pre>
-
 <h3 id="_4"><strong>终端密钥下载</strong></h3>
 <p>终端密钥下载只需要成功执行一次就可以,成功下载的密钥会被转载到POS硬件模块里面,后面就不需要再次调用了,建议你的应用可以在成功下载密钥之后持久化一个标志位,
 下次进入应用就不再去下载密钥了。整个过程可能会需要1~2分钟左右(依赖当前的网络状况),会经历以下步骤:</p>
@@ -321,7 +304,6 @@
         }
     });
 </code></pre>
-
 <h3 id="_5"><strong>签到</strong></h3>
 <p>签到其实也就是更新工作密钥的一个过程 (<code>下载工作密钥+装载工作密钥</code> ),讯联网关平台要求应用需要每天签到一次。</p>
 <pre><code>    CILSDK.signIn(new Callback&lt;CILResponse&gt;() {
@@ -336,13 +318,12 @@
         }
     });
 </code></pre>
-
 <h3 id="_6"><strong>发起交易</strong></h3>
 <p>SDK 将交易分为<code>银行卡交易</code>(刷卡、插卡和挥卡)和<code>扫码交易</code>(支付宝和微信)两种。银行卡相关交易需要POS机硬件模块读卡器,扫码相关交易则不需要。</p>
 <h4 id="a">a、银行卡交易</h4>
 <p>由于银行卡交易逻辑有点复杂,讯联提供了一个 <code>BaseCardActivity</code> 基础类,你只需要继承这个类便可以做银行卡类的交易了。具体使用方法可以见 demo 
 里的 <code>CommonCardHandlerActivity</code> 类。下面给个大概说明:</p>
-<pre><code class="java">    public class CommonCardHandlerActivity extends BaseCardActivity {
+<pre><code class="language-java">    public class CommonCardHandlerActivity extends BaseCardActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -437,7 +418,6 @@
 
     }
 </code></pre>
-
 <p><span id="base_request" style="font-size:20px;color:red" >注意:</span><br/></p>
 <blockquote>
 <p>调用银行卡类交易接口时，需要传入CILRequest以及CardType，且所有接口中CILRequest均需要传入以下信息：</p>
@@ -459,7 +439,6 @@
     request.setOrderId(orderId);//可选参数。（消费、退货、预授权、预授权完成、扫码下单、扫码退货）
     request.setLocation(location)//有终端具备获取位置信息能力时必选上送（ 用于消费 预授权）
 </code></pre>
-
 <h5 id="1">1、消费</h5>
 <p>消费接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    CILSDK.consume(request, cardType, new Callback&lt;CILResponse&gt;() {
@@ -475,7 +454,6 @@
         });
 
 </code></pre>
-
 <h5 id="2">2、撤销</h5>
 <p>撤销接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>
@@ -501,7 +479,6 @@
         });
 
 </code></pre>
-
 <h5 id="3">3、退货</h5>
 <p>退货接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>
@@ -524,7 +501,6 @@
         });
 
 </code></pre>
-
 <h5 id="4">4、余额查询</h5>
 <p>余额查询接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    CILSDK.checkBalance(request, cardType, new Callback&lt;CILResponse&gt;() {
@@ -540,7 +516,6 @@
         });
 
 </code></pre>
-
 <h5 id="5">5、卡预授权</h5>
 <p>预授权接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    request.setLocation(location)//有终端具备获取位置信息能力时必选上送（ 用于消费 预授权）
@@ -557,7 +532,6 @@
         });
 
 </code></pre>
-
 <h5 id="6">6、卡预授权撤销</h5>
 <p>预授权撤销接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    /**
@@ -579,7 +553,6 @@
         });
 
 </code></pre>
-
 <h5 id="7">7、卡预授权完成</h5>
 <p>预授权完成接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    /**
@@ -600,7 +573,6 @@
             }
         });
 </code></pre>
-
 <h5 id="8">8、卡预授权完成撤销</h5>
 <p>预授权完成撤销接口<a href="#base_request">request必须包含参数:</a></p>
 <pre><code>    /**
@@ -625,7 +597,6 @@
             }
         });
 </code></pre>
-
 <h5 id="9dccedc">9、DCC转EDC</h5>
 <p>当交易卡片为外卡时，消费类（消费、预授权完成）交易可选择进行DCC转EDC。</p>
 <pre><code>        CILRequest request = new CILRequest();
@@ -652,7 +623,6 @@
         });
 
 </code></pre>
-
 <h5 id="_7">交易结果字段说明</h5>
 <table>
 <thead>
@@ -1053,7 +1023,6 @@
      */
     CFCardSDK.dcc2edc(context,trans);
 </code></pre>
-
 <blockquote>
 <p>onActivityResult(int requestCode, int resultCode, Intent data)<br/>
 信息含义与Extra信息获取方式</p>
@@ -1072,7 +1041,6 @@
 </ul>
 <pre><code>    int transType = intent.getIntExtra(Constants.TRANS_TYPE, Constants.UNKNOWN);
 </code></pre>
-
 <p>transType 取值范围：</p>
 <pre><code>Constants.BANK_CONSUME : 0x001; // 消费
 Constants.QR_CONSUME : 0x002; // 扫码
@@ -1096,7 +1064,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
 <p>当resultCode == Constants.RESULT_OK时，会有结果返回</p>
 <pre><code>    Trans trans = data.getParcelableExtra(Constants.CONSUME_RESULT);
 </code></pre>
-
 <blockquote>
 <p><code>Intent中Extra信息的Key由com.cardinfolink.sdk.constant.Constants获取</code></p>
 </blockquote>
@@ -1296,7 +1263,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
 
 
 </code></pre>
-
 <h3 id="_8"><strong>账单查询</strong></h3>
 <p>智能 POS SDK 分别提供了近7天的<code>账单列表查询</code>和<code>账单统计接口</code>接口,接口会根据 type 值确定返回<code>银行卡账单</code>或<code>扫码账单</code>。
 交易成功还是失败最终以返回账单中应答码为准，见<a href="/user-guide/attachments/#v320160811">应答码表</a> 。</p>
@@ -1372,7 +1338,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
     });
 
 </code></pre>
-
 <blockquote>
 <p>SDK 的网络部分使用的是第三方库 <code>okhttp</code>,以上账单接口分别还提供了相对应的同步接口 <code>getBills</code> 和 <code>getBillStat</code> 。
 对于异步接口来说,都会返回一个 <code>Call</code> 对象,你可以在应用出错的时候调用 <code>call.cancel()</code> 取消这次请求,以免造成内存泄露。</p>
@@ -1393,7 +1358,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
         }
     });
 </code></pre>
-
 <p>如果使用讯联样式结算UI、逻辑直接使用</p>
 <blockquote>
 <p>注意,使用SettleDaoUtil工具类是必须先初始化，SettleDaoUtil.getInstance().init();</p>
@@ -1401,7 +1365,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
 <pre><code>
     SettleDaoUtil.getInstance().gotoLiquidation(context)
 </code></pre>
-
 <h3 id="_10"><strong>打印</strong></h3>
 <p>本模块可用于根据交易信息打印所需的消费票据。接口不仅提供了一套固定格式的小票样式，而且还可以根据需要自定义打印样式。
 主要功能包括小票打印、二维码打印、条形码打印以及图片打印。</p>
@@ -1431,7 +1394,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
           }
     }); 
 </code></pre>
-
 <ul>
 <li>打印结算小票</li>
 </ul>
@@ -1458,7 +1420,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
      });
 
 </code></pre>
-
 <ul>
 <li>自定义打印</li>
 </ul>
@@ -1486,7 +1447,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
     });
 
 </code></pre>
-
 <ul>
 <li>打印二维码</li>
 </ul>
@@ -1512,7 +1472,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
          }
     });
 </code></pre>
-
 <ul>
 <li>打印条形码</li>
 </ul>
@@ -1537,7 +1496,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
          }
     });
 </code></pre>
-
 <ul>
 <li>打印图片</li>
 </ul>
@@ -1563,7 +1521,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
          }
     });
 </code></pre>
-
 <h3 id="_11"><strong>其他设置</strong></h3>
 <p>考虑到使用 SDK 的时候可能还会有其他需求,比如<code>获取 POS 机的 SN 号</code>、<code>设置密钥索引</code>等,在这里,我们也提供了一部分接口。</p>
 <ul>
@@ -1574,42 +1531,36 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
     //版本号
     int versionCode = CILSDK.VERSION_CODE;
 </code></pre>
-
 <ul>
 <li>获取 SN 号</li>
 </ul>
 <pre><code>    //SN号
     String snCode = CILSDK.getDeviceSN();
 </code></pre>
-
 <ul>
 <li>设置流水号</li>
 </ul>
 <pre><code>    //serialNum范围：1~999999
     boolean isSuccess = CILSDK.setSerialNum(int serialNum);
 </code></pre>
-
 <ul>
 <li>获取流水号</li>
 </ul>
 <pre><code>    //序列号
     int serialNum = CILSDK.getSerialNum();
 </code></pre>
-
 <ul>
 <li>设置批次号</li>
 </ul>
 <pre><code>    //batchNum范围：1~999999
     boolean isSuccess = CILSDK.setBatchNum(int batchNum);
 </code></pre>
-
 <ul>
 <li>获取批次号</li>
 </ul>
 <pre><code>    //批次号
     int batchNum = CILSDK.getBatchNum();
 </code></pre>
-
 <!--* 设置密钥索引-->
 
 <ul>
@@ -1618,7 +1569,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
 <pre><code>    //1-15的设值范围
     CILSDK.setTingA8KeyIndex(2);
 </code></pre>
-
 <ul>
 <li>设置密钥索引  </li>
 </ul>
@@ -1627,7 +1577,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
     //可以使用下方提供数值,也可以根据自身程序设值
      CILSDK.setTingKeyIndex(4,101,10,150);
 </code></pre>
-
 <p>以上两个方法请在连接刷卡器(CILSDK.connect)之前使用</p>
 <h3 id="_12"><strong>工具类</strong></h3>
 <ul>
@@ -1658,7 +1607,6 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
     CILPayUtil.isQrPay(transCode);
 
 </code></pre>
-
 <ul>
 <li>ReceiptFormatUtils</li>
 </ul>
@@ -1672,11 +1620,11 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
     ReceiptFormatUtils.handleCardNum(cardNum);
 
 </code></pre>
-
 <h3 id="_13"><strong>许可证</strong></h3>
 <p>Copyright (c) 2016 cardinfolink.com</p>
 <h3 id="javadoc"><strong>JAVADOC</strong></h3>
 <p>java document 详情见 <a href="sdkapi/javadoc/">javadoc</a></p></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -1690,35 +1638,32 @@ Constants.FROM_TIP_REVOKE_ACTIVITY : 0x015; // 小费撤销
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

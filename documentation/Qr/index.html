@@ -9,120 +9,103 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Qr - CRAZYFOX</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../..">CRAZYFOX</a>
-                </div>
+                <a class="navbar-brand" href="../..">CRAZYFOX</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../..">功能预览</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">功能预览</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">快速接入 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../quik/">1. SDK API</a>
+<li>
+    <a href="../quik/" class="dropdown-item">1. SDK API</a>
 </li>
                                     
-<li >
-    <a href="../bluetooth/">2. BLUETOOTH API</a>
-</li>
-                                    
-<li >
-    <a href="../test/">3. TEST</a>
+<li>
+    <a href="../bluetooth/" class="dropdown-item">2. BLUETOOTH API</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交互流程图 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../flowChart/overview/">概述和序列图</a>
+<li>
+    <a href="../../flowChart/overview/" class="dropdown-item">概述和序列图</a>
 </li>
                                     
-<li >
-    <a href="../../flowChart/systemFlowChart/">系统交互图</a>
+<li>
+    <a href="../../flowChart/systemFlowChart/" class="dropdown-item">系统交互图</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">交易类型和应答码 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../attached/sdkAnserCode/">1. 应答码表:sdk应答码表</a>
+<li>
+    <a href="../../attached/sdkAnserCode/" class="dropdown-item">1. 应答码表:sdk应答码表</a>
 </li>
                                     
-<li >
-    <a href="../../attached/symbol/">2. 交易处理标志和冲正标志</a>
+<li>
+    <a href="../../attached/symbol/" class="dropdown-item">2. 交易处理标志和冲正标志</a>
 </li>
                                     
-<li >
-    <a href="../../attached/ticket/">3. 签购单规范</a>
+<li>
+    <a href="../../attached/ticket/" class="dropdown-item">3. 签购单规范</a>
 </li>
                                     
-<li >
-    <a href="../../attached/transType/">4. 交易类型</a>
+<li>
+    <a href="../../attached/transType/" class="dropdown-item">4. 交易类型</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">sdk环境与版本说明 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../download/">版本说明与sample下载</a>
+<li>
+    <a href="../../download/" class="dropdown-item">版本说明与sample下载</a>
 </li>
                                     
-<li >
-    <a href="../../about/">环境地址</a>
+<li>
+    <a href="../../about/" class="dropdown-item">环境地址</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li>
-                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/Qr.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/CardInfoLink/Smart-POS/edit/master/docs/documentation/Qr.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -130,11 +113,21 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <p><strong> 扫码交易</strong></p>
 <p>扫码相关的交易则是不依赖 POS 机器的读卡模块的,但是你需要将<code>微信</code>或者<code>支付宝</code>的二维码读出来传给扫码消费接口,扫码可以使用第三方库,如 <code>zxing</code>。</p>
@@ -162,7 +155,6 @@
         }
     });  
 </code></pre>
-
 <blockquote>
 <p>注意,如果应答码返回09或98，需要调用讯联扫码查询接口，查询该笔订单的实际状态。</p>
 </blockquote>
@@ -185,7 +177,6 @@
             }
         });  
 </code></pre>
-
 <p><strong>扫码退货</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();  
     request.setAmount(amount);//退款金额  
@@ -204,7 +195,6 @@
             }
         });
 </code></pre>
-
 <p><strong>扫码查询</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setBatchNum(response.getTrans().getBatchNum());//批次号
@@ -228,7 +218,6 @@
             }
         });
 </code></pre>
-
 <p><strong>扫码消费查询,只查询一次，不含取消接口</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setBatchNum(response.getTrans().getBatchNum());//批次号
@@ -249,7 +238,6 @@
             }
         });
 </code></pre>
-
 <p><strong>扫码取消</strong>  </p>
 <pre><code>    /**
      * 扫码取消
@@ -278,7 +266,6 @@
             }
         });  
 </code></pre>
-
 <p><strong>扫码预授权</strong>  </p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setAmount(amount);
@@ -305,7 +292,6 @@
             }
         });  
 </code></pre>
-
 <p><strong>扫码预授权撤销</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setAmount(transAmt);//原预授权交易金额
@@ -327,7 +313,6 @@
         });  
 
 </code></pre>
-
 <p><strong>扫码预授权完成</strong></p>
 <pre><code>        CILRequest request = new CILRequest();
         request.setAmount(transAmt);//原预授权交易金额
@@ -345,7 +330,6 @@
             }
         });  
 </code></pre>
-
 <p><strong>扫码预授权完成撤销</strong></p>
 <pre><code>    CILRequest request = new CILRequest();
     request.setAmount(transaction.getTransAmt());//原预授权完成交易金额
@@ -365,7 +349,6 @@
         }
     });
 </code></pre>
-
 <p><strong>单品券功能接入指引</strong>   </p>
 <blockquote>
 <p>注意：sdk v2.5.3及之后版本支持该功能
@@ -403,7 +386,6 @@
         }
     });
 </code></pre>
-
 <ul>
 <li>新增字段说明  </li>
 </ul>
@@ -466,7 +448,6 @@
     }
 ]&quot;
 </code></pre>
-
 <ul>
 <li>响应报文新增一个CouponInfo的实例,内部包含属性字段有：</li>
 </ul>
@@ -588,8 +569,8 @@
     &quot;otherContribution&quot;:&quot;000000000000&quot;
 }
 </code></pre>
-
 <p>附：最多支持传入9个商品  </p></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -603,35 +584,32 @@
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
