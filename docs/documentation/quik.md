@@ -6,7 +6,7 @@
 
 ```gradle
 gradle:
-    implementation 'com.cardinfolink.smart.pos:PosSDK:2.7.6'
+    implementation 'com.cardinfolink.smart.pos:PosSDK:2.7.1'
 ```
 
 * 如果想使用讯联集成的结算UI和逻辑，请配置
